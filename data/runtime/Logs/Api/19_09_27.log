@@ -1,0 +1,24 @@
+[ 2019-09-27T06:39:09+08:00 ] 112.224.17.81 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0118s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0163s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '19' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1569513600 AND `effect_time` <= 1569599999  )  [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0080s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '19' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0083s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0096s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '19' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-09-27T09:22:33+08:00 ] 172.104.142.105 /api/v1/pods
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+ERR: 无法加载控制器:V1
+

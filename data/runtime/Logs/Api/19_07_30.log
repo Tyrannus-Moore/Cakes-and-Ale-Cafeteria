@@ -1,0 +1,1076 @@
+[ 2019-07-30T09:33:34+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2019-07-30T09:33:35+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0109s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0095s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0094s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0083s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0151s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0089s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T09:33:38+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0144s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0248s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0102s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0086s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0147s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 3 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0100s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8478'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8452'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8449'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8444'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8438'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8429'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8428'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8354'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8345'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8344'  [ RunTime:0.0002s ]
+
+[ 2019-07-30T09:33:40+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0144s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0153s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0091s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0085s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0150s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.refund IN ('1','2') ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0084s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8489'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8485'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8480'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8459'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8407'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8383'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8382'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8351'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8350'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8349'  [ RunTime:0.0002s ]
+
+[ 2019-07-30T09:33:43+08:00 ] 106.2.165.222 /index.php?m=Api&c=Personal&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0147s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0144s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0092s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0089s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0153s ]
+SQL: SELECT a.stall_id,a.image,a.stall_name,a.stall_tel,a.score,a.stall_type,a.on_the_pin,b.ma_merchantname,a.tone_music FROM sm_stall a LEFT JOIN sm_merchant as b ON a.ma_id = b.ma_id   WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2019-07-30T09:33:44+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T09:33:46+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0171s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2019-07-30T09:33:48+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T09:56:47+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001057s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0184s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2019-07-30T09:56:48+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0150s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0237s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0094s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0118s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0100s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:51:24+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0125s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0112s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0089s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0154s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0088s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-07-30T10:53:38+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0135s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0109s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0095s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0135s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0086s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:53:41+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0143s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0114s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0096s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0091s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0145s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 3 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0094s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8478'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8452'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8449'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8444'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8438'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8429'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8428'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8354'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8345'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8344'  [ RunTime:0.0002s ]
+
+[ 2019-07-30T10:53:43+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order_xq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0141s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0119s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0099s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0127s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0109s ]
+SQL: SELECT `stall_name` FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT a.order_id,a.order_no,a.member_list_id,a.username,a.phone,a.address,FROM_UNIXTIME(a.express_time,'%Y-%m-%d %H:%i') as express_time,a.total_money,a.express_money,a.discount,a.real_money,a.order_status,a.deliver_type,a.integral,a.is_grab,a.trade_no,a.state,FROM_UNIXTIME(a.create_time,'%Y-%m-%d %H:%i') as create_time,FROM_UNIXTIME(a.payment_time,'%Y-%m-%d %H:%i') as payment_time,a.success_time,FROM_UNIXTIME(a.take_time,'%Y-%m-%d %H:%i') as take_time,a.order_type,a.order_note,a.stall_address,a.telphone,a.stall_tel,a.user_refuse_reason,a.refund,a.refuse_reason,c.member_list_nickname,c.member_list_headpic as yh_headpic,d.member_list_headpic as ps_headpic,d.member_name as ps_name,d.telphone as ps_telphone FROM sm_orders a LEFT JOIN sm_member_list AS c ON a.member_list_id = c.member_list_id LEFT JOIN sm_member_list AS d ON a.ps_id = d.member_list_id  WHERE a.stall_id = '31' AND a.order_id = '8478' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0089s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8478'  [ RunTime:0.0004s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: comment_list D:\xampp\htdocs\app\Api\Controller\PtorderController.class.php 第 441 行.
+
+[ 2019-07-30T10:53:46+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order_xq
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0182s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0134s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0095s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0086s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0164s ]
+SQL: SELECT `stall_name` FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT a.order_id,a.order_no,a.member_list_id,a.username,a.phone,a.address,FROM_UNIXTIME(a.express_time,'%Y-%m-%d %H:%i') as express_time,a.total_money,a.express_money,a.discount,a.real_money,a.order_status,a.deliver_type,a.integral,a.is_grab,a.trade_no,a.state,FROM_UNIXTIME(a.create_time,'%Y-%m-%d %H:%i') as create_time,FROM_UNIXTIME(a.payment_time,'%Y-%m-%d %H:%i') as payment_time,a.success_time,FROM_UNIXTIME(a.take_time,'%Y-%m-%d %H:%i') as take_time,a.order_type,a.order_note,a.stall_address,a.telphone,a.stall_tel,a.user_refuse_reason,a.refund,a.refuse_reason,c.member_list_nickname,c.member_list_headpic as yh_headpic,d.member_list_headpic as ps_headpic,d.member_name as ps_name,d.telphone as ps_telphone FROM sm_orders a LEFT JOIN sm_member_list AS c ON a.member_list_id = c.member_list_id LEFT JOIN sm_member_list AS d ON a.ps_id = d.member_list_id  WHERE a.stall_id = '31' AND a.order_id = '8452' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0093s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8452'  [ RunTime:0.0003s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: comment_list D:\xampp\htdocs\app\Api\Controller\PtorderController.class.php 第 441 行.
+
+[ 2019-07-30T10:53:49+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0145s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0111s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0094s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0087s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0112s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.refund IN ('1','2') ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0146s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8489'  [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8485'  [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8480'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8459'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8407'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8383'  [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8382'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8351'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8350'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8349'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T10:54:46+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:54:49+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2019-07-30T10:54:51+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0145s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0082s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0093s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0087s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0156s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0088s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:54:53+08:00 ] 106.2.165.222 /index.php?m=Api&c=Personal&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0123s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0120s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0087s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0110s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0139s ]
+SQL: SELECT a.stall_id,a.image,a.stall_name,a.stall_tel,a.score,a.stall_type,a.on_the_pin,b.ma_merchantname,a.tone_music FROM sm_stall a LEFT JOIN sm_merchant as b ON a.ma_id = b.ma_id   WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:54:57+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:54:59+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000846s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2019-07-30T10:55:00+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:55:02+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2019-07-30T10:55:05+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0146s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0120s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0105s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0110s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 3 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0091s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8478'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8452'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8449'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8444'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8438'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8429'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8428'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8354'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8345'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8344'  [ RunTime:0.0002s ]
+
+[ 2019-07-30T10:55:10+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:55:12+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:55:25+08:00 ] 106.2.165.222 /index.php?m=Api&c=Personal&a=statistics
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000846s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0141s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0296s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0101s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_finance` [ RunTime:0.0111s ]
+SQL: SELECT `order_no`,`money`,`state`,`statue`,`creattime` FROM `sm_finance` WHERE `stall_id` = '31' AND ( `creattime` >= 1564416000 AND `creattime` <= 1564502399  ) AND `statue` = 1 ORDER BY `creattime` desc LIMIT 0,10   [ RunTime:0.0031s ]
+SQL: SELECT SUM(money) AS tp_sum FROM `sm_finance` WHERE `stall_id` = '31' AND ( `creattime` >= 1564416000 AND `creattime` <= 1564502399  ) AND `statue` = 1 LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT SUM(money) AS tp_sum FROM `sm_finance` WHERE `stall_id` = '31' AND ( `creattime` >= 1564416000 AND `creattime` <= 1564502399  ) AND `statue` = 2 LIMIT 1   [ RunTime:0.0026s ]
+
+[ 2019-07-30T10:55:37+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0141s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0173s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0091s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0102s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0016s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0144s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0092s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:55:39+08:00 ] 106.2.165.222 /index.php?m=Api&c=Personal&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0141s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0109s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0092s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0086s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0157s ]
+SQL: SELECT a.stall_id,a.image,a.stall_name,a.stall_tel,a.score,a.stall_type,a.on_the_pin,b.ma_merchantname,a.tone_music FROM sm_stall a LEFT JOIN sm_merchant as b ON a.ma_id = b.ma_id   WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T10:55:39+08:00 ] 106.2.165.222 /index.php?m=Api&c=Set&a=returnState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T17:46:57+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0155s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0068s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0094s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0086s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0151s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0086s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-07-30T17:46:59+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0146s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0086s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0103s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0089s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0151s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.order_status = 3 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0090s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-07-30T17:47:00+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0109s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0089s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0092s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0219s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.refund IN ('1','2') ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0103s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7957'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7262'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '6874'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '6613'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '5237'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '4680'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '4524'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '3050'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '1921'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '1679'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T17:47:02+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0146s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0067s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0097s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0090s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0117s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.order_status IN ('4','5','6') ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0090s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7948'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7922'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7921'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7920'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7918'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7916'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7910'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7906'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7905'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7879'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T17:47:06+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0144s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0141s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0095s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0124s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.refund IN ('1','2') ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0091s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7957'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '7262'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '6874'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '6613'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '5237'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '4680'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '4524'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '3050'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '1921'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '1679'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T17:47:13+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0143s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0145s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0092s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0087s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0141s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.refund IN ('1','2') ORDER BY a.create_time desc LIMIT 10,10   [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0087s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '1566'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T17:47:15+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0147s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0160s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0099s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0093s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0117s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.refund IN ('1','2') ORDER BY a.create_time desc LIMIT 20,10   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0100s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T17:47:17+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0147s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0256s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0097s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0089s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0147s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.order_status = 3 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0087s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T17:47:18+08:00 ] 112.37.123.118 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0145s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0134s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0097s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0090s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0112s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '12' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0097s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '12' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T17:47:21+08:00 ] 112.37.123.118 /index.php?m=Api&c=Personal&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0158s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0174s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0100s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0089s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '12' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0150s ]
+SQL: SELECT a.stall_id,a.image,a.stall_name,a.stall_tel,a.score,a.stall_type,a.on_the_pin,b.ma_merchantname,a.tone_music FROM sm_stall a LEFT JOIN sm_merchant as b ON a.ma_id = b.ma_id   WHERE `stall_id` = '12' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T18:00:47+08:00 ] 27.188.254.246 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0146s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0423s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0101s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0146s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0092s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8490'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T21:01:41+08:00 ] 27.188.254.246 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-07-30T21:01:43+08:00 ] 27.188.254.246 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0149s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0164s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0099s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0089s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0195s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0090s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T21:01:45+08:00 ] 27.188.254.246 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000847s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0143s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0327s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0120s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0111s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 3 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0097s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8478'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8452'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8449'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8444'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8438'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8429'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8428'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8354'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8345'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8344'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T21:01:47+08:00 ] 27.188.254.246 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0163s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0430s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0101s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0090s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0138s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0084s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-07-30T21:39:48+08:00 ] 27.188.254.246 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0155s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0319s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0101s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0097s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0147s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 3 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0091s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8478'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8452'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8449'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8444'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8438'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8429'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8428'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8354'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8345'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8344'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T21:39:50+08:00 ] 27.188.254.246 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0145s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0151s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0101s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0097s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0147s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.refund IN ('1','2') ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0091s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8490'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8489'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8485'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8480'  [ RunTime:0.0004s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8459'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8407'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8383'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8382'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8351'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8350'  [ RunTime:0.0003s ]
+
+[ 2019-07-30T21:39:52+08:00 ] 27.188.254.246 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0148s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0077s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0091s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0090s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1564416000 AND `effect_time` <= 1564502399  )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0141s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0124s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0005s ]
+

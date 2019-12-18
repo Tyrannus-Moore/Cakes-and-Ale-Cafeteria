@@ -1,0 +1,321 @@
+[ 2019-10-28T15:49:20+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0163s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: sysconfig D:\xampp\htdocs\data\runtime\Cache\Admin\a4a1605debae0f282bbf2ef5517b6662.php 第 36 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037392s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2019-10-28T15:49:20+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000538s ]
+
+[ 2019-10-28T15:49:25+08:00 ] 27.188.250.107 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+
+[ 2019-10-28T15:49:28+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: sysconfig D:\xampp\htdocs\data\runtime\Cache\Admin\a4a1605debae0f282bbf2ef5517b6662.php 第 36 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007145s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000507s ]
+
+[ 2019-10-28T15:49:28+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000519s ]
+
+[ 2019-10-28T15:49:34+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: sysconfig D:\xampp\htdocs\data\runtime\Cache\Admin\a4a1605debae0f282bbf2ef5517b6662.php 第 36 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006905s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006954s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000483s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000522s ]
+
+[ 2019-10-28T15:49:34+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2019-10-28T15:51:59+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=runlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-28T15:52:03+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8] Undefined index: sysconfig D:\xampp\htdocs\data\runtime\Cache\Admin\a4a1605debae0f282bbf2ef5517b6662.php 第 36 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007084s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2019-10-28T15:52:03+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000689s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2019-10-28T15:52:15+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Login&a=runlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `sm_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `sm_admin` SET `admin_hits`=admin_hits+1 WHERE `admin_username` = 'admin' [ RunTime:0.0002s ]
+SQL: UPDATE `sm_admin` SET `admin_last_ip`='27.188.254.70',`admin_last_time`='1565512778',`admin_ip`='27.188.250.107',`admin_time`='1572249135' WHERE `admin_username` = 'admin' [ RunTime:0.0002s ]
+
+[ 2019-10-28T15:52:16+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 ORDER BY `sort`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0069s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0046s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined variable: site_name D:\xampp\htdocs\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 267 行.
+NOTIC: [8] Undefined variable: site_name D:\xampp\htdocs\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 272 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071566s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000647s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2019-10-28T15:52:21+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Index/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Admin/Index/index' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 0 ORDER BY `sort`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Undefined variable: site_name D:\xampp\htdocs\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 267 行.
+NOTIC: [8] Undefined variable: site_name D:\xampp\htdocs\data\runtime\Cache\Admin\eaaaa69a3a7994270bfd9e5a4028ad15.php 第 272 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073719s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000615s ]
+
+[ 2019-10-28T15:53:27+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Sys&a=sys
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0073s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0071s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Sys/sys' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 1 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.094805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094871s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000767s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2019-10-28T15:53:29+08:00 ] 27.188.250.107 /index.php?m=Admin&c=Sys&a=profile
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0077s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0072s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Admin/Sys/profile' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 1 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0073s ]
+SQL: SELECT * FROM sm_admin a INNER JOIN sm_auth_group_access as b on a.admin_id =b.uid INNER JOIN sm_auth_group as c on b.group_id = c.id  WHERE a.admin_id = '1' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.099543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.099606s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000824s ]
+

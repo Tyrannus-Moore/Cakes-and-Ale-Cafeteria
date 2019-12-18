@@ -1,0 +1,770 @@
+[ 2019-10-03T02:31:37+08:00 ] 130.0.56.81 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T02:39:24+08:00 ] 178.73.215.171 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T02:46:57+08:00 ] 3.112.251.68 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T03:57:27+08:00 ] 2.183.155.96 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T04:28:41+08:00 ] 151.66.53.148 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T04:52:28+08:00 ] 183.136.190.62 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T05:09:07+08:00 ] 194.44.16.35 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T05:30:13+08:00 ] 47.98.97.252 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T05:30:13+08:00 ] 47.98.97.252 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030796s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000544s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000583s ]
+
+[ 2019-10-03T07:19:10+08:00 ] 47.101.192.187 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T07:19:10+08:00 ] 47.101.192.187 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006254s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000517s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000555s ]
+
+[ 2019-10-03T07:19:11+08:00 ] 47.101.192.187 /index.php?m=Shop&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000508s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2019-10-03T07:20:32+08:00 ] 78.221.127.56 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T07:20:41+08:00 ] 35.243.207.188 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T07:20:42+08:00 ] 35.243.207.188 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006074s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000457s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000495s ]
+
+[ 2019-10-03T07:24:19+08:00 ] 35.243.207.188 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T07:24:19+08:00 ] 35.243.207.188 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006343s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006390s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000578s ]
+
+[ 2019-10-03T07:29:32+08:00 ] 124.13.239.81 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T08:34:38+08:00 ] 178.93.7.30 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T08:43:01+08:00 ] 216.218.206.69 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T09:09:03+08:00 ] 47.100.127.188 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T09:09:03+08:00 ] 47.100.127.188 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006923s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006968s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2019-10-03T09:09:04+08:00 ] 47.100.127.188 /index.php?m=Shop&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2019-10-03T09:11:20+08:00 ] 183.129.160.229 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T09:55:42+08:00 ] 175.143.114.236 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T10:35:30+08:00 ] 112.64.199.58 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T10:35:30+08:00 ] 112.64.199.58 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007132s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000534s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2019-10-03T10:35:41+08:00 ] 47.74.215.50 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T10:35:41+08:00 ] 47.74.215.50 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006468s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006513s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2019-10-03T10:35:42+08:00 ] 47.74.215.50 /index.php?m=Shop&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000537s ]
+
+[ 2019-10-03T11:03:30+08:00 ] 171.67.70.80 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T11:46:19+08:00 ] 112.60.1.64 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T11:46:19+08:00 ] 157.255.192.120 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T13:43:46+08:00 ] 128.14.134.134 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T13:43:46+08:00 ] 128.14.134.134 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006402s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006451s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2019-10-03T13:53:23+08:00 ] 213.170.247.161 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T14:36:24+08:00 ] 128.14.134.170 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T14:36:24+08:00 ] 128.14.134.170 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006680s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000526s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2019-10-03T14:57:15+08:00 ] 190.94.148.246 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T15:34:05+08:00 ] 112.74.63.145 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T15:39:51+08:00 ] 180.241.83.54 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T15:48:59+08:00 ] 83.53.71.2 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T16:14:51+08:00 ] 183.136.190.40 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T17:57:48+08:00 ] 47.101.137.69 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T17:57:48+08:00 ] 47.101.137.69 /index.php?m=Shop&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006679s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006725s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000560s ]
+
+[ 2019-10-03T17:57:50+08:00 ] 47.101.137.69 /index.php?m=Shop&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000505s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000560s ]
+
+[ 2019-10-03T18:13:21+08:00 ] 175.143.114.236 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T18:17:10+08:00 ] 175.143.114.236 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000698s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+
+[ 2019-10-03T18:21:55+08:00 ] 41.60.234.60 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T19:33:21+08:00 ] 58.251.103.172 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T19:33:22+08:00 ] 121.51.14.29 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T20:31:10+08:00 ] 103.61.100.220 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T21:42:04+08:00 ] 35.233.31.12 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+
+[ 2019-10-03T22:55:28+08:00 ] 121.151.135.154 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined index: HTTP_REFERER D:\xampp\htdocs\app\Common\Controller\CommonController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+

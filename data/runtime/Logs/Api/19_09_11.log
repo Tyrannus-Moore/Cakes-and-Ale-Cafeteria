@@ -1,0 +1,80 @@
+[ 2019-09-11T11:18:11+08:00 ] 106.2.165.222 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0129s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0113s ]
+
+[ 2019-09-11T11:18:13+08:00 ] 106.2.165.222 /index.php?m=Api&c=Personal&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0126s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0119s ]
+
+[ 2019-09-11T11:18:15+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-09-11T11:18:17+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-09-11T11:18:18+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-09-11T11:19:16+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-09-11T11:19:20+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551125' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-09-11T11:19:23+08:00 ] 106.2.165.222 /index.php?m=Api&c=Login&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_stall` WHERE `delete` = 2 AND `st_account` = '18310551122' LIMIT 1   [ RunTime:0.0004s ]
+

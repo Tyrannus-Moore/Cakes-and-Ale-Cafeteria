@@ -1,0 +1,39 @@
+[ 2019-08-31T11:55:36+08:00 ] 140.207.54.75 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '462620190831115527' LIMIT 1   [ RunTime:0.0472s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0093s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '462620190831115527' LIMIT 1   [ RunTime:0.0041s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8547' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1567223736',`payment_time`='1567223736' WHERE `order_id` = '8547' [ RunTime:0.0036s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8547' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0083s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0078s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2193' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0070s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8547' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 359 行.
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0088s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '31' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-08-31T11:55:52+08:00 ] 140.207.54.73 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '462620190831115527' LIMIT 1   [ RunTime:0.0188s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000891s ]
+

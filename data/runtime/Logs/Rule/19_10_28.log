@@ -1,0 +1,399 @@
+[ 2019-10-28T15:52:25+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_rule_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0196s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0073s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0072s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_rule_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` ORDER BY `sort`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.117511s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.117580s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000718s ]
+
+[ 2019-10-28T15:53:37+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_rule_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0079s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0074s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_rule_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` ORDER BY `sort`  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.119329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.119397s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2019-10-28T15:53:58+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_rule_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0072s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0071s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_rule_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` ORDER BY `sort`  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.116947s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.117010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000718s ]
+
+[ 2019-10-28T15:54:00+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0074s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0074s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_admin` ORDER BY `admin_id` LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087063s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.087126s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000682s ]
+
+[ 2019-10-28T15:54:02+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_group_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0086s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0101s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_group_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_auth_group`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093862s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2019-10-28T15:54:04+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_rule_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0074s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0069s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_rule_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` ORDER BY `sort`  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.123855s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.123922s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2019-10-28T15:54:06+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_group_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0069s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0070s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_group_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `sm_auth_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000181s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.090569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090630s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2019-10-28T15:54:06+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0048s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0043s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_admin` ORDER BY `admin_id` LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.088227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.088285s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000692s ]
+
+[ 2019-10-28T15:54:07+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_group_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0072s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0070s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_group_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `sm_auth_group`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089823s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000622s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2019-10-28T15:54:14+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_group_edit&id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0077s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0102s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_group_edit' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'Rule/Rule/admin_group_edit' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 210 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_group_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `sm_auth_group` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073984s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074044s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000778s ]
+
+[ 2019-10-28T15:54:17+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0068s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0068s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0067s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_admin` ORDER BY `admin_id` LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085509s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085562s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000659s ]
+
+[ 2019-10-28T15:54:23+08:00 ] 27.188.250.107 /index.php?m=Rule&c=Rule&a=admin_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0073s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0069s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Rule/Rule/admin_list' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 208 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 208 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_admin` [ RunTime:0.0068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_admin` ORDER BY `admin_id` LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.086749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086805s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000619s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+

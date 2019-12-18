@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>订单详情</title>
+		<base href="__PUBLIC__/home/" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<script src="js/jquery-2.2.1.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="layer/layermobile/need/layer.css"/>
+	</head>
+	
+	<style type="text/css">
+		.state{height: 40px;line-height: 40px;color: #fff;text-indent: 10px;}
+		.info p{display: flex;justify-content: space-between;}
+		.footer p {
+		    display: flex;
+		    justify-content: flex-end;
+		    align-items: center;
+		    width: 100%;
+		}
+		.footer button {
+		    width: 5rem;
+		    border-radius: 0.3rem;
+		    color: #fff;
+		    height: 2.5rem;
+		    float: right;
+		}
+	</style>
+	<body>
+		
+		<div class="mui-content">
+			<p class="state orangeBackground">
+				<switch name="infos.status">
+					<case value="1">待发货</case>
+					<case value="2">已发货</case>
+					<case value="3">已完成</case>
+					<case value="4">待取货</case>
+				</switch>
+			</p>
+			<div class="product border-bottom p-15 whiteBackground">
+				<div class="left">
+					<img src="{$infos.pic_url}" alt="" />
+				</div>
+				<div class="right">
+					<p class="c33">{$infos.goods_name}</p>
+					<p><span class="c33">{$infos.intergral}积分</span><span>×{$infos.pay_num}</span></p>
+				</div>					
+			</div>
+			<div class="info p-15 whiteBackground">
+				<p><span class="c33">积分合计</span><span class="yellowColor">{$infos.use_integral}</span></p>
+				<eq name="infos.state" value="1">
+					<p><span class="c33">配送费</span><span>￥{$infos.pay_money}</span></p>
+				</eq>
+				
+				<!--<p><span class="c33" style="width:50px;">备注</span><span class="darkGreyColor">{$infos.remark|default='未填写'}</span></p>-->
+				<p class="c33">备注</p>
+				<p class="darkGreyColor">{$infos.remark|default='未填写'}</p>
+			</div>
+			<eq name="infos.state" value="1">
+				<p class="p-10 c33 bold">邮寄信息</p>
+			
+				<div class=" mail p-15 whiteBackground">
+					<eq name="infos.type" value="1">
+						<p><span class="darkGreyColor">快递公司</span>&nbsp;&nbsp;<span class="c33">{$infos.log_company|default='暂无'}</span></p>
+						<p><span class="darkGreyColor">快递单号</span>&nbsp;&nbsp;<span class="c33">{$infos.log_order|default='暂无'}</span></p>
+					</eq>
+					<eq name="infos.type" value="2">
+						<p><span class="darkGreyColor">托送人</span>&nbsp;&nbsp;<span class="c33">{$infos.log_company|default='暂无'}</span></p>
+						<p><span class="darkGreyColor">托送人手机</span>&nbsp;&nbsp;<span class="c33">{$infos.log_order|default='暂无'}</span></p>
+					</eq>
+					
+					<p><span class="darkGreyColor">配送地址</span></p>
+					
+					<p><span class="c33">{$infos.username}</span>&nbsp;&nbsp;<span class="c33">{$infos.telphone}</span></p>
+					<p class="c33">{$infos.address}</p>
+				</div>
+			<else/>
+				<p class="p-10 c33 bold">自取地点</p>
+
+				<div class="mail p-15 whiteBackground">
+					<p><span class="darkGreyColor">地址</p>
+					<p class="c33">
+						<span>{$infos.address}</span>
+					<p>
+					<p>
+						<span class="darkGreyColor">电话</span>&nbsp;&nbsp;&nbsp;<span class="c33">{$infos.telphone}</span>
+					</p>
+				</div>
+			</eq>
+			
+			
+			<p class="p-10 c33 bold">订单信息</p>
+			<div class=" mail p-15 whiteBackground">
+				<p style="font-weight: bold;color: #333;"><span class="darkGreyColor">订单编号</span>&nbsp;&nbsp;<span class="c33">{$infos.ordersn}</span></p>
+				<p><span class="darkGreyColor">下单时间</span>&nbsp;&nbsp;<span class="c33">{$infos.addtime|date='Y-m-d H:i',###}</span></p>
+				<eq name="infos.state" value="1">
+					<p><span class="darkGreyColor">付款时间</span>&nbsp;&nbsp;<span class="c33">{$infos.payment_time|date='Y-m-d H:i',###}</span></p>
+				</eq>								
+			</div>
+			<eq name="infos.status" value="2">
+				<div class="footer">
+					<p class="p-10"  style="justify-content: space-between;">
+						<span>7天后自动确认收货</span>
+						<button class="redBackground shouhuo">确认收货</button>
+					</p>
+				</div>
+			</eq>
+			<eq name="infos.status" value="4">
+				<div class="footer">
+					<p class="p-10">
+
+						<button class="redBackground quhuo">确认取货</button>
+					</p>
+				</div>
+			</eq>
+			
+		</div>
+	</body>
+	<script src="js/jquery-2.2.1.min.js"></script>
+	<script src="layer/layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var order_id = "{$infos.order_id}";
+		$('.quhuo').click(function(){
+			//询问框
+			layer.open({
+			    content: '是否取货成功？'
+			    ,btn: ['确定', '取消']
+			    ,yes: function(index){
+				    $.post("{:U('quhuo')}",{order_id:order_id},function(da){
+						if(da == 1){
+						//提示
+							layer.open({
+							    content: '取货成功'
+							    ,skin: 'msg'
+							    ,time: 2 //2秒后自动关闭
+							    ,end:function(){
+							    	window.location.reload()
+							    }
+							});
+						}else{
+							layer.open({
+							    content: '取货失败'
+							    ,skin: 'msg'
+							    ,time: 2 //2秒后自动关闭
+							   
+							});
+						}
+					})
+			    }
+			});
+		})
+		$('.shouhuo').click(function(){
+			//询问框
+			layer.open({
+			    content: '是否确认收货？'
+			    ,btn: ['确定', '取消']
+			    ,yes: function(index){
+				    $.post("{:U('shouhuo')}",{order_id:order_id},function(da){
+						if(da == 1){
+						//提示
+							layer.open({
+							    content: '收货成功'
+							    ,skin: 'msg'
+							    ,time: 2 //2秒后自动关闭
+							    ,end:function(){
+							    	window.location.reload()
+							    }
+							});
+						}else{
+							layer.open({
+							    content: '收货失败'
+							    ,skin: 'msg'
+							    ,time: 2 //2秒后自动关闭
+							   
+							});
+						}
+					})
+			    }
+			});
+		})
+	</script>
+</html>

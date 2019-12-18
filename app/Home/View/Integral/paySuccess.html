@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="__PUBLIC__/home/css/mui.min.css" rel="stylesheet" />
+    <link href="__PUBLIC__/home/css/common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__PUBLIC__/home/css/icons-extra.css" />
+    <script src="__PUBLIC__/home/js/jquery-3.3.1.min.js"></script>
+    <script src="addMaterial.js"></script>
+    <script src="__PUBLIC__/home/js/mui.min.js"></script>
+    <title>支付成功</title>
+</head>
+<style type="text/css">
+    .payTitle{display: flex;justify-content: center;align-items: center;flex-direction: column;}
+    .info{background: #fff;width:100%;}
+    .info li{border-bottom: 1px solid #eee;padding: 0.5rem 0.8rem;display: flex;justify-content: space-between;}
+    .info span:first-child{color: #333;font-size:1rem;}
+    .info span:last-child{color: #ccc;font-size: 0.8rem;}
+</style>
+<body>
+
+<div class="mui-content">
+    <div class="pannelMg0 padding3 payTitle">
+        <p><img src="__PUBLIC__/home/images/paySuccess.png" alt="" /></p>
+        <p>支付成功</p>
+        <p>￥{$infos.actual_money}</p>
+    </div>
+
+    <div class="pannelMg0">
+        <ul class="info">
+            <li><span>交易单号</span><span>{$infos.order_sn}</span></li>
+            <li><span>成交时间</span><span>{$time|date='Y-m-d',###}</span></li>
+            <li><span>交易状态</span><span>支付成功</span></li>
+        </ul>
+
+        <a href="{:U('Home/Index/should')}">
+            <div>
+                <button class="back btmButton mui-btn lightGreenBorder">返回首页</button>
+            </div>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

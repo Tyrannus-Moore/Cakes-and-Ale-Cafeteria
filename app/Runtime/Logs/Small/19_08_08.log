@@ -1,0 +1,56 @@
+[ 2019-08-08T10:38:16+08:00 ] 140.207.54.78 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '227420190808103804' LIMIT 1   [ RunTime:0.0528s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0103s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000342201908084266798682',`payment_time`='1565231896',`order_status`='2' WHERE `order_no` = '227420190808103804' [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0080s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '31' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2019-08-08T10:38:31+08:00 ] 140.207.54.78 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000703s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '227420190808103804' LIMIT 1   [ RunTime:0.0501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000904s ]
+
+[ 2019-08-08T12:01:21+08:00 ] 140.207.54.76 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '481420190808120111' LIMIT 1   [ RunTime:0.0564s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0095s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000349201908081996820860',`payment_time`='1565236881',`order_status`='2' WHERE `order_no` = '481420190808120111' [ RunTime:0.0186s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0088s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '31' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-08-08T12:01:37+08:00 ] 140.207.54.77 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '481420190808120111' LIMIT 1   [ RunTime:0.0216s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000951s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000998s ]
+

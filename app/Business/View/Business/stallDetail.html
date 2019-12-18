@@ -1,0 +1,169 @@
+<extend name="Admin@Public/base" />
+<block name="main-content">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/layui/css/layui.css" media="all">
+    <div class="page-content">
+        <!--主题-->
+        <div class="page-header">
+            <h1>
+                您当前操作
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    档口详情
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="form-horizontal newForm" name="form0" method="post" action="{:U('businessAdd')}" >
+                    <input type="hidden" name="stall_id" value="{$infos.stall_id}">
+                    <input type="hidden" name="p" value="{$p}">
+                    <div class="form-group" id="pic_list">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1">档口图片： </label>
+                        <div class="col-sm-10">
+                            <div><img src="__ROOT__{$infos.image}" height="70" ></div>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 档口名称：  </label>
+                        <div class="col-sm-7">
+                            <input type="text" name="stall_name" value="{$infos.stall_name}" placeholder="档口名称" maxlength="10" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 商家名称：  </label>
+                        <div class="col-sm-7">
+                            <input type="text" maxlength="20" name="st_account" value="{$shopName}" placeholder="商家名称" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 档口电话：  </label>
+                        <div class="col-sm-7">
+                            <input type="number" min="1" maxlength="20" name="stall_tel" value="{$infos.stall_tel}" placeholder="档口电话" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 评分：  </label>
+                        <div class="col-sm-7">
+                            <input type="number" min="1" maxlength="20" name="score" value="{$infos.score}" placeholder="评分" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 月销：  </label>
+                        <div class="col-sm-7">
+                            <input type="text" min="1" maxlength="20" value="{$infos.sales}" placeholder="月销" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <!--<div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 添加时间：  </label>
+                        <div class="col-sm-7">
+                            <input type="text" min="1" maxlength="20" value="{$infos.addtime|date='Y-m-d H:i:s',###}" placeholder="添加时间" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 状态：  </label>
+                        <div class="col-sm-7">
+                            <input type="text" value="<if condition='$infos[is_freeze] eq 1'>冻结<else/>正常</if>" placeholder="状态" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info" type="button" onclick="javascript:window.history.back(-1);">
+                                返回
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- /.page-content -->
+</block>
+<block name="scripts">
+    <script src="__PUBLIC__/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        layui.use('laydate', function() {
+            var laydate = layui.laydate;
+            //时间范围
+            laydate.render({
+                elem: '#start_time'
+                ,type: 'time'
+                ,range: true
+            });
+
+            //日期范围
+            laydate.render({
+                elem: '#due_deadline'
+                ,min: '{$time}'
+            });
+        });
+        //获取市级单位
+        $('#province').change(function(){
+            var	pid = $(this).val();
+            $.ajax({
+                type:'post',
+                url:"{:U('Ajax/Ajax/getCity')}",
+                data:{pid:pid},
+                success:function(rs){
+                    //$('#city_one').css('display','block');
+                    $("#city").html("<option value=''>选择市</option>"+rs);
+                    $("#county").html("<option value=''>选择区县</option>"+rs);
+                }
+            })
+
+        })
+        //获取区县级单位
+        $('#city').change(function(){
+            var	pid = $(this).val();
+            $.ajax({
+                type:'post',
+                url:"{:U('Ajax/Ajax/getCity')}",
+                data:{pid:pid},
+                success:function(rs){
+                    //$('#city_two').css('display','block');
+                    $("#county").html("<option value=''>选择区县</option>"+rs);
+                }
+            })
+
+        })
+
+
+    </script>
+    <script src="__PUBLIC__/uploadify/api-uploadify.js" type="text/javascript"></script>
+    <script>
+        $(function(){
+            //页面一打开就执行，放入ready是为了layer所需配件（css、扩展模块）加载完毕
+            layer.ready(function(){
+                $(".btnmap").click(function(){
+                    var lnglat = $.trim($("#parentIframe").val());
+
+                    if(lnglat){
+                        var urllt = '/index.php?m=Ajax&c=Ajax&a=marker3&lnglat=' + lnglat;
+                    }else{
+                        lnglat = '114.991386,38.517601';
+                        var urllt = '/index.php?m=Ajax&c=Ajax&a=marker3&lnglat=' + lnglat;
+                    }
+                    layer.open({
+                        type: 2,
+                        title: '地图标记',
+                        maxmin: true,
+                        area: ['1000px', '665px'],
+                        content: urllt,
+                    });
+                })
+            });
+        })
+    </script>
+</block>

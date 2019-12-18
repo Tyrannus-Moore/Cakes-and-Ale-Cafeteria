@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>常见问题</title>
+		<base href="__PUBLIC__/" />
+		<link rel="stylesheet" type="text/css" href="home/css/common.css" />
+		<link rel="stylesheet" href="home/css/mui.min.css" />
+		<script src="home/js/mui.min.js"></script>
+		<script src="home/js/jquery-2.2.1.min.js"></script>
+	</head>
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<volist name="list" id="v">
+				 <li class="mui-table-view-cell">
+					 <a href="{:U('problem_info',array('baise_id'=>$v['baise_id']))}">{$v.baise_name}</a>
+				 </li>
+				</volist>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+[ 2019-08-07T09:06:03+08:00 ] 101.132.177.30 /index.php?m=home&c=stall&a=stalldetail&stall_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000845s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0152s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0155s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0088s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0078s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-08-07T09:06:03+08:00 ] 101.132.177.30 /index.php?m=Home&c=Oauth&a=login&
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000741s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0131s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='' ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000686s ]
+

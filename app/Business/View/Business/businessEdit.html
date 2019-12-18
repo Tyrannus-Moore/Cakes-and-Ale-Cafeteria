@@ -1,0 +1,226 @@
+<extend name="Admin@Public/base" />
+<block name="main-content">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/layui/css/layui.css" media="all">
+    <div class="page-content">
+        <!--主题-->
+        <div class="page-header">
+            <h1>
+                您当前操作
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    编辑商家
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="form-horizontal newForm" name="form0" method="post" action="{:U('businessEdit')}" >
+                    <input type="hidden"  name="ma_id" id="ma_id" value="{$info.ma_id}"/>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 商家名称：  </label>
+                        <div class="col-sm-10">
+                            <input type="text"  name="ma_merchantname" id="ma_merchantname" class="col-xs-10 col-sm-4" value="{$info.ma_merchantname}" required placeholder="请输入商家名称"/>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 商家电话： </label>
+                        <div class="col-sm-10">
+                            <input type="text"  name="ma_tel" id="ma_tel" maxlength="20" class="col-xs-10 col-sm-4" value="{$info.ma_tel}" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" minlength="6" maxlength="20" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')" required placeholder="请输入商家电话"/>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 商家登录账号：  </label>
+                        <div class="col-sm-10">
+                            <input type="text"  name="ma_account" id="ma_account" value="{$info.ma_account}" class="col-xs-10 col-sm-4" minlength="6" maxlength="20"  onkeyup="this.value=this.value.replace(/[^a-zA-Z0-9]/g,'');" placeholder="请输入商家登录账号" required/>
+                            <span class="lbl col-md-2 col-sm-2"><span class="red">(6-20位字母、数字)</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 商家登录密码：  </label>
+                        <div class="col-sm-10">
+                            <input type="password"  name="ma_pwd" id="ma_pwd" value="" class="col-xs-10 col-sm-4" minlength="6" maxlength="20" placeholder="请输入商家登录密码"/>
+                            <span class="lbl col-md-3 col-sm-2"><span class="red">(6-20位字符、数字,不填默认不修改)</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1">设置自提点： </label>
+                        <div class="col-sm-10">
+                            <div class="radio" >
+                                <label>
+                                    <input name="mention" <if condition="$info['mention'] eq 1">checked</if> type="radio" class="ace" value="1"/>
+                                    <span class="lbl">是</span>
+                                </label>
+                                <label>
+                                    <input name="mention" <if condition="$info['mention'] eq 2">checked</if> type="radio" class="ace" value="2"/>
+                                    <span class="lbl">否</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 所在学校：  </label>
+                        <div class="col-sm-2 col-md-2">
+                            <select name="school_id" class="form-control">
+                                <volist name="schoolData" id="v">
+                                    <option value="{$v.school_id}" <if condition="$info['school_id'] eq $v[school_id]">selected</if> >{$v.name}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 选择地址： </label>
+                        <div class="col-sm-2 col-md-2">
+                            <select name="provinceid" class="col-sm-10 col-md-7" id="province" required>
+                                <option value="">选择省</option>
+                                <foreach name="province" item="v">
+                                    <option value="{$v.cityid}" <eq name="v.cityid" value="$info.proviceid" >selected="selected"</eq> >{$v.name}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 col-md-2" id="city_one" style="margin-left: -7%;">
+                            <select name="cityid" id="city"  class="col-sm-10 col-md-7" required>
+                                <option value="">选择市</option>
+                                <foreach name="city" item="v">
+                                    <option value="{$v.cityid}" <eq name="v.cityid" value="$info.cityid" >selected</eq> >{$v.name}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 col-md-2" id="city_two" style="margin-left: -7%;">
+                            <select name="countyid" id="county"  class="col-sm-10 col-md-7" required>
+                                <option value="">选择区县</option>
+                                <foreach name="county" item="v">
+                                    <option value="{$v.cityid}" <eq name="v.cityid" value="$info.countyid" >selected</eq> >{$v.name}</option>
+                                </foreach>
+                            </select>
+                            <span class="lbl col-md-1 col-sm-1"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 地图定位： </label>
+                        <div class="col-sm-10">
+                            <input type="text" name="map"  class="col-xs-10 col-sm-2" id="parentIframe" value="{$info.lat_lon}" required readonly style="height: 34px;"/>
+                            <span class="lbl"> <input type="button" class="btnmap" value='获取标注位置' required></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 详细地址：  </label>
+                        <div class="col-sm-10">
+                            <input type="text"  name="address" id="address" value="{$info.address}" maxlength="30" class="col-xs-10 col-sm-4" placeholder="请输入详细地址" required/>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 商家营业时间：  </label>
+                        <div class="col-sm-10">
+                            <input type="text"  name="start_time" id="start_time" value="{$info.st_en}" class="col-xs-10 col-sm-4" placeholder="商家营业时间" required readonly/>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 商家账号到期时间：  </label>
+                        <div class="col-sm-10">
+                            <input type="text"  name="due_deadline" id="due_deadline" value="{$info.due_deadline|date='Y-m-d',###}" class="col-xs-10 col-sm-4"  placeholder="商家账号到期时间" required readonly/>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info add" type="submit">
+                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                保存
+                            </button>
+                            <button class="btn" type="button" style="margin-left: 5%" onclick="javascript:window.history.back(-1);">
+                                <i class="ace-icon fa fa-undo bigger-110"></i> 返回
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- /.page-content -->
+</block>
+<block name="scripts">
+    <script src="__PUBLIC__/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        layui.use('laydate', function() {
+            var laydate = layui.laydate;
+            //时间范围
+            laydate.render({
+                elem: '#start_time'
+                ,type: 'time'
+                ,range: true
+            });
+
+            //日期范围
+            laydate.render({
+                elem: '#due_deadline'
+                ,min: '{$time}'
+            });
+        });
+        //获取市级单位
+        $('#province').change(function(){
+            var	pid = $(this).val();
+            $.ajax({
+                type:'post',
+                url:"{:U('Ajax/Ajax/getCity')}",
+                data:{pid:pid},
+                success:function(rs){
+                    //$('#city_one').css('display','block');
+                    $("#city").html("<option value=''>选择市</option>"+rs);
+                    $("#county").html("<option value=''>选择区县</option>"+rs);
+                }
+            })
+
+        })
+        //获取区县级单位
+        $('#city').change(function(){
+            var	pid = $(this).val();
+            $.ajax({
+                type:'post',
+                url:"{:U('Ajax/Ajax/getCity')}",
+                data:{pid:pid},
+                success:function(rs){
+                    //$('#city_two').css('display','block');
+                    $("#county").html("<option value=''>选择区县</option>"+rs);
+                }
+            })
+
+        })
+
+
+    </script>
+    <script src="__PUBLIC__/uploadify/api-uploadify.js" type="text/javascript"></script>
+    <script>
+        $(function(){
+            //页面一打开就执行，放入ready是为了layer所需配件（css、扩展模块）加载完毕
+            layer.ready(function(){
+                $(".btnmap").click(function(){
+                    var lnglat = $.trim($("#parentIframe").val());
+
+                    if(lnglat){
+                        var urllt = '/index.php?m=Ajax&c=Ajax&a=marker3&lnglat=' + lnglat;
+                    }else{
+                        lnglat = '114.991386,38.517601';
+                        var urllt = '/index.php?m=Ajax&c=Ajax&a=marker3&lnglat=' + lnglat;
+                    }
+                    layer.open({
+                        type: 2,
+                        title: '地图标记',
+                        maxmin: true,
+                        area: ['1000px', '665px'],
+                        content: urllt,
+                    });
+                })
+            });
+        })
+    </script>
+</block>

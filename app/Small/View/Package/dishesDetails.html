@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>菜品详情</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/layer/layermobile/need/layer.css"/>
+    <style>
+        .imgs{text-align: center;margin-top:20px;}
+        .goodsDetaiMs img{max-width:100%;width:100%;}
+        .selDay{touch-action: none; }
+    </style>
+</head>
+
+<body>
+<div class="goodsDetailMainBox">
+    <div class="goodsDetailTopBox">
+        <img class="goodsDetailImg" src="{$list.pic_url}" />
+        <div class="goodsDetailCon p-10 bac-fff">
+            <p>{$list.dishes_name}</p>
+            <div class="clearfix mt-5 mb-5">
+                <if condition="$list['statue'] neq 1 && $list['discount'] lt 10">
+                    <img class="zhe fl" src="__PUBLIC__/home/images/icon_zhe.png" />
+                </if>
+                <div class="fl c99">
+                    <if condition="$list['statue'] neq 1 && $list['discount'] lt 10">
+                        <span>{$list.discount}</span><span>折</span>
+                        <if condition="$list['statue'] eq 3 && $list['discount'] lt 10">
+                            <span>&nbsp;{$list.start_time}~{$list.end_time}</span>
+                        </if>
+                    </if>
+                    <span>月销</span>
+                    <span>{$list.on_the_pin}</span>
+                    <span>评分</span>
+                    <span>{$list.score}</span>
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="fl">
+                    <if condition="$list['statue'] neq 1 && $list['discount'] lt 10">
+                            <span class="c-zhu">￥</span>
+                            <span class="font20 c-zhu">{$list.realMoney}</span>
+                            <del class="c99">{$list.price}</del>
+                        <else/>
+                            <span class="c-zhu">￥</span>
+                            <span class="font20 c-zhu">{$list.price}</span>
+                    </if>
+                </div>
+                <div class="fr goodsCon">{$list.hot}卡路里</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tcxqConBox bac-fff p-10 mt-15 mb-15">
+        <input type="hidden" value="{$list.ma_id}" name="ma_id" id="ma_id">
+        <input type="hidden" value="{$list.dishes_id}" name="dishes_id" id="dishes_id">
+        <input type="hidden" value="1" name="day" id="day">
+        <input type="hidden" value="1" name="type" id="type">
+        <div class="tcxqTitle mb-10 clearfix">
+            <div class="fl nacan" id="selNacan1"><span onclick="diningType(1)">早餐</span></div>
+            <div class="fl nacan" id="selNacan2"><span onclick="diningType(2)">午餐</span></div>
+            <div class="fl nacan" id="selNacan3"><span onclick="diningType(3)">晚餐</span></div>
+            <select class="fr selDay" name="weekType" id="selDay">
+                <option value="1" selected>周一</option>
+                <option value="2">周二</option>
+                <option value="3">周三</option>
+                <option value="4">周四</option>
+                <option value="5">周五</option>
+                <option value="6">周六</option>
+                <option value="7">周日</option>
+            </select>
+        </div>
+        <div id="NextOrder">
+            <!--<div class="orderDetailProList clearfix">-->
+                <!--<img class="orderDetailProImg fl" src="__PUBLIC__/home/images/pro.png" />-->
+                <!--<span class="psyorderCenterProTitle fl">显示餐品名称</span>-->
+                <!--<div class="fl">-->
+                    <!--<span>×</span>-->
+                    <!--<span>1</span>-->
+                <!--</div>-->
+                <!--<div class="fr">-->
+                    <!--<span>￥</span>-->
+                    <!--<span>28.00</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="goodsDetailEveBox bac-fff mb-15">
+        <div class="clearfix goodsDetailEveTitle">
+            <div class="fl font16 fontw c00">评价</div>
+            <a href="{:U('Home/Package/evaluationG',array('dishes_id'=>$list['dishes_id']))}">
+                <div class="fr c99 font12">全部评价 ></div>
+            </a>
+        </div>
+        <if condition="$evaluationDataCount eq 0">
+            <div class="imgs">
+                <p class="">暂无评价</p>
+            </div>
+            <else/>
+            <volist name="evaluationData" id="v">
+                <div class="userEveListBox p-10 bac-fff">
+                    <div class="userEveListTop clearfix">
+                        <div class="userHeadImgBox fl">
+                            <img class="userHeadImg" src="{$v.member_list_headpic}" />
+                        </div>
+                        <div class="userEveUserName fl">{$v.member_list_nickname}</div>
+                        <div class="xingBox fr clearfix mt-7">
+                            <div class="clearfix fl ml-10">
+                                <for start="0" end="$v.score" name="i">
+                                    <img class="ptdkXing" src="__PUBLIC__/home/images/star_icon24.png" />
+                                </for>
+                                <for start="0" end="$v.endscore" name="i">
+                                    <img class="ptdkXing" src="__PUBLIC__/home/images/star_icon25.png" />
+                                </for>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix userEveTime c99">
+                        <div class="c99 fl">{$v.addtime}&nbsp;&nbsp;&nbsp;</div>
+                        <div class="fl">{$v.dishes_name}</div>
+                    </div>
+                    <div class="userEveCon">{$v.content}</div>
+                    <div class="userEveImgBox mt-5">
+                        <if condition="$v.images neq ''">
+                            <foreach name="v.images" item="vo">
+                                <img class="userEveImg" src="{$vo}"/>
+                            </foreach>
+                        </if>
+                    </div>
+                </div>
+            </volist>
+        </if>
+
+    </div>
+
+    <div class="goodsDetailMsBox bac-fff pb-60">
+        <div class="clearfix goodsDetailEveTitle">
+            <div class="fl font16 fontw c00">菜品描述</div>
+        </div>
+        <div class="goodsDetaiMs p-10" style="word-break: break-all;">
+            {$list.content|htmlspecialchars_decode}
+        </div>
+    </div>
+</div>
+
+<div class="xqjiesuanBox">
+    <input class="xqjiesuan" type="button" name="" id="settlement" onclick="settlement()" value="结算" />
+</div>
+
+<script src="__PUBLIC__/home/js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/home/js/mainfile.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/others/jquery.form.js"></script>
+<script src="__PUBLIC__/layer/layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script>
+    var userEveImgBox = $(".userEveImgBox");
+    for(var i = 0; i < userEveImgBox.length; i++){
+        var size = $(userEveImgBox[i]).find("Img").size();
+        console.log(size);
+        var s = 6 - size%6
+        var str = '';
+        for(var j = 0; j < s; j++){
+          str += '<div style="width:50px;margin-right:5px"></div>'
+        }
+        $(userEveImgBox[i]).append(str)
+    }
+        
+    //餐品初始状态
+    $(function() {
+        var dishes_id   = $("#dishes_id").val();
+        var ma_id       = $("#ma_id").val();
+        var day         = $("#day").val();
+        var type        = $("#type").val();
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Package/NextGoods')}",
+            data:{dishes_id:dishes_id,ma_id:ma_id,day:day,type:type},
+            success:function(data){
+                console.log(data);
+                $("#selNacan1").addClass("selNacan");
+                var str = '';
+                if(data == '404'){
+                    $("#NextOrder").html(str);
+                }else{
+                    for(var a=0;a<data.length;a++) {
+                        str += '<div class="orderDetailProList clearfix">';
+                        str += '   <img class="orderDetailProImg fl" src="'+data[a]['pic_url']+'" />';
+                        str += '    <span class="psyorderCenterProTitle fl">'+data[a]['dishes_name']+'</span>';
+                        str += '    <div class="fl">';
+                        str += '    <span>×</span>';
+                        str += '<span>1</span>';
+                        str += '</div>';
+                        str += '<div class="fr">';
+                        str += '    <span>￥</span>';
+                        str += '    <span>'+data[a]['price']+'</span>';
+                        str += '    </div>';
+                        str += '   </div>';
+                    }
+                    $("#NextOrder").html(str);
+                }
+            }
+        })
+    });
+
+    //改变早中晚餐获取餐品
+    function diningType(diningType) {
+        $("#selNacan1").removeClass("selNacan");
+        $("#selNacan2").removeClass("selNacan");
+        $("#selNacan3").removeClass("selNacan");
+        $("#selNacan"+diningType).addClass("selNacan");
+        $("#type").val(diningType);
+        var dishes_id   = $("#dishes_id").val();
+        var ma_id       = $("#ma_id").val();
+        var day         = $("#day").val();
+        var type        = $("#type").val();
+
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Package/NextGoods')}",
+            data:{dishes_id:dishes_id,ma_id:ma_id,day:day,type:type},
+            success:function(data){
+                console.log(data);
+                var str = '';
+                for(var a=0;a<data.length;a++) {
+                    str += '<div class="orderDetailProList clearfix">';
+                    str += '   <img class="orderDetailProImg fl" src="'+data[a]['pic_url']+'" />';
+                    str += '    <span class="psyorderCenterProTitle fl">'+data[a]['dishes_name']+'</span>';
+                    str += '    <div class="fl">';
+                    str += '    <span>×</span>';
+                    str += '<span>1</span>';
+                    str += '</div>';
+                    str += '<div class="fr">';
+                    str += '    <span>￥</span>';
+                    str += '    <span>'+data[a]['price']+'</span>';
+                    str += '    </div>';
+                    str += '   </div>';
+                }
+                $("#NextOrder").html(str);
+            }
+        })
+    }
+
+    //改变日期获取餐品
+    $('#selDay').change(function(){
+        var weekType    = $(this).val();
+        $("#day").val(weekType);
+        var dishes_id   = $("#dishes_id").val();
+        var ma_id       = $("#ma_id").val();
+        var day         = $("#day").val();
+        var type        = $("#type").val();
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Package/NextGoods')}",
+            data:{dishes_id:dishes_id,ma_id:ma_id,day:day,type:type},
+            success:function(data){
+                console.log(data);
+                var str = '';
+                for(var a=0;a<data.length;a++) {
+                    str += '<div class="orderDetailProList clearfix">';
+                    str += '   <img class="orderDetailProImg fl" src="'+data[a]['pic_url']+'" />';
+                    str += '    <span class="psyorderCenterProTitle fl">'+data[a]['dishes_name']+'</span>';
+                    str += '    <div class="fl">';
+                    str += '    <span>×</span>';
+                    str += '<span>1</span>';
+                    str += '</div>';
+                    str += '<div class="fr">';
+                    str += '    <span>￥</span>';
+                    str += '    <span>'+data[a]['price']+'</span>';
+                    str += '    </div>';
+                    str += '   </div>';
+                }
+                $("#NextOrder").html(str);
+            }
+        })
+    });
+
+    //结算页面
+    function settlement() {
+        var dishes_id   = $("#dishes_id").val();
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Package/passGoods')}",
+            data:{dishes_id:dishes_id},
+            success: function (data) {
+                if(data.status == 1){
+                    window.location.href = data.url;
+                }else{
+                    layer.open({
+                        content: data.info
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                }
+            }
+        });
+    }
+</script>
+</html>

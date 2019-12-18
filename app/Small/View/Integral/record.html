@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>兑换记录</title>
+		<base href="__PUBLIC__/home/" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<script src="js/jquery-2.2.1.min.js"></script>
+		<script src="js/mui.min.js"></script>
+	</head>
+	<style type="text/css">
+		.for-b-grey{display: flex;justify-content: space-between;height: 40px;line-height: 40px;}
+		.product{margin-top: 1rem;}
+		
+		.imgs{display: flex;justify-content: center;flex-direction: column;align-items: center;background: #fff;}
+		.imgs img{width:10rem;height: 6rem;}
+	</style>
+	<body>
+		<div class="mui-content">	
+			<notempty name="list">
+				<volist name="list" id="vo">
+					<a href="{:U('orderDetail',array('order_id'=>$vo['order_id']))}">
+						<div class="mb-15 p-15 whiteBackground">
+							<p class="for-b-grey font15 c33"><span>订单编号<span>{$vo.ordersn}</span></span> <span><switch name="vo.status"><case value="1">待发货</case><case value="2">已发货</case><case value="3">已完成</case><case value="4">待取货</case></switch></span></p>
+							<div class="product">
+								<div class="left">
+									<img src="{$vo.pic_url}" alt="" />
+								</div>
+								<div class="right">
+									<p class="c33 font15 c33">{$vo.goods_name}</p>
+									<p><span class="yellowColor">{$vo['use_integral']/$vo['pay_num']}积分</span><span>×{$vo.pay_num}</span></p>
+								</div>					
+							</div>
+						</div>
+					</a>
+				</volist>	
+			<else/>
+				<div class="imgs">
+		            <img src="__PUBLIC__/home/images/icon_wjg.png" alt="" />
+		            <p style="text-align:center">暂无订单</p>
+	            </div>	
+			</notempty>
+									
+		</div>
+		<script>
+			$(".imgs").css("height",$(window).height());
+		</script>
+		
+	</body>	
+</html>

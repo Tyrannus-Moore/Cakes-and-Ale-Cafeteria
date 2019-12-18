@@ -1,0 +1,395 @@
+[ 2019-07-16T16:14:44+08:00 ] 183.3.234.45 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '179920190716154033' LIMIT 1   [ RunTime:0.0325s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000997s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001049s ]
+
+[ 2019-07-16T16:16:50+08:00 ] 183.3.234.45 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '820420190716154240' LIMIT 1   [ RunTime:0.0262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001112s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001167s ]
+
+[ 2019-07-16T16:28:02+08:00 ] 183.3.234.55 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '302520190716162745' LIMIT 1   [ RunTime:0.0504s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0114s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '302520190716162745' LIMIT 1   [ RunTime:0.0039s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8100' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563265682',`payment_time`='1563265682',`is_grab`='1' WHERE `order_id` = '8100' [ RunTime:0.0038s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8100' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0103s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0096s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2070' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0092s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8100' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 359 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000351201907161282190863',`payment_time`='1563265682' WHERE `order_no` = '302520190716162745' [ RunTime:0.0523s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0115s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T16:28:18+08:00 ] 140.207.54.76 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '302520190716162745' LIMIT 1   [ RunTime:0.0460s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000961s ]
+
+[ 2019-07-16T16:50:07+08:00 ] 140.207.54.77 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '450720190716164952' LIMIT 1   [ RunTime:0.0174s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0110s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '450720190716164952' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8101' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563267007',`payment_time`='1563267007',`is_grab`='1' WHERE `order_id` = '8101' [ RunTime:0.0048s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8101' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0109s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0099s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2070' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0109s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8101' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 363 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000343201907164347449984',`payment_time`='1563267007' WHERE `order_no` = '450720190716164952' [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0120s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T16:50:23+08:00 ] 101.226.103.70 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '450720190716164952' LIMIT 1   [ RunTime:0.0224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000761s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000812s ]
+
+[ 2019-07-16T16:54:59+08:00 ] 101.226.103.60 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '989320190716165446' LIMIT 1   [ RunTime:0.0377s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0111s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '989320190716165446' LIMIT 1   [ RunTime:0.0041s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8102' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563267299',`payment_time`='1563267299',`is_grab`='1' WHERE `order_id` = '8102' [ RunTime:0.0040s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8102' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0103s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0100s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2070' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0095s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8102' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 363 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000344201907161397458074',`payment_time`='1563267299' WHERE `order_no` = '989320190716165446' [ RunTime:0.0187s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0114s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0004s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T16:55:15+08:00 ] 140.207.54.77 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '989320190716165446' LIMIT 1   [ RunTime:0.0399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001274s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001332s ]
+
+[ 2019-07-16T16:56:00+08:00 ] 140.207.54.76 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '922220190716165547' LIMIT 1   [ RunTime:0.0506s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0110s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '922220190716165547' LIMIT 1   [ RunTime:0.0041s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8103' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563267360',`payment_time`='1563267360',`is_grab`='1' WHERE `order_id` = '8103' [ RunTime:0.0040s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8103' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0136s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0108s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2070' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0089s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8103' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 363 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000344201907160577705089',`payment_time`='1563267359' WHERE `order_no` = '922220190716165547' [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0143s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T16:56:16+08:00 ] 58.251.80.46 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '922220190716165547' LIMIT 1   [ RunTime:0.0396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001080s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001134s ]
+
+[ 2019-07-16T17:10:11+08:00 ] 58.251.80.46 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0157s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '869120190716170959' LIMIT 1   [ RunTime:0.0341s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0113s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '869120190716170959' LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8104' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563268211',`payment_time`='1563268211',`is_grab`='1' WHERE `order_id` = '8104' [ RunTime:0.0081s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8104' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0106s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0109s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2070' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0104s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8104' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 363 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000339201907164765765306',`payment_time`='1563268211' WHERE `order_no` = '869120190716170959' [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0114s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0004s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T17:10:28+08:00 ] 140.207.54.76 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0157s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '869120190716170959' LIMIT 1   [ RunTime:0.0385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001484s ]
+
+[ 2019-07-16T18:35:23+08:00 ] 140.207.54.78 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '924420190716183518' LIMIT 1   [ RunTime:0.0399s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0122s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '924420190716183518' LIMIT 1   [ RunTime:0.0039s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8105' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563273322',`payment_time`='1563273322' WHERE `order_id` = '8105' [ RunTime:0.0040s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8105' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0098s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0093s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2169' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0090s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8105' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 359 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000358201907164001671609',`payment_time`='1563273322' WHERE `order_no` = '924420190716183518' [ RunTime:0.0188s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0157s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0004s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T18:35:38+08:00 ] 183.3.234.62 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '924420190716183518' LIMIT 1   [ RunTime:0.0443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000956s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001007s ]
+
+[ 2019-07-16T18:37:27+08:00 ] 183.3.234.62 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '607320190716183723' LIMIT 1   [ RunTime:0.0387s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0116s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '607320190716183723' LIMIT 1   [ RunTime:0.0041s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8106' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563273447',`payment_time`='1563273447' WHERE `order_id` = '8106' [ RunTime:0.0038s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8106' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0102s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0095s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2169' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0097s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8106' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 363 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000348201907160746093503',`payment_time`='1563273447' WHERE `order_no` = '607320190716183723' [ RunTime:0.0345s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0122s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T18:37:43+08:00 ] 101.226.103.61 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '607320190716183723' LIMIT 1   [ RunTime:0.0261s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001107s ]
+
+[ 2019-07-16T18:39:22+08:00 ] 101.226.103.60 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '151620190716183918' LIMIT 1   [ RunTime:0.0553s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0117s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '151620190716183918' LIMIT 1   [ RunTime:0.0043s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8107' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563273562',`payment_time`='1563273562' WHERE `order_id` = '8107' [ RunTime:0.0039s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8107' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0104s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0098s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2169' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0090s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8107' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 363 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000347201907168300546955',`payment_time`='1563273562' WHERE `order_no` = '151620190716183918' [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0116s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T18:39:38+08:00 ] 140.207.54.78 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '151620190716183918' LIMIT 1   [ RunTime:0.0385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001096s ]
+
+[ 2019-07-16T18:41:04+08:00 ] 140.207.54.77 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '486120190716184100' LIMIT 1   [ RunTime:0.0549s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0110s ]
+SQL: SELECT `automatic` FROM `sm_stall` WHERE `stall_id` = '30' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_no` = '486120190716184100' LIMIT 1   [ RunTime:0.0039s ]
+SQL: SELECT `deliver_type` FROM `sm_orders` WHERE `order_id` = '8108' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `sm_orders` SET `order_status`='3',`success_time`='1563273664',`payment_time`='1563273664',`is_grab`='1' WHERE `order_id` = '8108' [ RunTime:0.0038s ]
+SQL: SELECT `ma_id` FROM `sm_stall` WHERE `stall_id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `member_list_id`,`order_no`,`create_time` FROM `sm_orders` WHERE `order_id` = '8108' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0102s ]
+SQL: SELECT `appid`,`appsecret`,`take_food_id` FROM `sm_merchant` WHERE `ma_id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0094s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2169' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0091s ]
+SQL: SELECT `meal_code` FROM `sm_order_goods` WHERE `order_id` = '8108' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: access_token D:\xampp\htdocs\app\Common\Common\function.php 第 363 行.
+SQL: UPDATE `sm_orders` SET `trade_no`='4200000351201907164245754745',`payment_time`='1563273664' WHERE `order_no` = '486120190716184100' [ RunTime:0.0179s ]
+SQL: SHOW COLUMNS FROM `sm_stall_music` [ RunTime:0.0115s ]
+SQL: SELECT `music` FROM `sm_stall_music` WHERE `stall_id` = '30' AND `music_type` = 1 LIMIT 1   [ RunTime:0.0004s ]
+ERR: Think\Controller:jpush方法不存在！
+
+[ 2019-07-16T18:41:20+08:00 ] 58.251.80.62 /orderb.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_no` = '486120190716184100' LIMIT 1   [ RunTime:0.0480s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001289s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001356s ]
+

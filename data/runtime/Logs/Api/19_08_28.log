@@ -1,0 +1,118 @@
+[ 2019-08-28T22:55:29+08:00 ] 106.115.36.115 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0109s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0097s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1566921600 AND `effect_time` <= 1567007999  )  [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0078s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0084s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-08-28T22:55:33+08:00 ] 106.115.36.115 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0124s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0173s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1566921600 AND `effect_time` <= 1567007999  )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0082s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 3 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8540'  [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8539'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8538'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8528'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8489'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8485'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8478'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8452'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8449'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8444'  [ RunTime:0.0002s ]
+
+[ 2019-08-28T22:55:33+08:00 ] 106.115.36.115 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0069s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0158s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1566921600 AND `effect_time` <= 1567007999  )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0052s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.refund IN ('1','2') ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0045s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8523'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8515'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8490'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8489'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8485'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8480'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8459'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8407'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8383'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8382'  [ RunTime:0.0002s ]
+
+[ 2019-08-28T22:55:35+08:00 ] 106.115.36.115 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0120s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0087s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1566921600 AND `effect_time` <= 1567007999  )  [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0078s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status IN ('4','5','6') ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0076s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8535'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8533'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8532'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8531'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8530'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8524'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8521'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8519'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8518'  [ RunTime:0.0002s ]
+SQL: SELECT `dishes_name`,`pic_url`,`dishes_nums` FROM `sm_order_goods` WHERE `order_id` = '8517'  [ RunTime:0.0002s ]
+
+[ 2019-08-28T22:55:38+08:00 ] 106.115.36.115 /index.php?m=Api&c=Ptorder&a=order
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0126s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0178s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1566921600 AND `effect_time` <= 1567007999  )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0079s ]
+SQL: SELECT a.order_id,a.create_time,a.order_status,a.phone,a.deliver_type,a.telphone,a.success_time,a.order_no,a.refund FROM sm_orders a WHERE a.stall_id = '31' AND a.order_type = 1 AND a.order_status = 2 AND a.refund <> 1 ORDER BY a.create_time desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+SQL: SELECT `timeout` FROM sm_stall a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.stall_id = '31' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-08-28T22:55:39+08:00 ] 106.115.36.115 /index.php?m=Api&c=Personal&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0113s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0165s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `stall_id` = '31' AND `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1566921600 AND `effect_time` <= 1567007999  )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0078s ]
+SQL: SELECT a.stall_id,a.image,a.stall_name,a.stall_tel,a.score,a.stall_type,a.on_the_pin,b.ma_merchantname,a.tone_music FROM sm_stall a LEFT JOIN sm_merchant as b ON a.ma_id = b.ma_id   WHERE `stall_id` = '31' LIMIT 1   [ RunTime:0.0003s ]
+

@@ -1,0 +1,136 @@
+[ 2019-10-04T10:32:34+08:00 ] 223.104.101.211 /index.php?m=Small&c=Drink&a=index&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0138s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0078s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1570118400 AND `effect_time` <= 1570204799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0071s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0025s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0071s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1570156354 AND `ma_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = null AND `is_del` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `sm_merchant_banner` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `sm_merchant_banner` WHERE `ma_id` = 1  [ RunTime:0.0003s ]
+SQL: SELECT a.dishes_id,a.pic_url,a.dishes_name,a.type,a.on_the_pin,a.score,a.price FROM sm_dishes a LEFT JOIN sm_stall as b on a.stall = b.stall_id  WHERE a.is_del = 2 AND a.ma_id = 1 AND a.state = 1 AND a.statue = 2 AND a.num > 0 AND b.delete = 2 AND b.is_freeze = 2 ORDER BY a.sort ASC,a.addtime DESC LIMIT 6   [ RunTime:0.0017s ]
+SQL: SELECT a.dishes_id,a.pic_url,a.dishes_name,a.type,a.on_the_pin,a.score,a.price FROM sm_dishes a LEFT JOIN sm_stall as b on a.stall = b.stall_id  WHERE a.is_del = 2 AND a.ma_id = 1 AND a.state = 1 AND a.statue = 2 AND a.num > 0 AND b.delete = 2 AND b.is_freeze = 2 ORDER BY a.on_the_pin DESC LIMIT 6   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: offset D:\xampp\htdocs\app\Small\Controller\DrinkController.class.php 第 95 行.
+NOTIC: [8] Undefined variable: psize D:\xampp\htdocs\app\Small\Controller\DrinkController.class.php 第 95 行.
+SQL: SELECT `stall_id`,`image`,`stall_name`,`score`,`addtime`,`on_the_pin`,`stall_type` FROM sm_stall a WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = 1 ORDER BY `sort` asc,`on_the_pin` DESC,`addtime` DESC  [ RunTime:0.0006s ]
+SQL: SELECT `appid`,`appsecret`,`saturation` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-10-04T10:32:34+08:00 ] 223.104.101.211 /index.php?m=Small&c=Index&a=errors&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000543s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0062s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0056s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1570118400 AND `effect_time` <= 1570204799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0044s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0061s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2196' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-10-04T10:32:34+08:00 ] 223.104.101.211 /index.php?m=Small&c=Drink&a=distance&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0052s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0049s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1570118400 AND `effect_time` <= 1570204799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0043s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0075s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0046s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1570156354 AND `ma_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SELECT `longitude`,`latitude` FROM `sm_merchant` WHERE `ma_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-10-04T10:39:59+08:00 ] 223.104.101.211 /index.php?m=Small&c=Index&a=errors&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0136s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0075s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1570118400 AND `effect_time` <= 1570204799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0074s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0076s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2196' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-10-04T10:39:59+08:00 ] 223.104.101.211 /index.php?m=Small&c=Drink&a=distance&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0050s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0046s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2196' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1570118400 AND `effect_time` <= 1570204799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0044s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0045s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0077s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1570156799 AND `ma_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\app\Small\Controller\BaseController.class.php 第 282 行.
+SQL: SELECT `longitude`,`latitude` FROM `sm_merchant` WHERE `ma_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+

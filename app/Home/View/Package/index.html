@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>周餐档口</title>
+	<base href="__PUBLIC__/home/" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/layer/layermobile/need/layer.css"/>
+</head>
+<body>
+	<style>
+		.ptdkCpListInfoBox{min-height:80px;display: flex;flex-direction: column;justify-content: space-between;}
+		.zhe{width:14px;height: 14px;}
+	</style>
+<div class="ptdkTop bac-fff">
+
+    <img class="ptdkTopImg" src="{$stallData.image}" />
+    <p class="c00 font16 fontw mt-10 mb-10">{$stallData.stall_name}</p>
+    <div class="ptdkTopPjBox clearfix">
+        <div class="ptdkXingBox clearfix fl">
+            <for start="0" end="$stallData.score" name="i">
+                <img class="ptdkXing" src="__PUBLIC__/home/images/star_icon24.png" />
+            </for>
+            <for start="0" end="$end" name="i">
+                <img class="ptdkXing" src="__PUBLIC__/home/images/star_icon25.png" />
+            </for>
+        </div>
+        <div class="fl c99 ml-5">
+            <span>{$stallData.score}</span>
+            <span>月销</span>
+            <span>{$stallData.on_the_pin}</span>
+        </div>
+    </div>
+
+    <div class="lxdkBox clearfix">
+        <a href="tel:{$stallData.stall_tel}">
+            <img class="lxdkImg fl" src="__PUBLIC__/home/images/icon_lxdk.png" />
+            <div class="lxdkText fl">联系档口</div>
+        </a>
+    </div>
+    <if condition="$stallData['is_sc'] eq 1">
+        <img class="ptdkScImg" src="__PUBLIC__/home/images/icon_shouc_uns.png" />
+        <else/>
+        <img class="ptdkScImg" src="__PUBLIC__/home/images/icon_shouc_s.png" />
+    </if>
+
+</div>
+
+<div class="ptdkMainBox bac-fff">
+    <div class="ptdkTabBox clearfix po-rela">
+        <div class="ptdkTabList fl ptdkTabSel">
+            <span>菜品</span>
+        </div>
+        <div class="ptdkTabList fl">
+            <span>评价</span>
+        </div>
+        <div class="ptdkTabxian"></div>
+    </div>
+
+    <!--餐品-->
+    <div class="ptdkMainBottomBox clearfix">
+        <div class="ggListBox clearfix">
+            <div class="ggListScrollBox clearfix">
+
+                <foreach name="tuijian" item="v">
+                    <a href="{:U('Home/Package/dishesDetails',array('dishes_id'=>$v['dishes_id']))}">
+                    	<if condition="$v['num'] neq 0">
+		                    <div class="ptdkGgList">							
+		                        <img class="ptdkGgImg" src="{$v.pic_url}" />
+		                        <div class="ptdkGgText"><span style="background-color: rgba(0,0,0,0.4);padding: 2px 5px;">{$v.dishes_name|msubstr=0,5}</span></div>
+		                    </div>
+		                <else/>
+		                	<div class="ptdkGgList po-rela">	
+		                		<div style="position: absolute;top: 0;left: 0;width:100%;height:100%;background: rgba(0,0,0,0.6);z-index: 99;"></div>
+		                		<img class="po-abso" style="width:100%;height:100%;z-index:100;" src="__PUBLIC__/home/images/icon_ysq.png" alt="">
+		                        <img class="ptdkGgImg" src="{$v.pic_url}" />
+		                        <div class="ptdkGgText"><span style="background-color: rgba(0,0,0,0.4);padding: 2px 5px;">{$v.dishes_name|msubstr=0,5}</span></div>
+		                    </div>
+		                    
+                        </if>
+                    </a>
+                </foreach>
+            </div>
+        </div>
+        <!--分类导航-->
+        <div class="ptdkMainBottomLeft fl">
+            <input type="hidden" value="{$typeCategory[0]['dishes_cate_id']}" id="dishes_cate_id">
+            <input type="hidden" value="{$stallData['stall_id']}" id="stall_id">
+            <input type="hidden" value="{$stallData['ma_id']}" id="ma_id">
+            <volist name="typeCategory" id="v" key="k">
+                <div <if condition="$k eq 1">class="lxSel"</if> onclick="selNacan(this)" data-id="{$v.dishes_cate_id}">{$v.cat_name}</div>
+            </volist>
+        </div>
+        <!--周餐菜品-->
+        <div class="ptdkMainBottomRight fl">
+            <div class="ptdkCpListBox"></div>
+        </div>
+    </div>
+
+    <div class="ptdkMainBottomBox dis-n itemlisto">
+        <input type="hidden" class="totalPage" value="">
+    </div>
+</div>
+
+<script src="__PUBLIC__/home/js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/home/js/mainfile.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/others/jquery.form.js"></script>
+<script src="__PUBLIC__/layer/layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/home/jscript/pass.js" type="text/javascript"></script>
+</body>
+<script>
+    /*档口餐品和评价切换*/
+    $(".ptdkTabList").click(function(){
+        $(this).addClass("ptdkTabSel").siblings(".ptdkTabList").removeClass("ptdkTabSel");
+        var index = $(this).index();
+        $(".ptdkMainBottomBox").hide();
+        $(".ptdkMainBottomBox").eq(index).show();
+    })
+    $(function() {
+        var dishes_cate_id = $("#dishes_cate_id").val();
+        var ma_id = $("#ma_id").val();
+        var stall_id = $("#stall_id").val();
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Package/searchGoods')}",
+            data:{dishes_cate_id:dishes_cate_id,ma_id:ma_id,stall_id:stall_id},
+            success:function(data){
+                var str = '';
+    
+                for(var a=0;a<data.length;a++) {
+                    str += '<div class="ptdkCpList clearfix po-rela">';
+                    str += '<a href="/index.php?m=Home&c=Package&a=dishesDetails&dishes_id='+data[a]['dishes_id']+'">';
+					if(data[a]['num'] == "0"){
+						str += '	<div style="position: absolute;top: 0;left: 0;width: 80px;height: 80px;background: rgba(0,0,0,0.6);z-index: 99;"></div>'
+						str +=  '   <img class="po-abso" style="width: 80px;height: 80px;top: 0; left: 0;z-index: 100;" src="__PUBLIC__/home/images/icon_ysq.png" alt="">';
+					}
+                    str +=  '   <img class="ptdkCpListImg fl" src="'+data[a]['pic_url']+'" />';
+								
+								
+                    str += '   <div class="ptdkCpListInfoBox fl">';
+                    str += '   <p class="font16 c00" style="line-height:13px;">'+splitStr(data[a]['dishes_name'])+'</p>';
+                    str += '   <div class="clearfix" style="font-size:12px;color:#999;margin-top:5px;">';                    
+                    str += '   <div>';
+                    str += '   <span>评分</span>';
+                    str += '   <span>'+data[a]['score']+'</span>';
+                    str += '   <span>月销</span>';
+                    str += '   <span>'+data[a]['on_the_pin']+'</span>';
+                    str += '   </div>';
+                    
+                    if(data[a]['statue'] != 1 && data[a]['discount'] < 10){
+                        str += '<div>';
+                        if(data[a]['statue'] != 1 && data[a]['discount'] < 10) {
+	                        str += '   <img class="zhe fl" src="__PUBLIC__/home/images/icon_zhe.png" />';
+	                    }
+                        
+                        str+='<span>'+data[a]['discount']+'</span><span>折</span>';
+                        if(data[a]['statue'] == 3 && data[a]['discount'] < 10) {
+                            str += '&nbsp;' + data[a]['start_time'] + '~' + data[a]['end_time'] + '</div>';
+                        }
+                    }
+                    str += '<p>'+data[a]['hot']+'卡路里</p>  </div>';
+                    str += '<div class="c-zhu">';
+                    str += '  <span>￥</span>';
+                    if(data[a]['statue'] != 1 && data[a]['discount'] < 10){
+                        str += '  <span class="font16">'+data[a]['realMoney']+'</span>';
+                        str += '  <del class="c99">￥'+data[a]['price']+'</del>';
+                    }else{
+                        str += '  <span class="font16">'+data[a]['price']+'</span>';
+                    }
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>'
+                    str += '</a>';
+                    str += ' </div>';
+
+                }
+                $(".ptdkCpListBox").html(str);
+            }
+        })
+    });
+
+    var p; //设置当前页数
+    $(function () {
+        var stall_id = $("#stall_id").val();
+        p = 1;
+        $.ajax({
+            url:"{:U('stallevaluation')}",
+            data:{
+                stall_id:stall_id
+            },
+            success:function(data) {
+                addList(data);
+                totalPage = data.data.totalPage;
+                $(".totalPage").val(totalPage);
+            }
+        });
+    });
+
+    // 收藏
+    $('.ptdkScImg').click(function () {
+        var stall_id = $("#stall_id").val();
+        $.ajax({
+            url: "{:U('collection')}",
+            data: {stall_id: stall_id},
+            success:function (data) {
+                if(data == 1){
+                    layer.open({
+                        content: '收藏成功'
+                        ,skin: 'msg'
+                        ,time: 1 //2秒后自动关闭
+                        ,end:function () {
+                            $('.ptdkScImg').attr('src','__PUBLIC__/home/images/icon_shouc_uns.png');
+                        }
+                    });
+                }else{
+                    layer.open({
+                        content: '取消收藏'
+                        ,skin: 'msg'
+                        ,time: 1 //2秒后自动关闭
+                        ,end:function () {
+                            $('.ptdkScImg').attr('src','__PUBLIC__/home/images/icon_shouc_s.png');
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+    function splitStr(e){
+        var str = '';
+        if(e.length>5){
+            str = e.substring(0,5) + "..."
+        }else{
+            str = e;
+        }
+        return str
+    }
+    // 评价
+    function addList(data) {
+        //console.log(data);
+        var str = '';
+        $.each(data.data.list,function(index,item){
+            str += '<div class="userEveListBox p-10 bac-fff">';
+            str += '<div class="userEveListTop clearfix">';
+            str += '<div class="userHeadImgBox fl">';
+            str += '<img class="userHeadImg" src="'+item.member_list_headpic+'" />';
+            str += '</div>';
+            str += '<div class="userEveUserName fl">'+item.member_list_nickname+'</div>';
+            str += '<div class="xingBox fr clearfix mt-15">';
+            str += '<div class="clearfix fl ml-10">';
+            for( var i=0; i< item.score;i++){
+                str += '<img class="fl" src="__PUBLIC__/home/images/star_icon24.png" />';
+            }
+            for( var i=0; i< item.endscore;i++){
+                str += '<img class="fl" src="__PUBLIC__/home/images/star_icon25.png" />';
+            }
+            str += '</div>';
+            str += '</div>';
+            str += '</div>';
+            str += '<div class="clearfix userEveTime c99">';
+            str += '<div class="c99 fl">'+item.addtime+'&nbsp;&nbsp;&nbsp;</div>';
+            str += '<div class="fl">'+item.dishes_name+'</div>';
+            str += ' </div>';
+            str += '<div class="userEveCon">'+item.content+'</div>';
+            str += '<div class="userEveImgBox mt-5">';
+            if(item.images !== ''){
+                for( var j=0; j< item.images.length;j++){
+                    str += '<img class="userEveImg" src="'+item.images[j]+'" />';
+                }
+            }
+            str += '</div>';
+            str += '</div>';
+        });
+        $(".itemlisto").append(str);
+        var userEveImgBox = $(".userEveImgBox");
+        for(var i = 0; i < userEveImgBox.length; i++){
+            var size = $(userEveImgBox[i]).find("Img").size();
+            //sole.log(size);
+            var s = 6 - size%6
+            var str = '';
+            for(var j = 0; j < s; j++){
+              str += '<div style="width:50px;margin-right:5px"></div>'
+            }
+            $(userEveImgBox[i]).append(str)
+        }
+    }
+
+    $(window).scroll(function(){
+        var stall_id = $("#stall_id").val();
+        var winH = $(window).height(); //页面可视区域高度
+        var scrollTop=$(window).scrollTop();//滚动条top
+        var bodyHeight=$(document).height();
+        if(scrollTop + winH>=bodyHeight) {
+            totalPage = $(".totalPage").val();
+            if (p <= totalPage) {
+                $.post("{:U('evaluationList')}",{k:p,stall_id:stall_id},function(data){
+                    addList(data);
+                });
+                p++;
+            }
+        }
+    });
+
+    function selNacan(obj) {
+        $(obj).addClass("lxSel").siblings().removeClass("lxSel");
+        var dishes_cate_id = $(obj).attr('data-id');
+        var ma_id = $("#ma_id").val();
+        var stall_id = $("#stall_id").val();
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Package/searchGoods')}",
+            data:{dishes_cate_id:dishes_cate_id,ma_id:ma_id,stall_id:stall_id},
+            success:function(data){
+                var str = '';
+                for(var a=0;a<data.length;a++) {
+
+                    str += '<div class="ptdkCpList clearfix po-rela">';
+                    str += '<a href="/index.php?m=Home&c=Package&a=dishesDetails&dishes_id='+data[a]['dishes_id']+'">';
+					if(data[a]['num'] == 0){
+						str += '	<div style="position: absolute;top: 0;left: 0;width: 80px;height: 80px;background: rgba(0,0,0,0.6);z-index: 99;"></div>'
+						str +=  '   <img class="po-abso" style="width: 80px;height: 80px;top: 0; left: 0;z-index: 100;" src="__PUBLIC__/home/images/icon_ysq.png" alt="">';
+					}
+                    str +=  '   <img class="ptdkCpListImg fl" src="'+data[a]['pic_url']+'" />';					
+                    str += '   <div class="ptdkCpListInfoBox fl">';
+                    str += '   <p class="font16 c00" style="line-height:13px;">'+data[a]['dishes_name']+'</p>';
+                    str += '   <div class="clearfix"  style="font-size:12px;color:#999;margin-top:5px;">';
+                    if(data[a]['statue'] != 1 && data[a]['discount'] < 10) {
+                        str += '   <img class="zhe fl" src="__PUBLIC__/home/images/icon_zhe.png" />';
+                    }
+                    str += '    <div class="fl">';
+                    if(data[a]['statue'] != 1 && data[a]['discount'] < 10){
+                        str += '    <span>'+data[a]['discount']+'</span><span>折</span>';
+                        if(data[a]['statue'] == 3 && data[a]['discount'] < 10) {
+                            str += '&nbsp;' + data[a]['start_time'] + '~' + data[a]['end_time'] + '';
+                        }
+                    }
+                    str += '   <span>评分</span>';
+                    str += '   <span>'+data[a]['score']+'</span>';
+                    str += '   <span>月销</span>';
+                    str += '   <span>'+data[a]['on_the_pin']+'</span>';
+                    str += '   </div>';
+                    str += '  </div>';
+                    str += '  <p>'+data[a]['hot']+'卡路里</p>';
+                    str += '<div class="c-zhu">';
+                    str += '  <span>￥</span>';
+                    if(data[a]['statue'] != 1 && data[a]['discount'] < 10){
+                        str += '  <span class="font16">'+data[a]['realMoney']+'</span>';
+                        str += '  <del class="c99">￥'+data[a]['price']+'</del>';
+                    }else{
+                        str += '  <span class="font16">'+data[a]['price']+'</span>';
+                    }
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</a>';
+                    str += ' </div>';
+                }
+                $(".ptdkCpListBox").html(str);
+            }
+        })
+    }
+
+
+    var width = $(".ptdkGgList img").width();
+    $(".ptdkGgList").width(width + "px");
+    $(".ptdkGgList").height(width + "px");
+</script>
+</html>

@@ -1,0 +1,18 @@
+支付时间：2019-06-03 11:08:42
+<xml><appid><![CDATA[wxc0b30000d65d2286]]></appid>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[100]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[Y]]></is_subscribe>
+<mch_id><![CDATA[1523992141]]></mch_id>
+<nonce_str><![CDATA[nl2y3wyoyb46yne7ikcofyouxh4xj9yq]]></nonce_str>
+<openid><![CDATA[o6Iva5pZGqEcOxUtRwG1TT8z5pVQ]]></openid>
+<out_trade_no><![CDATA[201906031708319331]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[9807035172BE3F935DA37F9EB5625A0E]]></sign>
+<time_end><![CDATA[20190603170841]]></time_end>
+<total_fee>100</total_fee>
+<trade_type><![CDATA[JSAPI]]></trade_type>
+<transaction_id><![CDATA[4200000293201906037360076558]]></transaction_id>
+</xml>

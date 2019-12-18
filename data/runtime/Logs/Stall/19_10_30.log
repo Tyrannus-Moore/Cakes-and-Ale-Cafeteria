@@ -1,0 +1,22 @@
+[ 2019-10-30T19:20:57+08:00 ] 221.2.209.230 /index.php?m=Stall&c=Index&a=index&ma_id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010100s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013614s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+NOTIC: [8] Use of undefined constant phone - assumed 'phone' D:\xampp\htdocs\data\runtime\Cache\Stall\19337d61881721e733c9f3fb8212086e.php 第 22 行.
+NOTIC: [8] Use of undefined constant pwd - assumed 'pwd' D:\xampp\htdocs\data\runtime\Cache\Stall\19337d61881721e733c9f3fb8212086e.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070978s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071028s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007724s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007764s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008171s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008212s ]
+

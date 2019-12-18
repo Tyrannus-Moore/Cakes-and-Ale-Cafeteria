@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>确认支付</title>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/common.css" />
+		<link rel="stylesheet" href="__PUBLIC__/home/css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/layer/layermobile/need/layer.css"/>
+		
+	</head>
+	
+	<style>
+		.distribution p{display: flex;justify-content: space-between;}
+		.pay{display: flex;justify-content: space-between;flex-direction: row;}
+		.left{display: flex;flex-direction: row;align-items: center;}
+		.left img{width:2rem;height: 2rem;margin-right: 15px;}
+	</style>
+	<body>
+		
+		<div class="mui-content">
+			<div class="p-10 whiteBackground distribution">
+				<p>
+					<span class="c33">配送费</span><span class="redColor">￥{$orderInfo.pay_money}</span>
+				</p>
+				<p><span class="c33">积分<span class="darkGreyColor">(自动扣除)</span></span><span class="darkGreyColor">{$orderInfo.use_integral}积分</span></p>
+			</div>
+			
+			<div class="p-10 whiteBackground mt-10">
+				<p class="greyColor">支付方式</p>
+				<div class="pay">
+					<div class="left">
+						<img src="__PUBLIC__/home/images/icon_wx.png" alt="" />
+						微信钱包
+					</div>
+					<div class="right">
+						<img src="__PUBLIC__/home/images/check_circle_s.png" alt="" />
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="footer">
+			<button class="redBackground bottomBtn realpay">去支付</button>
+		</div>
+		<script src="__PUBLIC__/home/js/jquery-2.2.1.min.js"></script>
+		<script src="__PUBLIC__/home/layer/layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__PUBLIC__/home/js/mui.min.js"></script>
+		<script type="text/javascript">
+		 	var order_id = "{$orderInfo.order_id}";
+			$('.realpay').click(function(){
+				callpay();
+			})
+			//调用微信JS api 支付
+			function jsApiCall()
+			{
+				
+				WeixinJSBridge.invoke(
+					'getBrandWCPayRequest',
+					{$jsApiParameters},
+					function(res){
+						WeixinJSBridge.log(res.err_msg);
+
+						// console.log(res);  return false;
+						if(res.err_msg=='get_brand_wcpay_request:ok'){
+							state = 1;
+						}
+						else
+						{
+							state = 0;
+						}
+						if(state === 1)
+						{
+						 	setTimeout("location.href = '{$success_returnUrl}'",1);
+						}
+						else
+						{
+		 					layer.open({
+								type: 0,
+								time: 1,
+								content: "支付失败",
+								skin: 'msg',
+								end: function() {
+										$.post("{:U('orderDel')}",{order_id:order_id},function(da){
+											if(da == 1){
+												windows.location.href="{:U('shop')}";
+											}
+										})
+									}
+						 	});
+						}
+					}
+				);
+			}
+			
+			function callpay()
+			{
+
+				if (typeof WeixinJSBridge == "undefined"){
+					if( document.addEventListener ){
+						document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+					}
+					else if(document.attachEvent){
+						document.attachEvent('WeixinJSBridgeReady', jsApiCall); 
+						document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+					}
+				}
+				else
+				{
+					
+					jsApiCall();
+				}
+			}
+			// sessionStorage.clear();
+		 //    $(function(){
+		 //        //清空浏览器历史记录
+		 //        pushHistory();
+		 //        //监听浏览器后退事件
+		 //        window.addEventListener("popstate",
+		 //            function(e) {
+		 //                //转向指定的URL
+		 //                location.href = '/index.php/Home/Myorder/index';
+		 //            }, false);
+		 //        //清空浏览器历史记录
+		 //        function pushHistory() {
+		 //            var url = "#";
+		 //            var state = {
+		 //                title: "title",
+		 //                url: "#"
+		 //            };
+		 //            window.history.pushState(state, "title", "#");
+		 //        }
+		 //    });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1501 @@
+[ 2019-09-14T06:21:58+08:00 ] 123.151.76.158 /index.php?m=Home&c=Drink&a=index&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0134s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0059s ]
+
+[ 2019-09-14T06:21:58+08:00 ] 123.151.76.158 /index.php?m=Home&c=Oauth&a=login&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0093s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-09-14T06:22:00+08:00 ] 123.151.76.158 /index.php?m=Home&c=Oauth&a=login&ma_id=1&code=071tPLwx0CpwMb17FSvx0AIAwx0tPLwE&state=wx_oauth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0133s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `openid` = 'o6Iva5vVCLQHUjrrrHdJKCZnmq7Q' AND `ma_id` = '1' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `sm_member_list` (`ma_id`,`openid`,`member_list_headpic`,`member_list_nickname`,`member_list_sex`,`addtime`,`unionid`) VALUES ('1','o6Iva5vVCLQHUjrrrHdJKCZnmq7Q','/data/upload/WxImage/2019-09-14/5d7c168877961.jpg','寻梦青年','1','1568413320','oykPnw2hke045XLwPegcMo0CLAYQ') [ RunTime:0.0005s ]
+
+[ 2019-09-14T06:22:01+08:00 ] 123.151.76.158 /index.php?m=Home&c=Drink&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0096s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0052s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0082s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0083s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568413320 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2269' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant_banner` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `sm_merchant_banner` WHERE `ma_id` = 1  [ RunTime:0.0003s ]
+SQL: SELECT a.dishes_id,a.pic_url,a.dishes_name,a.type FROM sm_dishes a LEFT JOIN sm_stall as b on a.stall = b.stall_id  WHERE a.is_del = 2 AND a.ma_id = '1' AND a.state = 1 AND a.statue = 2 AND a.num > 0 AND b.delete = 2 AND b.is_freeze = 2 ORDER BY a.sort ASC,a.addtime DESC LIMIT 6   [ RunTime:0.0094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_stall` WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`saturation` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049198s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000622s ]
+
+[ 2019-09-14T06:22:02+08:00 ] 123.151.76.158 /index.php?m=Home&c=Drink&a=indexLists&page=1&psize=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0098s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0092s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0081s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0076s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568413322 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `stall_id`,`image`,`stall_name`,`score`,`addtime`,`on_the_pin`,`stall_type` FROM sm_stall a WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc,`on_the_pin` DESC,`addtime` DESC LIMIT 0,10   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000716s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000754s ]
+
+[ 2019-09-14T06:22:13+08:00 ] 123.151.76.158 /index.php?m=Home&c=Drink&a=distance
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0127s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0090s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0080s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0089s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0083s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568413333 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `longitude`,`latitude` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-09-14T06:22:14+08:00 ] 123.151.76.158 /index.php?m=Home&c=Drink&a=indexLists&page=2&psize=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0125s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0077s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0102s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0074s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568413334 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `stall_id`,`image`,`stall_name`,`score`,`addtime`,`on_the_pin`,`stall_type` FROM sm_stall a WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc,`on_the_pin` DESC,`addtime` DESC LIMIT 10,10   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000661s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000702s ]
+
+[ 2019-09-14T06:22:19+08:00 ] 123.151.76.158 /index.php?m=Home&c=Drink&a=indexLists&page=3&psize=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0130s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0218s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0096s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0076s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0076s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568413339 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `stall_id`,`image`,`stall_name`,`score`,`addtime`,`on_the_pin`,`stall_type` FROM sm_stall a WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc,`on_the_pin` DESC,`addtime` DESC LIMIT 20,10   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+
+[ 2019-09-14T06:22:23+08:00 ] 123.151.76.158 /index.php?m=Home&c=Integral&a=shop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0130s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0154s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0085s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0076s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_banner` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `sm_banner` WHERE `is_show` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_goods_category` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `sm_goods_category` WHERE `is_del` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `member_list_id` = '2269' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_goods` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `sm_goods` WHERE `is_del` = 1 AND `state` = 1 ORDER BY `sort` asc,`addtime` desc LIMIT 20   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_goods` WHERE `is_del` = 1 AND `state` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2269' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050874s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000493s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000534s ]
+
+[ 2019-09-14T06:22:28+08:00 ] 123.151.76.158 /index.php?m=Home&c=Drink&a=indexLists&page=1&psize=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0155s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0092s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0073s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0077s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568413348 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `stall_id`,`image`,`stall_name`,`score`,`addtime`,`on_the_pin`,`stall_type` FROM sm_stall a WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc,`on_the_pin` DESC,`addtime` DESC LIMIT 0,10   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000694s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000737s ]
+
+[ 2019-09-14T06:22:29+08:00 ] 123.151.76.158 /index.php?m=Home&c=Personal&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0117s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0238s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0090s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0075s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0072s ]
+SQL: SELECT `member_list_nickname`,`member_list_headpic`,`telphone`,`state`,`status` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030110s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000511s ]
+
+[ 2019-09-14T06:22:30+08:00 ] 123.151.76.158 /index.php?m=Home&c=Drink&a=indexLists&page=1&psize=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000631s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0126s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0094s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0079s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0076s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568413350 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `stall_id`,`image`,`stall_name`,`score`,`addtime`,`on_the_pin`,`stall_type` FROM sm_stall a WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc,`on_the_pin` DESC,`addtime` DESC LIMIT 0,10   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000635s ]
+
+[ 2019-09-14T06:22:33+08:00 ] 123.151.76.158 /index.php?m=Home&c=Integral&a=shop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0145s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0089s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0076s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `sm_banner` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `sm_banner` WHERE `is_show` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_goods_category` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `sm_goods_category` WHERE `is_del` = 1  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `member_list_id` = '2269' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_goods` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `sm_goods` WHERE `is_del` = 1 AND `state` = 1 ORDER BY `sort` asc,`addtime` desc LIMIT 20   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_goods` WHERE `is_del` = 1 AND `state` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2269' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053151s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000496s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000536s ]
+
+[ 2019-09-14T06:22:36+08:00 ] 123.151.76.158 /index.php?m=Home&c=Integral&a=record
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0133s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0093s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0081s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0047s ]
+SQL: SELECT a.*,b.pic_url,b.goods_name,b.intergral FROM sm_integral_order as a LEFT JOIN sm_goods AS b ON a.goods_id=b.goods_id  WHERE a.member_list_id = '2269' AND a.status NOT IN ('0','5') ORDER BY a.addtime desc  [ RunTime:0.0046s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035158s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000558s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2019-09-14T06:22:42+08:00 ] 123.151.76.158 /index.php?m=Home&c=Integral&a=detail&goods_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0130s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0085s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0073s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `sm_goods` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `sm_goods` WHERE `goods_id` = '6' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `member_list_id` = '2269' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042285s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042342s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000446s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2019-09-14T06:22:46+08:00 ] 123.151.76.158 /index.php?m=Home&c=Personal&a=personal_add&href=/index.php/Home/Integral/detail/goods_id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0127s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0085s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0077s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0099s ]
+SQL: SELECT a.member_list_nickname,a.member_list_sex,a.telphone,a.birthary_time,b.name,a.school_id,a.faculty,a.member_class,a.stature,a.weight FROM sm_member_list a LEFT JOIN sm_school as b on a.school_id = b.school_id  WHERE a.member_list_id = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0078s ]
+SQL: SELECT b.school_id,b.name FROM sm_merchant a LEFT JOIN sm_school as b on a.school_id = b.school_id  WHERE a.ma_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_faculty` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `sm_faculty` WHERE `school_id` = 2  [ RunTime:0.0003s ]
+SQL: SELECT `num` FROM `sm_faculty` WHERE `faculty_name` = null LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: ban D:\xampp\htdocs\app\Home\Controller\PersonalController.class.php 第 154 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\xampp\htdocs\data\runtime\Cache\Home\fcc95967d04f4881a8380d7ee60a7a5c.php 第 104 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\xampp\htdocs\data\runtime\Cache\Home\fcc95967d04f4881a8380d7ee60a7a5c.php 第 105 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045244s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045305s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2019-09-14T06:23:02+08:00 ] 101.89.239.232 /index.php?m=Home&c=Drink&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0144s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0123s ]
+
+[ 2019-09-14T06:23:02+08:00 ] 123.151.76.158 /index.php?m=Home&c=Personal&a=personal_add&href=/index.php/Home/Integral/detail/goods_id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0058s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0082s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0083s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0074s ]
+SQL: SELECT a.member_list_nickname,a.member_list_sex,a.telphone,a.birthary_time,b.name,a.school_id,a.faculty,a.member_class,a.stature,a.weight FROM sm_member_list a LEFT JOIN sm_school as b on a.school_id = b.school_id  WHERE a.member_list_id = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0074s ]
+SQL: SELECT b.school_id,b.name FROM sm_merchant a LEFT JOIN sm_school as b on a.school_id = b.school_id  WHERE a.ma_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_faculty` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `sm_faculty` WHERE `school_id` = 2  [ RunTime:0.0002s ]
+SQL: SELECT `num` FROM `sm_faculty` WHERE `faculty_name` = null LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: ban D:\xampp\htdocs\app\Home\Controller\PersonalController.class.php 第 154 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\xampp\htdocs\data\runtime\Cache\Home\fcc95967d04f4881a8380d7ee60a7a5c.php 第 104 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\xampp\htdocs\data\runtime\Cache\Home\fcc95967d04f4881a8380d7ee60a7a5c.php 第 105 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028994s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029045s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000465s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000505s ]
+
+[ 2019-09-14T06:23:29+08:00 ] 101.89.239.230 /index.php?m=Home&c=Personal&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0136s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0043s ]
+
+[ 2019-09-14T06:23:29+08:00 ] 101.89.239.230 /index.php?m=Home&c=Oauth&a=login&
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0095s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026164s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026232s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000330s ]
+
+[ 2019-09-14T06:23:38+08:00 ] 101.89.239.238 /index.php?m=Home&c=Integral&a=record
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0142s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0042s ]
+
+[ 2019-09-14T06:23:42+08:00 ] 61.151.178.175 /index.php?m=Home&c=Integral&a=detail&goods_id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0120s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0041s ]
+
+[ 2019-09-14T06:23:46+08:00 ] 101.89.239.230 /index.php?m=Home&c=Personal&a=personal_add&href=/index.php/Home/Integral/detail/goods_id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0122s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0042s ]
+
+[ 2019-09-14T06:24:02+08:00 ] 123.151.76.158 /index.php?m=Home&c=Personal&a=ban
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0130s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0088s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0077s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `sm_faculty` [ RunTime:0.0175s ]
+SQL: SELECT `num` FROM `sm_faculty` WHERE `faculty_id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-09-14T06:24:16+08:00 ] 123.151.76.158 /index.php?m=Home&c=Personal&a=personal_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0125s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0076s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0072s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0070s ]
+SQL: UPDATE `sm_member_list` SET `member_list_nickname`='寻梦青年',`member_list_sex`='1',`birthary_time`='1084464000',`telphone`='18365816847',`school_id`='2',`faculty`='汽车系',`member_class`='2班',`stature`='170',`weight`='95',`is_perfect`='1' WHERE `member_list_id` = '2269' [ RunTime:0.0003s ]
+
+[ 2019-09-14T06:24:17+08:00 ] 123.151.76.158 /index.php/Home/Integral/detail/goods_id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0111s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0075s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2269' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0070s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `sm_goods` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `sm_goods` WHERE `goods_id` = '6' LIMIT 1   [ RunTime:0.0023s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `member_list_id` = '2269' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006423s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006474s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000485s ]
+
+[ 2019-09-14T06:25:17+08:00 ] 101.227.139.164 /index.php/Home/Integral/detail/goods_id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0139s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0062s ]
+
+[ 2019-09-14T07:59:21+08:00 ] 112.224.19.32 /index.php?m=Home&c=Integral&a=shop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0125s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0061s ]
+
+[ 2019-09-14T07:59:31+08:00 ] 112.224.19.32 /index.php?m=Home&c=Oauth&a=login&
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0122s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='' ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006129s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006203s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000573s ]
+
+[ 2019-09-14T08:00:27+08:00 ] 101.227.139.164 /index.php?m=Home&c=Oauth&a=login&
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0141s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000125s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005531s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005590s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000299s ]
+
+[ 2019-09-14T11:46:27+08:00 ] 112.224.2.220 /index.php?m=Home&c=Drink&a=index&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0141s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0094s ]
+
+[ 2019-09-14T11:46:28+08:00 ] 112.224.2.220 /index.php?m=Home&c=Oauth&a=login&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0124s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-09-14T11:46:29+08:00 ] 112.224.2.220 /index.php?m=Home&c=Oauth&a=login&ma_id=1&code=061PqN0p19DZhk0JMR1p1nRL0p1PqN0T&state=wx_oauth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0059s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `openid` = 'o6Iva5rZ0mqSoc9CK_oThm0Rv6Ig' AND `ma_id` = '1' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\app\Home\Model\UploadModel.class.php 第 30 行.
+SQL: INSERT INTO `sm_member_list` (`ma_id`,`openid`,`member_list_headpic`,`member_list_nickname`,`member_list_sex`,`addtime`,`unionid`) VALUES ('1','o6Iva5rZ0mqSoc9CK_oThm0Rv6Ig','/data/upload/WxImage/2019-09-14/5d7c62953714c.jpg','。。','1','1568432789','oykPnw4CqCZvnSfptHfQyCt53YLg') [ RunTime:0.0005s ]
+
+[ 2019-09-14T11:46:29+08:00 ] 112.224.2.220 /index.php?m=Home&c=Drink&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0092s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0093s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0046s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2270' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2270' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0074s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0059s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0078s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568432789 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2270' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant_banner` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `sm_merchant_banner` WHERE `ma_id` = 1  [ RunTime:0.0003s ]
+SQL: SELECT a.dishes_id,a.pic_url,a.dishes_name,a.type FROM sm_dishes a LEFT JOIN sm_stall as b on a.stall = b.stall_id  WHERE a.is_del = 2 AND a.ma_id = '1' AND a.state = 1 AND a.statue = 2 AND a.num > 0 AND b.delete = 2 AND b.is_freeze = 2 ORDER BY a.sort ASC,a.addtime DESC LIMIT 6   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_stall` WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`saturation` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049382s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049456s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000609s ]
+
+[ 2019-09-14T11:46:39+08:00 ] 112.224.2.220 /index.php?m=Home&c=Drink&a=indexLists&page=1&psize=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0137s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0083s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2270' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2270' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0075s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0073s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568432799 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `stall_id`,`image`,`stall_name`,`score`,`addtime`,`on_the_pin`,`stall_type` FROM sm_stall a WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc,`on_the_pin` DESC,`addtime` DESC LIMIT 0,10   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2019-09-14T11:46:47+08:00 ] 112.224.2.220 /index.php?m=Home&c=Integral&a=shop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0127s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0207s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0085s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2270' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2270' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0074s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `sm_banner` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `sm_banner` WHERE `is_show` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_goods_category` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `sm_goods_category` WHERE `is_del` = 1  [ RunTime:0.0026s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `member_list_id` = '2270' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_goods` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `sm_goods` WHERE `is_del` = 1 AND `state` = 1 ORDER BY `sort` asc,`addtime` desc LIMIT 20   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_goods` WHERE `is_del` = 1 AND `state` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2270' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053097s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053161s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2019-09-14T12:00:34+08:00 ] 14.116.133.171 /index.php?m=Home&c=Drink&a=index&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0135s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0169s ]
+
+[ 2019-09-14T12:00:34+08:00 ] 14.116.133.171 /index.php?m=Home&c=Oauth&a=login&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0126s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-09-14T12:00:36+08:00 ] 14.116.133.171 /index.php?m=Home&c=Oauth&a=login&ma_id=1&code=061aEuUd08YMeu18KFXd0SxAUd0aEuUZ&state=wx_oauth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0134s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `openid` = 'o6Iva5jRFnaWUTVMv7Xh07jC2f_M' AND `ma_id` = '1' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\app\Home\Model\UploadModel.class.php 第 30 行.
+SQL: INSERT INTO `sm_member_list` (`ma_id`,`openid`,`member_list_headpic`,`member_list_nickname`,`member_list_sex`,`addtime`,`unionid`) VALUES ('1','o6Iva5jRFnaWUTVMv7Xh07jC2f_M','/data/upload/WxImage/2019-09-14/5d7c65e429ec8.jpg','懂我不言','1','1568433636','oykPnwx6GxaxaHL0EkI5UTsxkPFc') [ RunTime:0.0005s ]
+
+[ 2019-09-14T12:00:36+08:00 ] 14.116.133.171 /index.php?m=Home&c=Drink&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0093s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0051s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2271' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2271' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0078s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0096s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568433636 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2271' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant_banner` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `sm_merchant_banner` WHERE `ma_id` = 1  [ RunTime:0.0003s ]
+SQL: SELECT a.dishes_id,a.pic_url,a.dishes_name,a.type FROM sm_dishes a LEFT JOIN sm_stall as b on a.stall = b.stall_id  WHERE a.is_del = 2 AND a.ma_id = '1' AND a.state = 1 AND a.statue = 2 AND a.num > 0 AND b.delete = 2 AND b.is_freeze = 2 ORDER BY a.sort ASC,a.addtime DESC LIMIT 6   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_stall` WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `appid`,`appsecret`,`saturation` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047156s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000610s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000655s ]
+
+[ 2019-09-14T12:14:40+08:00 ] 47.97.215.92 /index.php?m=home&c=oauth&a=login&ma_id=1&code=071nvvx81u6doo1rkmb81n5zx81nvvxc&state=wx_oauth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0132s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019423s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000464s ]
+
+[ 2019-09-14T12:17:06+08:00 ] 47.92.35.138 /index.php?m=home&c=drink&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0137s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0167s ]
+
+[ 2019-09-14T12:17:06+08:00 ] 47.92.35.138 /index.php?m=Home&c=Oauth&a=login&
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0092s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005736s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005791s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000410s ]
+
+[ 2019-09-14T12:36:39+08:00 ] 47.97.120.5 /index.php?m=home&c=stall&a=stalldetail&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0142s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0155s ]
+
+[ 2019-09-14T12:36:39+08:00 ] 47.97.120.5 /index.php?m=Home&c=Oauth&a=login&
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0096s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005725s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005779s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000410s ]
+
+[ 2019-09-14T12:41:04+08:00 ] 106.14.215.243 /index.php?m=home&c=stall&a=dishesdetail&dishes_id=166
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0144s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0166s ]
+
+[ 2019-09-14T12:41:04+08:00 ] 106.14.215.243 /index.php?m=Home&c=Oauth&a=login&
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0092s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005793s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005845s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000379s ]
+
+[ 2019-09-14T19:28:06+08:00 ] 119.84.153.153 /index.php?m=Home&c=Drink&a=index&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0102s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0147s ]
+
+[ 2019-09-14T19:28:07+08:00 ] 119.84.153.153 /index.php?m=Home&c=Oauth&a=login&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0114s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-09-14T19:28:08+08:00 ] 119.84.153.153 /index.php?m=Home&c=Oauth&a=login&ma_id=1&code=0617KhlX1sWOa11TlfiX1AsYkX17Khlm&state=wx_oauth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0121s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `openid` = 'o6Iva5hiUvXGIuvnqxhgfDKpMUf4' AND `ma_id` = '1' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `sm_member_list` SET `unionid`='oykPnw5nOy0o2D2_TI4_oK97M5KA' WHERE `openid` = 'o6Iva5hiUvXGIuvnqxhgfDKpMUf4' [ RunTime:0.0003s ]
+
+[ 2019-09-14T19:28:09+08:00 ] 119.84.153.153 /index.php?m=Home&c=Drink&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0122s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0231s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0108s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '1478' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '1478' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1568390400 AND `effect_time` <= 1568476799  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0074s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0074s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1568460489 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '1478' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant_banner` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `sm_merchant_banner` WHERE `ma_id` = 1  [ RunTime:0.0003s ]
+SQL: SELECT a.dishes_id,a.pic_url,a.dishes_name,a.type FROM sm_dishes a LEFT JOIN sm_stall as b on a.stall = b.stall_id  WHERE a.is_del = 2 AND a.ma_id = '1' AND a.state = 1 AND a.statue = 2 AND a.num > 0 AND b.delete = 2 AND b.is_freeze = 2 ORDER BY a.sort ASC,a.addtime DESC LIMIT 6   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_stall` WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `appid`,`appsecret`,`saturation` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.069030s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069119s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+

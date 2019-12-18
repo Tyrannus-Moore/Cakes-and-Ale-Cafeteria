@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>确认支付</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/layer/layermobile/need/layer.css"/>
+</head>
+<body class="bac-fff">
+<div class="payTop clearfix p-10 bac-fff">
+    <div class="fl" style="line-height: 33px;">支付金额</div>
+    <div class="fr c-zhu">
+        <span class="">￥</span>
+        <span class="font25">{$orderInfo.real_money}</span>
+    </div>
+</div>
+<div class="jiangek"></div>
+<div class="zffsBox p-10">
+    <div class="c99">支付方式</div>
+    <div class="clearfix wxzfBox">
+        <img class="fl zfImg" src="__PUBLIC__/home/images/icon_wx.png"/>
+        <div class="fl">微信钱包</div>
+        <img class="fr zfSelImg" src="__PUBLIC__/home/images/icon_s.png"/>
+    </div>
+</div>
+<button class="psyTjBtn weiXinButton"onclick="callpay()" style="margin-top: 100px;" type="button">去支付</button>
+<script src="__PUBLIC__/home/js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/home/js/mainfile.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/others/jquery.form.js"></script>
+<script src="__PUBLIC__/layer/layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var order_id = "{$orderInfo.order_id}";
+    $('.realpay').click(function(){
+        callpay();
+    })
+    //调用微信JS api 支付
+    function jsApiCall()
+    {
+
+        WeixinJSBridge.invoke(
+            'getBrandWCPayRequest',
+            {$jsApiParameters},
+            function(res){
+                WeixinJSBridge.log(res.err_msg);
+                // console.log(res);  return false;
+                if(res.err_msg=='get_brand_wcpay_request:ok'){
+                    state = 1;
+                }
+                else
+                {
+                    state = 0;
+                }
+                if(state === 1)
+                {
+                    layer.open({
+                        type: 0,
+                        time: 1,
+                        content: "支付成功",
+                        skin: 'msg',
+                        end: function() {
+                            window.location.href="{:U('Home/Myorder/index')}";
+                        }
+                    });
+                }
+                else
+                {
+                    layer.open({
+                        type: 0,
+                        time: 1,
+                        content: "支付失败",
+                        skin: 'msg',
+                        end: function() {
+                            window.location.href="{:U('Home/Myorder/index')}";
+                            /*$.post("{:U('orderDel')}",{order_id:order_id},function(da){
+                                if(da == 1){
+                                    windows.location.href="{:U('shop')}";
+                                }
+                            })*/
+                        }
+                    });
+                }
+            }
+        );
+    }
+
+    function callpay()
+    {
+
+        if (typeof WeixinJSBridge == "undefined"){
+            if( document.addEventListener ){
+                document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+            }
+            else if(document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+            }
+        }
+        else
+        {
+
+            jsApiCall();
+        }
+    }
+</script>
+</body>
+</html>

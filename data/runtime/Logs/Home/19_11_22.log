@@ -1,0 +1,862 @@
+[ 2019-11-22T08:04:47+08:00 ] 113.96.218.51 /index.php?m=Home&c=Drink&a=index&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0143s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0122s ]
+
+[ 2019-11-22T08:04:48+08:00 ] 113.96.218.51 /index.php?m=Home&c=Oauth&a=login&ma_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0140s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-11-22T08:04:49+08:00 ] 113.96.218.51 /index.php?m=Home&c=Oauth&a=login&ma_id=1&code=021ot0100M5exI1cwa300ATQ000ot01f&state=wx_oauth
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0061s ]
+SQL: SELECT `appid`,`appsecret` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `openid` = 'o6Iva5iojohbbrkj5SucipvJcDSM' AND `ma_id` = '1' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `sm_member_list` (`ma_id`,`openid`,`member_list_headpic`,`member_list_nickname`,`member_list_sex`,`addtime`,`unionid`) VALUES ('1','o6Iva5iojohbbrkj5SucipvJcDSM','/data/upload/WxImage/2019-11-22/5dd72621a479a.jpg','丧先生','1','1574381089','oykPnw7m_lbQusI3Pb7dF9wSRjBk') [ RunTime:0.0004s ]
+
+[ 2019-11-22T08:04:50+08:00 ] 113.96.218.51 /index.php?m=Home&c=Drink&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0099s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0049s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0078s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0080s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1574381089 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `status` FROM `sm_member_list` WHERE `member_list_id` = '2370' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant_banner` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `sm_merchant_banner` WHERE `ma_id` = 1  [ RunTime:0.0003s ]
+SQL: SELECT a.dishes_id,a.pic_url,a.dishes_name,a.type FROM sm_dishes a LEFT JOIN sm_stall as b on a.stall = b.stall_id  WHERE a.is_del = 2 AND a.ma_id = '1' AND a.state = 1 AND a.statue = 2 AND a.num > 0 AND b.delete = 2 AND b.is_freeze = 2 ORDER BY a.sort ASC,a.addtime DESC LIMIT 6   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_stall` WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`saturation` FROM `sm_merchant` WHERE ( ma_id='1' ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051168s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000623s ]
+
+[ 2019-11-22T08:05:08+08:00 ] 113.96.218.51 /index.php?m=Home&c=Drink&a=indexLists&page=1&psize=10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0153s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0123s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0086s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0075s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0074s ]
+SQL: SELECT `ma_id` FROM `sm_merchant` WHERE `delete` = 1 AND `is_open` = 1 AND `due_deadline` > 1574381108 AND `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `stall_id`,`image`,`stall_name`,`score`,`addtime`,`on_the_pin`,`stall_type` FROM sm_stall a WHERE `delete` = 2 AND `is_freeze` = 2 AND `ma_id` = '1' ORDER BY `sort` asc,`on_the_pin` DESC,`addtime` DESC LIMIT 0,10   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+NOTIC: [8] Use of undefined constant stall_id - assumed 'stall_id' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant stall_type - assumed 'stall_type' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 337 行.
+NOTIC: [8] Use of undefined constant image - assumed 'image' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 338 行.
+NOTIC: [8] Use of undefined constant stall_name - assumed 'stall_name' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 340 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 345 行.
+NOTIC: [8] Use of undefined constant score - assumed 'score' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 348 行.
+NOTIC: [8] Use of undefined constant on_the_pin - assumed 'on_the_pin' D:\xampp\htdocs\app\Home\Controller\DrinkController.class.php 第 350 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000685s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000725s ]
+
+[ 2019-11-22T08:05:22+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=stallDetail&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0133s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0126s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0082s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0083s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '26' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_collection` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `sm_member_collection` WHERE `member_list_id` = '2370' AND `stall_id` = '26'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `statue` = 2 AND `state` = 1 AND `is_del` = 2 ORDER BY `sort` ASC LIMIT 6   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_dishes_category` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `sm_dishes_category` WHERE `ma_id` = 1 AND `is_del` = 2 ORDER BY `sort` asc  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0041s ]
+SQL: SELECT `discount`,`start_time`,`end_time` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0805' AND `end_time` >= '0805' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 1 ORDER BY `sort` ASC  [ RunTime:0.0029s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 2 ORDER BY `sort` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 3 ORDER BY `sort` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 4 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 5 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 6 ORDER BY `sort` ASC  [ RunTime:0.0005s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 159 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0039s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 232 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 160 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 233 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 161 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 234 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 163 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 164 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 165 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 166 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 167 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 196 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 197 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 199 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 200 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_perfect` FROM `sm_member_list` WHERE `member_list_id` = '2370' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000221s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000266s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.090172s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090240s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000519s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000570s ]
+
+[ 2019-11-22T08:05:23+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=evaluationList&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0137s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0272s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0095s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0075s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `sm_comment` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `sm_comment` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sm_comment as a WHERE `stall_id` = '26' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT c.member_list_headpic,c.member_list_nickname,a.dish_score,a.service_score,a.addtime,a.image,a.content,a.order_id FROM sm_comment as a LEFT JOIN sm_orders as b on a.order_id = b.order_id LEFT JOIN sm_member_list as c on b.member_list_id = c.member_list_id  WHERE (  a.is_del = 2 OR a.member_list_id = '2370' ) AND a.stall_id = '26' ORDER BY a.addtime DESC LIMIT 5   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '5273'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '2137'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '6383'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '7968'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '6462'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+
+[ 2019-11-22T08:05:23+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=cart&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0055s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0048s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0046s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0079s ]
+SQL: SELECT * FROM sm_cart as a LEFT JOIN sm_dishes as b on a.dishes_id = b.dishes_id  WHERE a.stall_id = '26' AND a.member_list_id = '2370' ORDER BY a.addtime DESC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0043s ]
+SQL: SELECT `discount` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0805' AND `end_time` >= '0805' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-11-22T08:05:30+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=addCar&dishes_id=232&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0129s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0253s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0085s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0076s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0070s ]
+SQL: INSERT INTO `sm_cart` (`member_list_id`,`stall_id`,`dishes_id`,`number`,`addtime`) VALUES ('2370','26','232','1','1574381130') [ RunTime:0.0067s ]
+
+[ 2019-11-22T08:05:31+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=cart&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0134s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0080s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0076s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0058s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0071s ]
+SQL: SELECT * FROM sm_cart as a LEFT JOIN sm_dishes as b on a.dishes_id = b.dishes_id  WHERE a.stall_id = '26' AND a.member_list_id = '2370' ORDER BY a.addtime DESC  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0040s ]
+SQL: SELECT `discount` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0805' AND `end_time` >= '0805' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-11-22T08:05:36+08:00 ] 113.96.218.51 /index.php?m=Home&c=Personal&a=personal_add&href=/index.php/Home/Stall/StallDetail/stall_id/26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0133s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0238s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0080s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0071s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0075s ]
+SQL: SELECT a.member_list_nickname,a.member_list_sex,a.telphone,a.birthary_time,b.name,a.school_id,a.faculty,a.member_class,a.stature,a.weight FROM sm_member_list a LEFT JOIN sm_school as b on a.school_id = b.school_id  WHERE a.member_list_id = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0072s ]
+SQL: SELECT b.school_id,b.name FROM sm_merchant a LEFT JOIN sm_school as b on a.school_id = b.school_id  WHERE a.ma_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_faculty` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `sm_faculty` WHERE `school_id` = 2  [ RunTime:0.0003s ]
+SQL: SELECT `num` FROM `sm_faculty` WHERE `faculty_name` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: ban D:\xampp\htdocs\app\Home\Controller\PersonalController.class.php 第 154 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\xampp\htdocs\data\runtime\Cache\Home\fcc95967d04f4881a8380d7ee60a7a5c.php 第 104 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\xampp\htdocs\data\runtime\Cache\Home\fcc95967d04f4881a8380d7ee60a7a5c.php 第 105 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032161s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032216s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000611s ]
+
+[ 2019-11-22T08:06:07+08:00 ] 113.96.218.51 /index.php?m=Home&c=Personal&a=ban
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0159s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0173s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0086s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0073s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `sm_faculty` [ RunTime:0.0079s ]
+SQL: SELECT `num` FROM `sm_faculty` WHERE `faculty_id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2019-11-22T08:06:14+08:00 ] 113.96.218.51 /index.php?m=Home&c=Personal&a=ban
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0133s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0126s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0079s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0249s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0076s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `sm_faculty` [ RunTime:0.0069s ]
+SQL: SELECT `num` FROM `sm_faculty` WHERE `faculty_id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-11-22T08:06:22+08:00 ] 218.68.91.84 /index.php?m=Home&c=Personal&a=personal_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0131s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0082s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0074s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+SQL: UPDATE `sm_member_list` SET `member_list_nickname`='黄振龙',`member_list_sex`='1',`birthary_time`='958838400',`telphone`='15615255382',`school_id`='2',`faculty`='建工系',`member_class`='2班',`stature`='',`weight`='',`is_perfect`='1' WHERE `member_list_id` = '2370' [ RunTime:0.0003s ]
+
+[ 2019-11-22T08:06:23+08:00 ] 218.68.91.84 /index.php/Home/Stall/StallDetail/stall_id/26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0127s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0081s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0071s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `sm_stall` WHERE `stall_id` = '26' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_collection` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `sm_member_collection` WHERE `member_list_id` = '2370' AND `stall_id` = '26'  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `statue` = 2 AND `state` = 1 AND `is_del` = 2 ORDER BY `sort` ASC LIMIT 6   [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `sm_dishes_category` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `sm_dishes_category` WHERE `ma_id` = 1 AND `is_del` = 2 ORDER BY `sort` asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0042s ]
+SQL: SELECT `discount`,`start_time`,`end_time` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0806' AND `end_time` >= '0806' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 1 ORDER BY `sort` ASC  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 2 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 3 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 4 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 5 ORDER BY `sort` ASC  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `stall` = 26 AND `state` = 1 AND `is_del` = 2 AND `dishes_cate_id` = 6 ORDER BY `sort` ASC  [ RunTime:0.0005s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 159 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 232 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 160 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 233 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 161 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 234 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 163 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 164 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 165 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 166 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 167 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 196 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 197 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 199 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `number` FROM `sm_cart` WHERE `stall_id` = 26 AND `dishes_id` = 200 AND `member_list_id` = 2370 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_perfect` FROM `sm_member_list` WHERE `member_list_id` = '2370' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000220s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087581s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.087657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000567s ]
+
+[ 2019-11-22T08:06:24+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=evaluationList&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0137s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0087s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0076s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `sm_comment` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `sm_comment` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sm_comment as a WHERE `stall_id` = '26' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT c.member_list_headpic,c.member_list_nickname,a.dish_score,a.service_score,a.addtime,a.image,a.content,a.order_id FROM sm_comment as a LEFT JOIN sm_orders as b on a.order_id = b.order_id LEFT JOIN sm_member_list as c on b.member_list_id = c.member_list_id  WHERE (  a.is_del = 2 OR a.member_list_id = '2370' ) AND a.stall_id = '26' ORDER BY a.addtime DESC LIMIT 5   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '5273'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '2137'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '6383'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '7968'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '6462'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+
+[ 2019-11-22T08:06:24+08:00 ] 218.68.91.84 /index.php?m=Home&c=Stall&a=cart&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0048s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0044s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0043s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0072s ]
+SQL: SELECT * FROM sm_cart as a LEFT JOIN sm_dishes as b on a.dishes_id = b.dishes_id  WHERE a.stall_id = '26' AND a.member_list_id = '2370' ORDER BY a.addtime DESC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0042s ]
+SQL: SELECT `discount` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0806' AND `end_time` >= '0806' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-11-22T08:06:30+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=confirmOrder&stall_id=26&all=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0143s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0230s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0084s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0077s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0044s ]
+SQL: SELECT * FROM sm_stall as a LEFT JOIN sm_merchant as b on a.ma_id = b.ma_id  WHERE `stall_id` = '26' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0072s ]
+SQL: SELECT * FROM sm_cart as a LEFT JOIN sm_dishes as b on a.dishes_id = b.dishes_id  WHERE `member_list_id` = '2370' AND `stall_id` = '26' ORDER BY a.addtime DESC  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0042s ]
+SQL: SELECT `discount` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0806' AND `end_time` >= '0806' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: allmoney D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 616 行.
+NOTIC: [8] Undefined index: allmoneys D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 618 行.
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0067s ]
+SQL: SELECT `value` FROM `sm_sysconfig` WHERE `varname` = 'cfg_integral' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_member_list` WHERE `member_list_id` = '2370' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `status` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_user_address_list` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `sm_user_address_list` WHERE `member_list_id` = 2370 AND `is_default` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_user_address` [ RunTime:0.0068s ]
+SQL: SELECT `title` FROM `sm_user_address` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cityid D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 678 行.
+SQL: SELECT `title` FROM `sm_user_address` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: countyid D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 679 行.
+SQL: SELECT `title` FROM `sm_user_address` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `stature`,`weight` FROM `sm_member_list` WHERE `member_list_id` = '2370' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+NOTIC: [8] Undefined variable: address_id D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 29 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 34 行.
+NOTIC: [8] Undefined index: phone D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 34 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 35 行.
+NOTIC: [8] Undefined variable: address_id D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 117 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 127 行.
+NOTIC: [8] Undefined index: phone D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 128 行.
+NOTIC: [8] Undefined index: address_id D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 129 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 130 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 165 行.
+NOTIC: [8] Undefined variable: address_id D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055616s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000497s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2019-11-22T08:06:31+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=confirmOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0134s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0077s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0144s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `sm_cart` WHERE `stall_id` = 26 AND `member_list_id` = 2370  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `dishes_id` = '232' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0072s ]
+SQL: SELECT `status` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `telphone` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `sm_orders` (`order_no`,`member_list_id`,`ma_id`,`stall_id`,`deliver_type`,`stall_address`,`stall_tel`,`telphone`,`total_money`,`express_time`,`discount`,`real_money`,`integral`,`order_note`,`create_time`) VALUES ('645320191122080631','2370','1','26','2','时光餐厅 技师学院餐厅二楼','13210455329','15615255382','4.00','1574382091','','4.00','40','','1574381191') [ RunTime:0.0105s ]
+SQL: SELECT * FROM `sm_order_goods` AS a left join sm_orders as b on a.order_id = b.order_id  WHERE a.meal_code = 60701 AND b.ma_id = '1' AND b.order_status < 5 AND b.order_type = 1 LIMIT 1   [ RunTime:0.0233s ]
+SQL: UPDATE `sm_dishes` SET `num`=num-1 WHERE `dishes_id` = '232' [ RunTime:0.0064s ]
+SQL: SELECT * FROM `sm_dishes` WHERE `dishes_id` = '232' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `sm_order_goods` (`order_id`,`dishes_id`,`dishes_nums`,`dishes_price`,`discount_price`,`meal_code`,`addtime`,`dishes_name`,`pic_url`) VALUES ('8663','232','1','4.00','4.00','60701','1574381191','红玉冰柠','/data/upload/2019-07-02/5d1b3585bd73d.jpg') [ RunTime:0.0002s ]
+SQL: DELETE FROM `sm_cart` WHERE `stall_id` = 26 AND `member_list_id` = 2370 [ RunTime:0.0036s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018566s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018619s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000327s ]
+SQL: SELECT * FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0047s ]
+SQL: SELECT * FROM sm_stall as a LEFT JOIN sm_merchant as b on a.ma_id = b.ma_id  WHERE `stall_id` = '26' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0044s ]
+SQL: SELECT * FROM sm_cart as a LEFT JOIN sm_dishes as b on a.dishes_id = b.dishes_id  WHERE `member_list_id` = '2370' AND `stall_id` = '26' ORDER BY a.addtime DESC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0042s ]
+SQL: SELECT `discount` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0806' AND `end_time` >= '0806' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0071s ]
+SQL: SELECT `value` FROM `sm_sysconfig` WHERE `varname` = 'cfg_integral' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: allmoneys D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 621 行.
+NOTIC: [8] Undefined index: allmoneys D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 622 行.
+NOTIC: [8] Undefined index: allmoneys D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 623 行.
+SQL: SELECT * FROM `sm_member_list` WHERE `member_list_id` = '2370' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `status` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_user_address_list` [ RunTime:0.0207s ]
+SQL: SELECT * FROM `sm_user_address_list` WHERE `member_list_id` = 2370 AND `is_default` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_user_address` [ RunTime:0.0072s ]
+SQL: SELECT `title` FROM `sm_user_address` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: cityid D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 678 行.
+SQL: SELECT `title` FROM `sm_user_address` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: countyid D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 679 行.
+SQL: SELECT `title` FROM `sm_user_address` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `stature`,`weight` FROM `sm_member_list` WHERE `member_list_id` = '2370' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.074139s ]
+NOTIC: [8] Undefined variable: address_id D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 29 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 34 行.
+NOTIC: [8] Undefined index: phone D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 34 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 35 行.
+NOTIC: [8] Undefined variable: address_id D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 117 行.
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 127 行.
+NOTIC: [8] Undefined index: phone D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 128 行.
+NOTIC: [8] Undefined index: address_id D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 129 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 130 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 165 行.
+NOTIC: [8] Undefined variable: address_id D:\xampp\htdocs\data\runtime\Cache\Home\c435d11fa2e58fe656ecf4a87721bf31.php 第 215 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053239s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.054506s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.107462s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2019-11-22T08:06:42+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=evaluationList&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0137s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0444s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0085s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0072s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `sm_comment` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `sm_comment` [ RunTime:0.0051s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sm_comment as a WHERE `stall_id` = '26' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT c.member_list_headpic,c.member_list_nickname,a.dish_score,a.service_score,a.addtime,a.image,a.content,a.order_id FROM sm_comment as a LEFT JOIN sm_orders as b on a.order_id = b.order_id LEFT JOIN sm_member_list as c on b.member_list_id = c.member_list_id  WHERE (  a.is_del = 2 OR a.member_list_id = '2370' ) AND a.stall_id = '26' ORDER BY a.addtime DESC LIMIT 5   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '5273'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '2137'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '6383'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '7968'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '6462'  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+
+[ 2019-11-22T08:06:42+08:00 ] 218.68.91.84 /index.php?m=Home&c=Stall&a=cart&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000647s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0046s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0043s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0042s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0076s ]
+SQL: SELECT * FROM sm_cart as a LEFT JOIN sm_dishes as b on a.dishes_id = b.dishes_id  WHERE a.stall_id = '26' AND a.member_list_id = '2370' ORDER BY a.addtime DESC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0042s ]
+SQL: SELECT `discount` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0806' AND `end_time` >= '0806' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-11-22T08:06:45+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=cart&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0137s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0324s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0090s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0079s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0062s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `sm_cart` [ RunTime:0.0075s ]
+SQL: SELECT * FROM sm_cart as a LEFT JOIN sm_dishes as b on a.dishes_id = b.dishes_id  WHERE a.stall_id = '26' AND a.member_list_id = '2370' ORDER BY a.addtime DESC  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sm_discount` [ RunTime:0.0067s ]
+SQL: SELECT `discount` FROM `sm_discount` WHERE `ma_id` = '1' AND `start_time` <= '0806' AND `end_time` >= '0806' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-11-22T08:06:45+08:00 ] 113.96.218.51 /index.php?m=Home&c=Stall&a=evaluationList&stall_id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0051s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0047s ]
+SQL: SELECT `is_open` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `is_del` FROM `sm_member_list` WHERE `member_list_id` = '2370' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `order_id` FROM `sm_orders` WHERE `order_status` = 2 AND `refund` <> 1 AND ( `effect_time` >= 1574352000 AND `effect_time` <= 1574438399  )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_order_goods` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `sm_dishes` [ RunTime:0.0044s ]
+SQL: SELECT `dishes_id`,`create_time`,`order_status`,`order_id`,`order_type` FROM `sm_orders` WHERE `order_status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_integral_order` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `sm_integral_order` WHERE `status` = 2  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_orders` WHERE `order_status` = 4 AND `deliver_type` = 1  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_stall` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `sm_comment` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `sm_comment` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM sm_comment as a WHERE `stall_id` = '26' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT c.member_list_headpic,c.member_list_nickname,a.dish_score,a.service_score,a.addtime,a.image,a.content,a.order_id FROM sm_comment as a LEFT JOIN sm_orders as b on a.order_id = b.order_id LEFT JOIN sm_member_list as c on b.member_list_id = c.member_list_id  WHERE (  a.is_del = 2 OR a.member_list_id = '2370' ) AND a.stall_id = '26' ORDER BY a.addtime DESC LIMIT 5   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '5273'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '2137'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '6383'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '7968'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+SQL: SELECT * FROM `sm_order_goods` WHERE `order_id` = '6462'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\app\Home\Controller\StallController.class.php 第 226 行.
+

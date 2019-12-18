@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>订单详情</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/layer/default/layer.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/newLayer/mobile/need/layer.css"/>
+</head>
+
+<body>
+	<style>
+	    .selDay{touch-action: none; }
+        .popuo-refund{width:70% !important;}
+        .popuo-refund .layui-m-layercont{padding:20px 10px 10px;}
+        .popuo-refund textarea{width:240px;}
+	</style>
+<div class="orderDetailMainBox">
+    <input type="hidden" id="timeT" value="{$timeT}" />
+    <input type="hidden" id="oOrder" value="{$order_id}" />
+    <div class="orderDetailTop bac-fff p-10">
+        <div class="clearfix">
+            <div class="orderDetailTopTitle fl">{$list.stall_name}</div>
+            <div class="c-zhu fr">
+                <if condition="$list['order_status'] eq 1"><div class="" style="color: red;">待付款</div></if>
+                <if condition="$list['order_status'] eq 2 && $list['refund'] eq 1">
+                    <div class="" style="color: #999999;">退款申请中</div>
+                </if>
+                <if condition="$list['order_status'] eq 2 && $list['refund'] eq 0">
+                    <div class="" style="color: #999999;">已付款</div>
+                </if>
+                <if condition="$list['order_status'] eq 4"><div class="" style="color: green;">已生效</div></if>
+                <if condition="$list['order_status'] eq 5"><div class="" style="color: #999999;">已完成</div></if>
+                <if condition="$list['order_status'] eq 6"><div class="" style="color: #999999;">已完成</div></if>
+                <if condition="$list['order_status'] eq 7"><div class="" style="color: #999999;">已取消</div></if>
+                <if condition="$list['order_status'] eq 8"><div class="" style="color: #999999;">退款成功</div></if>
+            </div>
+        </div>
+        <a href="{:U('Home/Stall/stallDetail',array('stall_id'=>$list['stall_id']))}">
+        <div class="c99 font13">档口主页>></div>
+        </a>
+        <div class="mt-20">
+            <div class="orderCenterProListBox clearfix">
+                <img class="tcorderCenterProImg fl" src="{$list.dishes_url}" />
+                <div class="fl tcInfoBox">
+                    <div class="tcorderCenterProTitle">{$list.dishes_name}</div>
+                    <div class="clearfix priceBox">
+                        <div class="fl">
+                            <span>￥</span>
+                            <span>{$list.real_money}</span>
+                            <if condition="$list['real_money'] neq $list['dishes_money']">
+                                <del class="c99 font12">￥</del>
+                                <del class="c99 font12">{$list.dishes_money}</del>
+                            </if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tcxqConBox bac-fff p-10 mt-15">
+        <div class="tcxqTitle mb-10 clearfix">
+            <div class="fl nacan" id="selNacan1"><span onclick="diningType(1)">早餐</span></div>
+            <div class="fl nacan" id="selNacan2"><span onclick="diningType(2)">午餐</span></div>
+            <div class="fl nacan" id="selNacan3"><span onclick="diningType(3)">晚餐</span></div>
+            <select class="fr selDay" name="weekType" id="selDay">
+                <option value="1" <if condition="$list['weekType'] eq 1">selected</if>>周一</option>
+                <option value="2" <if condition="$list['weekType'] eq 2">selected</if>>周二</option>
+                <option value="3" <if condition="$list['weekType'] eq 3">selected</if>>周三</option>
+                <option value="4" <if condition="$list['weekType'] eq 4">selected</if>>周四</option>
+                <option value="5" <if condition="$list['weekType'] eq 5">selected</if>>周五</option>
+                <option value="6" <if condition="$list['weekType'] eq 6">selected</if>>周六</option>
+                <option value="7" <if condition="$list['weekType'] eq 7">selected</if>>周日</option>
+            </select>
+        </div>
+        <if condition="in_array($list['order_status'],array(4,5,6))"><div id="addB"></div></if>
+
+        <input type="hidden" value="{$list.order_id}" name="orderId" id="orderId">
+        <input type="hidden" value="{$list.diningType}" name="diningType" id="diningType">
+        <input type="hidden" value="{$list.weekType}" name="weekType" id="weekType">
+        <input type="hidden" value="" id="idId">
+        <input type="hidden" value="{$list.order_status}" id="status">
+        <div id="NextOrder"></div>
+    </div>
+
+    <div class="orderDetailPriceBox mt-15 bac-fff">
+        <div class="orderDetailPriceList clearfix">
+            <div class="fl">订单金额</div>
+            <div class="fr">
+                <span>￥</span>
+                <span>{$list.total_money}</span>
+            </div>
+        </div>
+        <div class="orderDetailPriceList clearfix">
+            <div class="fl">赠送积分</div>
+            <div class="fr">
+                {$list.integral}
+            </div>
+        </div>
+        <div class="orderDetailPriceList clearfix">
+            <div class="fl">实付金额</div>
+            <div class="fr c-zhu">
+                <span>￥</span>
+                <span>{$list.real_money}</span>
+            </div>
+        </div>
+        <div class="orderDetailPriceList clearfix">
+            <div>备注</div>
+            <div class="c99">
+                {$list.order_note|default='未填写'}
+            </div>                       
+        </div>
+    </div>
+
+
+    <div class="orderDetailPriceBox mt-15 bac-fff">
+        <div class="orderDetailPriceList clearfix">
+            <div class="fl">生效时间</div>
+            <div class="fr">
+                {$list.startTime}
+            </div>
+        </div>
+        <div class="orderDetailPriceList clearfix">
+            <div class="fl">自动结束时间</div>
+            <div class="fr">
+                {$list.endTime}
+            </div>
+        </div>
+    </div>
+
+    <!--取餐信息-->
+    <div class="qcInfoBox mt-15">
+        <div class="orderDetailOrderInfoTitle" style="display: flex;justify-content: space-between;">取餐信息
+	        <if condition="$list['order_status'] eq 4 && $list['state'] eq 2">
+	            <span style="color: red;">请于{$endTimes}前取餐</span>
+	        </if>
+        </div>
+        <if condition="$list['order_status'] eq 4 && $list['state'] eq 2">
+            <div class="orderDetailOrderInfoList clearfix bac-fff" style="color:blue;font-weight: bold;">
+                <div class="fl orderDetailOrderInfoText">取餐码</div>
+                <div class="fl">{$list.meal_code}</div>
+            </div>
+        </if>
+        <div class="orderDetailOrderInfoList clearfix bac-fff">
+            <div class="fl c99 orderDetailOrderInfoText">档口电话</div>
+            <div class="fl">{$list.stall_tel}</div>
+        </div>
+        <div class="orderDetailOrderInfoList clearfix bac-fff">
+            <div class="c99 orderDetailOrderInfoText">档口地址</div>
+            <div class="addrInfo">
+                <p>{$list.stall_address}</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="orderDetailOrderInfo mt-15">
+        <div class="orderDetailOrderInfoTitle">订单信息</div>
+        <div class="orderDetailOrderInfoList clearfix bac-fff" style="font-weight: bold;color: #333;">
+            <div class="fl orderDetailOrderInfoText">订单编号</div>
+            <div class="fl">{$list.order_no}</div>
+        </div>
+        <div class="orderDetailOrderInfoList clearfix bac-fff">
+            <div class="fl c99 orderDetailOrderInfoText">下单时间</div>
+            <div class="fl">{$list.create_time|date="Y-m-d H:i",###}</div>
+        </div>
+        <if condition='$list.order_status eq 2 or $list.order_status eq 3 or $list.order_status eq 4 or $list.order_status eq 5 or $list.order_status eq 6'>
+        <div class="orderDetailOrderInfoList clearfix bac-fff">
+            <div class="fl c99 orderDetailOrderInfoText">付款时间</div>
+            <div class="fl">{$list.payment_time|date="Y-m-d H:i",###}</div>
+        </div>
+        </if>
+    </div>
+
+    <!--用户评价-->
+    <if condition="$list['order_status'] eq 6">
+        <div class="userEveBox mt-15">
+            <div class="orderDetailOrderInfoTitle">用户评价</div>
+            <div class="userEveListBox p-10 bac-fff">
+                <div class="userEveListTop clearfix">
+                    <div class="userHeadImgBox fl">
+                        <img class="userHeadImg" src="{$comment_list.member_list_headpic}"/>
+                    </div>
+                    <div class="userEveUserName fl">{$comment_list.member_list_nickname}</div>
+                    <div class="userEveTime c99 fr">{$comment_list.addtime|date='Y-m-d H:i',###}</div>
+                </div>
+                <div class="xingBox clearfix mt-15">
+                    <div class="fl c99">餐品评价</div>
+                    <div class="clearfix fl ml-10">
+                        <for start="0" end="$comment_list.dish_score">
+                            <img class="fl" src="__PUBLIC__/home/images/star_icon24.png"/>
+                        </for>
+                        <?php
+                        for ($i=0;$i<5-$comment_list[dish_score];$i+=1){
+                            echo '<img class="ptdkXing" src="__PUBLIC__/home/images/star_icon25.png" />';
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="xingBox clearfix mt-5">
+                    <div class="fl c99">服务评价</div>
+                    <div class="clearfix fl ml-10">
+                        <for start="0" end="$comment_list.service_score">
+                            <img class="fl" src="__PUBLIC__/home/images/star_icon24.png"/>
+                        </for>
+                        <?php
+                        for ($i=0;$i<5-$comment_list[service_score];$i+=1){
+                            echo '<img class="ptdkXing" src="__PUBLIC__/home/images/star_icon25.png" />';
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="userEveCon mt-15">{$comment_list.content}</div>
+                <div class="userEveImgBox mt-5">
+                    <foreach name="comment_list.image" item="vo">
+                        <img class="userEveImg" src="{$vo}" />
+                    </foreach>
+                </div>
+            </div>
+        </div>
+    </if>
+</div>
+
+<if condition='$list.order_status eq 1 or $list.order_status eq 2 or $list.order_status eq 5 or $list.order_status eq 6'>
+    <div class="orderDetailBottBtnBox">
+        <if condition='$list.order_status eq 1'>
+            <div class="fl c99 qcmBox font12">
+                <span>支付剩余</span>
+                <!--<h1><strong id="RemainH">XX</strong>:<strong id="RemainM">XX</strong>:<strong id="RemainS">XX</strong></h1>-->
+                <span><strong id="RemainM"></strong>分<strong id="RemainS"></strong>秒</span>
+            </div>
+            <!--<a href="{:U('Package/pay',array('order_id'=>$list['order_id']))}">-->
+                <input class="fr orderCenterListBtn bcwcBtn" onclick="goPayMoney({$list.order_id})" type="button" value="去付款" />
+            <!--</a>-->
+            <input class="fr orderCenterListBtn lxkhBtn" type="button" onclick="cancelOrder({$list.order_id})" value="取消" />
+        </if>
+        <if condition='$list.order_status eq 2 && $list.refund eq 0'>
+            <input class="fr orderCenterListBtn lxkhBtn" type="button" onclick="refundOrder({$list.order_id})" value="申请退款" />
+        </if>
+        <if condition='$list.order_status eq 5'>
+            <a href="{:U('evaluation',array('order_id'=>$list['order_id'],'type'=>2))}">
+                <input class="fr orderCenterListBtn bcwcBtn" type="button" value="去评价" />
+            </a>
+        </if>
+        <if condition='$list.order_status eq 6'>
+            <input class="fr orderCenterListBtn bcwcBtn" style="color: #999999;border-color: #999999" type="button" value="已评价" />
+        </if>
+    </div>
+</if>
+
+
+<!--<div class="orderDetailBottBtnBox">
+    <input class="fr orderCenterListBtn bcwcBtn" type="button" value="联系客户" />
+    <input class="fr orderCenterListBtn bcwcBtn" type="button" value="抢单" />
+    <input class="fr orderCenterListBtn lxkhBtn" type="button" value="取消任务" />
+</div>-->
+
+</body>
+<script src="__PUBLIC__/home/js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/home/js/mainfile.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/others/jquery.form.js"></script>
+<script src="__PUBLIC__/newLayer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="__PUBLIC__/home/jscript/pass.js" type="text/javascript"></script>
+<script>
+    // $(function(){
+    //     //清空浏览器历史记录
+    //     //pushHistory();
+    //     //监听浏览器后退事件
+    //     window.addEventListener("popstate",
+    //         function(e) {
+    //             //转向指定的URL
+    //             location.href = '/index.php/Home/Myorder/index';
+    //         }, false);
+    //     //清空浏览器历史记录
+    //     /*function pushHistory() {
+    //         var url = "#";
+    //         var state = {
+    //             title: "title",
+    //             url: "#"
+    //         };
+    //         window.history.pushState(state, "title", "#");
+    //     }*/
+    // });
+    var userEveImgBox = $(".userEveImgBox");
+    for(var i = 0; i < userEveImgBox.length; i++){
+        var size = $(userEveImgBox[i]).find("Img").size();
+        var s = 6 - size%6
+        var str = '';
+        for(var j = 0; j < s; j++){
+            str += '<div style="width:50px;margin-right:5px"></div>'
+        }
+        $(userEveImgBox[i]).append(str)
+    }
+</script>
+<script>
+    var runtimes = 0;
+    function GetRTime(){
+        var timeT = $("#timeT").val();
+        if(timeT !== ''){
+            var order_id = $("#oOrder").val();
+            var nMS = timeT*1000-runtimes*1000;
+            /*var nH=Math.floor(nMS/(1000*60*60))%24;*/
+            var nM=Math.floor(nMS/(1000*60)) % 60;
+            var nS=Math.floor(nMS/1000) % 60;
+            /*document.getElementById("RemainH").innerHTML=nH;*/
+            document.getElementById("RemainM").innerHTML=nM;
+            document.getElementById("RemainS").innerHTML=nS;
+            /*if(nMS>1*59*1000&&nMS<=1*60*1000)
+            {
+                alert("还有最后一分钟！");
+            }*/
+            if(nMS==0)
+            {
+                console.log(order_id);
+                $.ajax({
+                    type:'post',
+                    url:"{:U('Home/Myorder/timeTOrder')}",
+                    data:{order_id:order_id},
+                    success:function(data){
+                        console.log(data);
+                        if (data == 1){
+                            window.location.reload();
+                        }
+                    }
+                });
+                return false;
+            }
+            runtimes++;
+            setTimeout("GetRTime()",1000);
+        }
+    }
+    window.onload=GetRTime;
+
+    //餐品初始状态
+    $(function() {
+        var orderId     = $("#orderId").val();
+        var diningType  = $("#diningType").val();
+        var weekType    = $("#weekType").val();
+        $("#selNacan"+diningType).addClass("selNacan");
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Myorder/NextOrder')}",
+            data:{orderId:orderId,diningType:diningType,weekType:weekType},
+            success:function(data){
+                console.log(data);
+                $("#idId").val(data[0]['id']);
+                var html = '';
+                if(data[0]['state'] == 1){
+                    html += '<div class="c-zhu" id="www">备餐中</div>';
+                }
+                if(data[0]['state'] == 2){
+                    html += '<div class="c-zhu" id="www">待取餐</div>';
+                }
+                if(data[0]['state'] == 3){
+                    html += '<div class="c-zhu" id="www" style="color: #999999">已完成</div>';
+                }
+                $("#addB").html(html);
+                var str = '';
+                for(var a=0;a<data.length;a++) {
+                    str += '<div class="clearfix nameBox">';
+                    str += '   <div class="tcProName fl">'+data[a]['dishes_name']+'</div>';
+                    str += '   <div class="fr">';
+                    str += '        <span>×</span>';
+                    str += '        <span>'+data[a]['dishes_nums']+'</span>';
+                    str += '   </div>';
+                    str += ' </div>';
+                }
+                $("#NextOrder").html(str);
+            }
+        })
+    });
+
+    //改变早中晚餐获取餐品
+    function diningType(diningType) {
+        $("#selNacan1").removeClass("selNacan");
+        $("#selNacan2").removeClass("selNacan");
+        $("#selNacan3").removeClass("selNacan");
+        $("#selNacan"+diningType).addClass("selNacan");
+        var orderId     = $("#orderId").val();
+        var weekType    = $("#weekType").val();
+        $("#diningType").val(diningType);
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Myorder/NextOrder')}",
+            data:{orderId:orderId,diningType:diningType,weekType:weekType},
+            success:function(data){
+                console.log(data);
+                if(data == ''){
+                    $("div#www").remove();
+                    $("#NextOrder").html('');
+                    layer.open({
+                        content: '暂无提供此餐'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                }else{
+                    var html = '';
+                    if(data[0]['state'] == 1){
+                        html += '<div class="c-zhu" id="www">备餐中</div>';
+                    }
+                    if(data[0]['state'] == 2){
+                        html += '<div class="c-zhu" id="www">待取餐</div>';
+                    }
+                    if(data[0]['state'] == 3){
+                        html += '<div class="c-zhu" id="www" style="color: #999999">已完成</div>';
+                    }
+                    if(parseInt($("#status").val()) == 5 || parseInt($("#status").val()) == 6){
+                        $("#addB").html(html);
+                    }else{
+                        if(parseInt($("#idId").val()) >= parseInt(data[0]['id'])){
+                            $("#addB").html(html);
+                        }else{
+                            $("div#www").remove();
+                        }
+                    }
+                    var str = '';
+                    for(var a=0;a<data.length;a++) {
+                        str += '<div class="clearfix nameBox">';
+                        str += '   <div class="tcProName fl">'+data[a]['dishes_name']+'</div>';
+                        str += '   <div class="fr">';
+                        str += '        <span>×</span>';
+                        str += '        <span>'+data[a]['dishes_nums']+'</span>';
+                        str += '   </div>';
+                        str += ' </div>';
+                    }
+                    $("#NextOrder").html(str);
+                }
+            }
+        })
+    }
+
+    //改变日期获取餐品
+    $('#selDay').change(function(){
+        var orderId     = $("#orderId").val();
+        var diningType  = $("#diningType").val();
+        var weekType    = $(this).val();
+        $("#weekType").val(weekType);
+        $.ajax({
+            type:'post',
+            url:"{:U('Home/Myorder/NextOrder')}",
+            data:{orderId:orderId,diningType:diningType,weekType:weekType},
+            success:function(data){
+                if(data == ''){
+                    $("div#www").remove();
+                    $("#NextOrder").html('');
+                    layer.open({
+                        content: '暂无提供此餐'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                }else{
+                    var html = '';
+                    if(data[0]['state'] == 1){
+                        html += '<div class="c-zhu" id="www">备餐中</div>';
+                    }
+                    if(data[0]['state'] == 2){
+                        html += '<div class="c-zhu" id="www">待取餐</div>';
+                    }
+                    if(data[0]['state'] == 3){
+                        html += '<div class="c-zhu" id="www" style="color: #999999">已完成</div>';
+                    }
+                    if(parseInt($("#status").val()) == 5 || parseInt($("#status").val()) == 6){
+                        $("#addB").html(html);
+                    }else{
+                        if(parseInt($("#idId").val()) >= parseInt(data[0]['id'])){
+                            $("#addB").html(html);
+                        }else{
+                            $("div#www").remove();
+                        }
+                    }
+                    var str = '';
+                    for(var a=0;a<data.length;a++) {
+                        str += '<div class="clearfix nameBox">';
+                        str += '   <div class="tcProName fl">'+data[a]['dishes_name']+'</div>';
+                        str += '   <div class="fr">';
+                        str += '        <span>×</span>';
+                        str += '        <span>'+data[a]['dishes_nums']+'</span>';
+                        str += '   </div>';
+                        str += ' </div>';
+                    }
+                    $("#NextOrder").html(str);
+                }
+            }
+        })
+    });
+
+    //申请退款
+    function refundOrder(id) {
+        layer.open({
+            className: 'popuo-refund',
+            content: '<p>申请退款,请填写原因</p><textarea id="textareaText" style="width: 100%;height: 100px"></textarea>'
+            //content:str
+            ,btn: ['确定', '取消']
+            ,yes: function(index){
+                if($("#textareaText").val() == ''){
+                    layer.open({
+                        content: '退款原因不能为空'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                        ,type:1
+                    });
+                    return false;
+                }
+                $.ajax({
+                    type: 'post',
+                    url: "{:U('Home/Myorder/refundOrder')}",
+                    data: {order_id:id,user_refuse_reason:$("#textareaText").val()},
+                    success: function (data) {
+                        if(data.status == 1){
+                            layer.open({
+                                content: data.info
+                                ,skin: 'msg'
+                                ,time: 2 //2秒后自动关闭
+                                ,end:function () {
+                                    window.location.href = data.url;
+                                }
+                            });
+                        }else{
+                            layer.open({
+                                content: data.info
+                                ,skin: 'msg'
+                                ,time: 2 //2秒后自动关闭
+                                ,type:1
+                                ,end: function() {
+                                    //$(this).attr('disable','false');
+                                    //layer.close(index);
+                                }
+                            });
+                        }
+                    }
+                });
+                layer.close(index);
+            }
+        });
+        /*layer.prompt({title: '申请退款,请填写原因', formType: 2}, function(pass, index){
+            $.ajax({
+                type: 'post',
+                url: "{:U('Home/Myorder/refundOrder')}",
+                data: {order_id:id,user_refuse_reason:pass},
+                success: function (data) {
+                    if(data.status == 1){
+                        layer.open({
+                            content: data.info
+                            ,skin: 'msg'
+                            ,time: 2 //2秒后自动关闭
+                            ,end:function () {
+                                window.location.href = data.url;
+                            }
+                        });
+                    }else{
+                        layer.open({
+                            content: data.info
+                            ,skin: 'msg'
+                            ,time: 2 //2秒后自动关闭
+                            ,end: function() {
+                                layer.close(index);
+                            }
+                        });
+                    }
+                }
+            })
+        });*/
+    }
+
+    //取消订单
+    function cancelOrder(id) {
+        $(this).attr("disabled","disabled");
+        layer.open({
+            content: '您确定要取消订单吗？'
+            ,btn: ['确定', '不要']
+            ,yes: function(index){
+                $.ajax({
+                    type: 'post',
+                    url: "/index.php?m=Home&c=Myorder&a=cancelOrder",
+                    data: {id:id},
+                    success: function (data) {
+                        if(data.status == 1){
+                            layer.open({
+                                content: data.info
+                                ,skin: 'msg'
+                                ,time: 2 //2秒后自动关闭
+                                ,end:function () {
+                                    window.location.href = data.url;
+                                }
+                            });
+                        }else{
+                            layer.open({
+                                content: data.info
+                                ,skin: 'msg'
+                                ,time: 2 //2秒后自动关闭
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    }
+    
+    //去付款
+    function goPayMoney(id) {
+        $.ajax({
+            type: 'post',
+            url: "/index.php?m=Home&c=Myorder&a=goPayMoney",
+            data: {id:id},
+            success: function (data) {
+                if(data.code == 2){
+                    layer.open({
+                        content: data.info
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                }else{
+                    window.location.href = data.url;
+                    /*layer.open({
+                        content: data.memage
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭\
+                        ,end:function () {
+                            window.location.href = data.url;
+                        }
+                    });*/
+                }
+            }
+        })
+    }
+</script>
+</html>

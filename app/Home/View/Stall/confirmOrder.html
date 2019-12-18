@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>确认订单</title>
+    <base href="__PUBLIC__/home/" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="layermobile/need/layer.css"/>
+    <script src="layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+    <script src="js/mui.picker.min.js"></script>
+    <link href="css/mui.poppicker.css" rel="stylesheet" />
+    <script src="js/mui.poppicker.js"></script>
+</head>
+
+<body>
+    <style>
+        .confirmOrderTopTitleList{font-weight: bold;}
+    </style>
+<div class="confirmOrderTopBox">
+    <div class="confirmOrderTopTitle clearfix">
+        <if condition="$a eq 1">
+           <div type="1" class="confirmOrderTopTitleList <if condition="$a eq 1 && $b eq 1"> qiehuan</if>  fl <if condition='($a eq 1 && $b eq 2) || $address_id'> confirmOrderTabSel </if>">捎带</div>
+        </if>
+        <if condition="$b eq 1">
+           <div type="2" class="confirmOrderTopTitleList <if condition="$a eq 1 && $b eq 1"> qiehuan</if> fl <empty name ='address_id'>confirmOrderTabSel</empty>">自取</div>
+        </if>
+    </div>
+    <if condition='$a eq 1'>
+        <div class="confirmOrderTabCon confirmOrderTabConA ass <if condition='($a eq 1 && $b eq 1) || $address_id'> dis-n</if>">
+            <div class="confirmOrderHasAddr">
+                <p>{$address.name} &nbsp;&nbsp;&nbsp; {$address.phone}</p>
+                <p class="mt-5" style="height: 50px;line-height: 25px;overflow: hidden">{$address.proviceid}&nbsp;&nbsp;{$address.cityid}&nbsp;&nbsp;{$address.countyid}&nbsp;&nbsp;{$address.address}</p>
+                <a href="{:U('address_list',array('stall_id'=>$stallInfo['stall_id']))}"><img class="confirmOrderMore" src="images/more_right.png" /></a>
+            </div>
+        </div>
+    </if>
+    <if condition="$b eq 1">
+        <div class="confirmOrderTabCon confirmOrderTabConD <notempty name ='address_id'>dis-n</notempty> ">
+            <div class="confirmOrderZqAddr">
+                <div class="c66">取餐地址</div>
+                <div>{$stallInfo.address}</div>
+                <div>
+                    <span class="c66">档口电话</span>
+                    <span>{$stallInfo.stall_tel}</span>
+                </div>
+            </div>
+        </div>
+    </if>
+    <!--没有配送地址-->
+    <div>
+        <if condition="$a eq 1 && $address eq ''">
+            <div class="confirmOrderTabCon confirmOrderTabConA bss <if condition='$b eq 1'>dis-n</if> ">
+                <a href="{:U('address_list',array('stall_id'=>$stallInfo['stall_id']))}">
+                    <div class="confirmOrderNoAddr">
+                        <img class="addrSiteImg" src="images/icon_site.png" />
+                        <span class="c99">添加配送地址</span>
+                        <img class="confirmOrderMore" src="images/more_right.png" />
+                    </div>
+                </a>
+            </div>
+        </if>
+    </div>
+</div>
+<!-- 配送 -->
+<if condition="$a eq 1">
+    <div class="confirmOrderTimeSelBox clearfix" <if condition='$b eq 1 || $address_id'> style="display: none;" </if>>
+        <div class="fl">送达时间</div>
+        <div class="fr" style="color:#d5b630">
+            <span id='putInTime' class="selectEle date" data-options='{}'>尽快</span>
+            <img class="fr timeSelMore ml-10" src="images/more_right.png" />
+            <input type="hidden" class="start_h" value="{$merchant.start_time|date='H',###}">
+            <input type="hidden" class="start_m" value="{$merchant.end_time|date='i',###}">
+            <input type="hidden" class="end_h" value="{$merchant.end_time|date='H',###}">
+            <input type="hidden" class="end_m" value="{$merchant.end_time|date='i',###}">
+        </div>
+    </div>
+</if>
+<div class="confirmOrderInfoBox">
+    <div class="confirmOrderInfoTitle font16 c00">{$stallInfo.stall_name}</div>
+    <div class="">
+        <foreach name="list" item="v">
+            <div class="orderDetailProList clearfix">
+                <img class="orderDetailProImg fl" src="{$v.pic_url}" />
+                <span class="psyorderCenterProTitle fl">{$v.dishes_name}</span>
+                <div class="fl">
+                    <span>×</span>
+                    <span>{$v.number}</span>
+                </div>
+                <div class="fr">
+                    <span>￥</span>
+                    <span>{$v.real}</span>
+                </div>
+            </div>
+        </foreach>
+        <if condition="$memInfo.stature neq 0 && $memInfo.weight neq 0">
+            <if condition="$res.start gt $all"><span style="color:red">摄入热量小于推荐{$res.start}热量！</span></if>
+            <if condition="$res.end lt $all"><span style="color:red">摄入热量大于推荐{$res.end}热量！</span></if>
+        </if>
+    </div>
+    
+</div>
+<div class="mt-15 bac-fff">
+    <if condition="$a eq 1">
+        <div class="orderDetailPriceList clearfix peisong" <if condition='$b eq 1 || $address_id'>style="display: none;" </if> >
+            <div class="fl">配送费</div>
+            <div class="fr">
+                <span>￥</span>
+                <span>{$stallInfo.p_money}</span>
+            </div>
+        </div>
+    </if>
+    <div class="orderDetailPriceList clearfix">
+        <div class="fl">获得积分</div>
+        <div class="fr">
+            {$stallInfo.integral}
+        </div>
+    </div>
+</div>
+<form class="form-horizontal ajaxF" method="post" autocomplete="off" action="{:U('confirmOrder')}">
+    <div class="confirmOrderRemark mt-15 bac-fff p-10">
+        <p>
+            <span>备注</span>
+            <span class="c99 font12">（选填）</span>
+        </p>
+        <textarea class="confirmOrderRemarkText" name="order_note" maxlength="200" placeholder="限制输入200字"></textarea>
+    </div>
+    <if condition="$address_id neq ''">
+        <input class="ptype" name="deliver_type" type="hidden" value="1">
+    <else/>
+        <if condition="$a eq 1 && $b eq 1">
+            <input class="ptype" name="deliver_type" type="hidden" value="2">
+        <elseif condition="$a eq 1 && $b eq 2"/>
+            <input class="ptype" name="deliver_type" type="hidden" value="1">
+        <elseif condition="$a eq 2 && $b eq 1"/>
+            <input class="ptype" name="deliver_type" type="hidden" value="2">
+        </if>
+    </if>
+    
+    
+    <input name="stall_id" type="hidden" value="{$stallInfo.stall_id}" >
+    <input name="username" class="username" type="hidden" value="{$address.name}">
+    <input name="phone" type="hidden" value="{$address.phone}">
+    <input name="address_id" type="hidden" value="{$address.address_id}">
+    <input name="address" type="hidden" value="{$address.proviceid} {$address.cityid} {$address.countyid} {$address.address}">
+    <input name="express_time" class="express_time" type="hidden" value="">
+    <input name="total_money" type="hidden" class="allmoney" value="{$stallInfo.allmoney}" autocomplete="off">
+    <input name="express_money" class="express_money" type="hidden" value="{$stallInfo.p_money}" autocomplete="off">
+    <input name="discount" type="hidden" value="{$count}">
+    <input name="real_money" type="hidden" class="allmoneys" value="{$stallInfo.allmoneys}" autocomplete="off">
+    <input name="integral" type="hidden" value="{$stallInfo.integral}">
+    <input name="stall_address" type="hidden" value="{$stallInfo.address}">
+    <input name="stall_tel" type="hidden" value="{$stallInfo.stall_tel}">
+    <input name="peisongMoney" type="hidden" value="{$stallInfo['allmoney']+$stallInfo['p_money']}" autocomplete="off">
+    <input name="zitiMoney" type="hidden" value="{$stallInfo['allmoney']}" autocomplete="off">
+    <button class="quzhifu" type="submit">去支付 ￥<p style="display: inline;" class="realAllMoneys">{$stallInfo.allmoneys}</p></button>
+</form>
+
+<script src="js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="js/mainfile.js" type="text/javascript" charset="utf-8"></script> -->
+<script src="__PUBLIC__/others/jquery.form.js"></script>
+<!-- <script type="text/javascript">
+    $(document).ready(function(e) {   
+            var counter = 0;  
+            if (window.history && window.history.pushState) {  
+                             $(window).on('popstate', function () {  
+                                            window.history.pushState('forward', null, '#');  
+                                            window.history.forward(1);  
+                                          //alert("不可回退");  
+                                             location.replace(document.referrer);//刷新
+                                });  
+              }  
+
+              window.history.pushState('forward', null, '#'); //在IE中必须得有这两行  
+              window.history.forward(1);  
+}); 
+</script> -->
+
+<script>
+    var addresss = "{$address}";
+    // console.log(addresss);
+    $(".qiehuan").click(function(){
+        
+            $(this).addClass("confirmOrderTabSel").siblings().removeClass("confirmOrderTabSel")
+            var index = $(this).index();
+            var peisong = $('.express_money').val();
+            //var allmoney = $('.allmoney').val();
+            // var allmoneys = $('.allmoneys').val();
+            var allmoneys = "{$stallInfo.allmoneys}";
+            var type = $(this).attr('type');
+            
+            if(type == 1){
+
+                $(".confirmOrderTimeSelBox").show();
+                $(".ptype").val(1);
+                
+                if(addresss){
+                    $(".ass").removeClass('dis-n');
+                }else{
+                    $(".bss").removeClass('dis-n');
+                }
+                
+                $(".confirmOrderTabConD").hide();
+                $(".peisong").show();
+                var money = $("input[name=peisongMoney]").val();
+                // alert(money);
+                //$(".allmoney").val(parseFloat(allmoney)+parseFloat(peisong));
+                $(".allmoneys").val(intToFloat(money));
+                $(".realAllMoneys").text(intToFloat(money));
+            }else{
+                $(".confirmOrderTimeSelBox").hide();
+                $(".ptype").val(2);
+                $(".confirmOrderTabConD").show();
+                if(addresss){
+                    $(".ass").addClass('dis-n');
+                }else{
+                    $(".bss").addClass('dis-n');
+                }
+                // $(".confirmOrderTabConA").hide();
+                $(".peisong").hide();
+                var money = $("input[name=zitiMoney]").val();
+                //$(".allmoney").val(parseFloat(allmoney)-parseFloat(peisong));
+                
+                $(".allmoneys").val(intToFloat(money));
+                $(".realAllMoneys").text(intToFloat(money));
+            }
+        
+        
+    });
+    var address = "{$address_id}";
+    if(address){
+
+        $('.confirmOrderTabConD').addClass('dis-n');
+        $('.peisong').css('display','block');
+        // $('.peisong').css('display','block');
+        $('.ass').css('display','block');
+    }
+    function intToFloat(val){
+        return new Number(val).toFixed(2);
+    }
+    mui(".confirmOrderTimeSelBox").on('tap', '#putInTime', function() {
+        var _self = this;
+        var date1 = new Date();
+        var start_h = $(".start_h").val();
+        var start_m = $(".start_m").val();
+        var end_h = $(".end_h").val();
+        var end__m = $(".end_m").val();
+        if(_self.picker) {
+            _self.picker.show(function(rs) {
+                var hour = new Date().getHours();
+                var minutes = new Date().getMinutes();
+                if(minutes < 10){
+                    minutes = '0'+minutes;
+                }
+                var currentTime = rs.text.split(":");
+                if(date1.setHours(currentTime[0],currentTime[1]) < date1.setHours(hour,minutes)) //当前时间大于选中时间
+                {
+                    $(_self).text(hour+":"+minutes);
+                    $(".express_time").val(hour+":"+minutes);
+                }else if(date1.setHours(currentTime[0],currentTime[1]) < date1.setHours(start_h,start_m) || date1.setHours(currentTime[0],currentTime[1]) > date1.setHours(end_h,end__m)){
+                    layer.open({
+                        type: 0,
+                        time: 1,
+                        content: '超出营业时间！',
+                        skin: 'msg'
+                    });
+                    $(_self).text(hour+":"+minutes);
+                    $(".express_time").val(hour+":"+minutes);
+                }else{
+                    $(_self).text(rs.text);
+                    $(".express_time").val(rs.text);
+                }
+                _self.picker.dispose();
+                _self.picker = null;
+            });
+        }else {
+            _self.picker = new mui.DtPicker({
+                type:"time"
+            });
+            _self.picker.show(function(rs) {
+                var hour = new Date().getHours();
+                var minutes = new Date().getMinutes();
+                if(minutes < 10){
+                    minutes = '0'+minutes;
+                }
+                var currentTime = rs.text.split(":");
+                var date1 = new Date();
+                if(date1.setHours(currentTime[0],currentTime[1]) < date1.setHours(hour,minutes)) //当前时间大于选中时间
+                {
+                    $(_self).text(hour+":"+minutes);
+                    $(".express_time").val(hour+":"+minutes);
+                }else if(date1.setHours(currentTime[0],currentTime[1]) < date1.setHours(start_h,start_m) || date1.setHours(currentTime[0],currentTime[1]) > date1.setHours(end_h,end__m)){
+                    layer.open({
+                        type: 0,
+                        time: 1,
+                        content: '超出营业时间！',
+                        skin: 'msg'
+                    });
+                    $(_self).text(hour+":"+minutes);
+                    $(".express_time").val(hour+":"+minutes);
+                }else{
+                    $(_self).text(rs.text);
+                    $(".express_time").val(rs.text);
+                }
+                _self.picker.dispose();
+                _self.picker = null;
+            });
+        }
+    });
+    // var  zzz ='';
+    $(function(){
+        $('.ajaxF').ajaxForm({
+            beforeSubmit: shenheF,
+            success: complete2, // 这是提交后的方法
+            dataType: 'json'
+        });
+    });
+
+    // 提交前验证
+    function shenheF() {
+        var ptype = $(".ptype").val();
+        var username = $(".username").val();
+        if(ptype == 1){
+            if(username == ''){
+                layer.open({
+                    type: 0,
+                    time: 1,
+                    content: '请选择地址！',
+                    skin: 'msg'
+                });
+                return false;
+            }
+        }
+        $('.quzhifu').attr('type', 'button'); 
+        // zzz = layer.open({type: 2,shadeClose:false});
+
+    };
+    //失败不跳转
+    function complete2(data) {
+        
+        // console.log(data);
+        if(data.status == 1) {
+            // layer.close(zzz);
+            // return false;
+            window.location.href="/index.php?m=Home&c=Stall&a=payNow&order_id="+data.url;
+        }else{
+            $('.quzhifu').attr('type', 'submit'); 
+            layer.open({
+                type: 0,
+                time: 2,
+                content: data.info,
+                skin: 'msg'
+            });
+            return false;
+        }
+    };
+</script>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- bootstrap & fontawesome必须的css -->
+    <link rel="stylesheet" href="__PUBLIC__/ace/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="__PUBLIC__/font-awesome/css/font-awesome.min.css" />
+    <!-- 此页插件css -->
+    <!-- ace的css -->
+    <link rel="stylesheet" href="__PUBLIC__/ace/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+    <!-- IE版本小于9的ace的css -->
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="__PUBLIC__/ace/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="__PUBLIC__/ace/css/ace-ie.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="__PUBLIC__/yfcmf/yfcmf.css" />
+    <!-- 此页相关css -->
+    <!-- ace设置处理的css -->
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+    <!--[if lte IE 8]>
+    <script src="__PUBLIC__/others/html5shiv.min.js"></script>
+    <script src="__PUBLIC__/others/respond.min.js"></script>
+    <![endif]-->
+    <!-- 引入基本的js -->
+    <script type="text/javascript">
+        var admin_ueditor_handle = "{:U('Admin/Sys/upload')}";
+        var admin_ueditor_lang ='zh-cn';
+    </script>
+    <!--[if !IE]> -->
+    <script src="__PUBLIC__/others/jquery.min-2.2.1.js"></script>
+    <!-- <![endif]-->
+    <!-- 如果为IE,则引入jq1.12.1 -->
+    <!--[if IE]>
+    <script src="__PUBLIC__/others/jquery.min-1.12.1.js"></script>
+    <![endif]-->
+    <!-- 如果为触屏,则引入jquery.mobile -->
+    <script type="text/javascript">
+        if('ontouchstart' in document.documentElement) document.write("<script src='__PUBLIC__/others/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="__PUBLIC__/others/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #fff;">
+<div class="page-content">
+    <div class="page-header">
+        <h1>
+            您当前操作
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                列表
+            </small>
+        </h1>
+    </div>
+    <div class="row maintop">
+        <div class="col-xs-5 col-sm-9">
+            <form name="admin_list_sea" class="form-search" method="post" action="{:U('choose')}">
+                <input type="hidden" name="nid" value="{$nid}">
+                <div class="row maintop">
+                    <div class="col-xs-12 col-sm-3 btn-sespan">
+                        <div class="input-group">
+                            <span class="input-group-addon">菜品名称：</span>
+                            <input type="text" name="search[dishes_name]"  class="form-control" value="{$search.dishes_name}" placeholder="请输入菜品名称" style="width:120px;" />
+                            <span class="input-group-addon">分类名称：</span>
+                            <select name="search[dishes_cate_id]" class="form-control" style="width:80px">
+                                <option value="">请选择</option>
+                                <foreach name="dishes_cate_list" item="v">
+                                    <option value="{$v['dishes_cate_id']}" <if condition="$search['dishes_cate_id'] eq $v['dishes_cate_id']">selected</if>>{$v['cat_name']}</option>
+                                </foreach>
+                            </select>
+                            <span class="input-group-btn btn-group-sm" style="padding-left:10px;">
+                                    <button type="submit" class="btn btn-xs  btn-purple">
+                                        <span class="ace-icon fa fa-search"></span>搜索
+                                    </button>
+                                </span>
+                            <span class="input-group-btn btn-group-sm" style="padding-left:10px;">
+                                    <a href="{:U('choose')}">
+                                        <button type="button" class="btn btn-sm  btn-purple">
+                                            <span class="ace-icon fa fa-globe icon-on-right bigger-110"></span>显示全部
+                                        </button>
+                                    </a>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th class="sort"><input type="checkbox" class="checkboxCtrl" data-group="ids" data-toggle="icheck" style="zoom:150%"></th>
+                        <th class="hidden-xs">菜品ID</th>
+                        <th class="hidden-xs">菜品名称</th>
+                        <th class="hidden-xs">档口名称</th>
+                        <th class="hidden-xs">菜品分类</th>
+                        <th class="hidden-xs">库存</th>
+                        <th class="hidden-xs">菜品价格</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <foreach name="list" item="v">
+                        <tr>
+                            <td>
+                                <input class="danCheck" type="checkbox" data-toggle="icheck" name="ids" value="{$v.dishes_id}" dname="{$v.dishes_name}" style="zoom:150%"/>
+                            </td>
+                            <td class="hidden-xs">{$v.dishes_id}</td>
+                            <td class="hidden-xs">{$v.dishes_name}</td>
+                            <td class="hidden-xs">{$v.stall_name}</td>
+                            <td class="hidden-xs">{$v.cat_name}</td>
+                            <td class="hidden-xs">{$v.num}</td>
+                            <td class="hidden-xs">{$v.price}</td>
+                        </tr>
+                    </foreach>
+                    <tr>
+                        <td height="50" colspan="13" align="left">{$page}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-sm nochoose" style="float: left;margin-bottom: 10px;border-radius: 5px" data-id="{$checi_id}" title="不选择">
+        不选择
+    </a>
+    <a class="btn btn-sm btn-yellow chooseJs" style="float: right;margin-bottom: 10px;border-radius: 5px" data-id="{$checi_id}" title="选择">
+        选择
+    </a>
+</div><!-- /.page-content -->
+<script type="text/javascript" src="__PUBLIC__/others/jquery.min-2.2.1.js"></script>
+<script src="__PUBLIC__/others/jquery.form.js"></script>
+<script src="__PUBLIC__/layer/layer.js"></script>
+<script type="text/javascript">
+    var nid = "{$nid}";
+    var ids = $("#"+nid,parent.document).prev().prev().val();
+    var arr = $(".danCheck");
+    for(var i=0;i<arr.length;i++){
+        var idss = $(arr[i]).val();
+        if(ids.indexOf(idss,0) != -1){
+            $(arr[i]).prop('checked','checked');
+        }
+    }
+    $(".nochoose").click(function () {
+        console.log(nid)
+        $("#"+nid,parent.document).prev().html('无');
+        $("#"+nid,parent.document).prev().prev().val('');
+        //关闭ifram框
+        var index = parent.layer.getFrameIndex(window.name);
+        parent.layer.close(index);//关闭当前页
+    })
+    $(".chooseJs").click(function(){
+        var id = $(this).attr("data-id");//回复表ID
+        var ids = new Array();
+        var name = new Array();
+        $('input[name="ids"]:checked').each(function(i){
+            ids[i] = $(this).val();
+            name[i] = $(this).attr('dname');
+        });
+        var vals = ids.join(","); //选中的小任务ID
+        var names = name.join(","); //选中的小任务ID
+        if(vals ==""){
+            layer.alert("请选择选项！");
+            return false;
+        }
+        console.log(ids);
+        console.log(names);
+        $("#"+nid,parent.document).prev().html(names);
+        $("#"+nid,parent.document).prev().prev().val(vals);
+        //关闭ifram框
+        var index = parent.layer.getFrameIndex(window.name);
+        parent.layer.close(index);//关闭当前页
+    })
+    //全选
+    $(".checkboxCtrl").change(function () {
+        $('.danCheck').prop("checked", $(this).prop("checked"));
+    });
+    //单选
+    $(".danCheck").change(function () {
+        $(".checkboxCtrl").prop("checked", $('.danCheck:checked').length == $('.danCheck').length);
+    });
+</script>
+</body>
+</html>

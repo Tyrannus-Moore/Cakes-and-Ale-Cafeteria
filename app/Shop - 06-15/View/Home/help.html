@@ -1,0 +1,50 @@
+<extend name="Public/base" />
+<block name="main-content">
+	<div class="page-content" style="padding-top: 50px">
+		<!--主题-->
+		<div class="page-header">
+			<h1>您当前操作
+				<small>
+					<i class="ace-icon fa fa-angle-double-right"></i>帮助中心
+				</small>
+			</h1>
+		</div>
+		<div class="row">
+			<div class="tabbable">
+				<ul class="nav nav-tabs" id="myTab">
+					<volist name="class" id="v">
+					<li>
+						<a data-toggle="tab" href="#{$v.new_cate_id}">
+							{$v.cate_name}
+						</a>
+					</li>
+					</volist>
+				</ul>
+				<form class="form-horizontal setting" name="sys" method="post" action="{:U('runsys')}">
+					<fieldset>
+						<div class="tab-content">
+							<volist name="class" id="v">
+							<div id="{$v.new_cate_id}" class="tab-pane fade">
+								<ul class="list-unstyled">
+									<foreach name="v.help" item="vo">
+									<li>
+										<a href="{:U('helpDetail',array('help_id'=>$vo['help_id'],'p'=>I('p',1)))}">
+											<span>{$key+1}、{$vo.help_name}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{$v.addtime|date="Y-m-d",###}</span>
+										</a>
+									</li>
+									</foreach>
+								</ul>
+							</div>
+							</volist>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div><!-- /.page-content -->
+	<script>
+        $('#myTab').find('li').first().addClass("active");
+		$('.tab-content').find('div').first().addClass("in active");
+	</script>
+</block>

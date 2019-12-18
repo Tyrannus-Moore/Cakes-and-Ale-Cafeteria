@@ -1,0 +1,51 @@
+<extend name="Admin@Public/base"/>
+<block name="main-content">
+    <div class="page-content">
+        <!--主题-->
+        <div class="page-header">
+            <h1>
+                您当前操作
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    常见问题添加
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="form-horizontal ajaxForm" name="member_list_edit" method="post" action="{:U('problemsAdd')}">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 标题：  </label>
+                        <div class="col-sm-10">
+                            <input type="text"  name="baise_name" id="baise_name" value="{$info.baise_name}" class="col-xs-10 col-sm-4" maxlength="30" placeholder="标题" required/>
+                            <span class="lbl col-md-2 col-sm-2"><span class="red">(字符长度不超过30字)</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1">内容：</label>
+                        <div class="col-xs-1 col-sm-6">
+                            <script src="__PUBLIC__/ueditor/ueditor.config.js" type="text/javascript"></script>
+                            <script src="__PUBLIC__/ueditor/ueditor.all.js" type="text/javascript"></script>
+                            <textarea name="content" rows="100%" style="width:100%;height:350px;" id="myEditor">{$info.content}</textarea>
+                            <script type="text/javascript">
+                                var editor = new UE.ui.Editor();
+                                editor.render("myEditor");
+                            </script>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info" type="submit">
+                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                确定
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- /.page-content -->
+</block>
+

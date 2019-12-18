@@ -1,0 +1,152 @@
+[ 2019-08-10T15:18:29+08:00 ] 27.188.254.70 /index.php?m=School&c=School&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0074s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0071s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'School/School/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 499 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 499 ORDER BY `sort`  [ RunTime:0.0003s ]
+NOTIC: [2] Illegal string offset 'name' D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 21 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 21 行.
+NOTIC: [2] Illegal string offset 'address' D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 24 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `sm_school` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_school` WHERE `is_del` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_school` WHERE `is_del` = 1 ORDER BY `addtime` desc LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+NOTIC: [2] Illegal string offset 'name' D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 253 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 253 行.
+NOTIC: [2] Illegal string offset 'address' D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 258 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 258 行.
+NOTIC: [8] Undefined variable: infos D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 379 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084375s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084430s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2019-08-10T15:18:32+08:00 ] 27.188.254.70 /index.php?m=School&c=School&a=schoolEdit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0079s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0072s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'School/School/schoolEdit' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'School/School/schoolEdit' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 500 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'School/School/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 499 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 499 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_school` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `sm_school` WHERE `school_id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-08-10T15:18:35+08:00 ] 27.188.254.70 /index.php?m=School&c=School&a=faculty&school_id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0080s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0076s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'School/School/faculty' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 0 AND `name` = 'School/School/faculty' ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 500 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'School/School/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 499 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 499 ORDER BY `sort`  [ RunTime:0.0003s ]
+NOTIC: [2] Illegal string offset 'faculty_name' D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 110 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 110 行.
+SQL: SHOW COLUMNS FROM `sm_faculty` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_faculty` WHERE `school_id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_faculty` WHERE `school_id` = 2 ORDER BY `addtime` desc LIMIT 0,10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [2] Illegal string offset 'faculty_name' D:\xampp\htdocs\data\runtime\Cache\School\404a17261036ee49495b9f561a11cc79.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\School\404a17261036ee49495b9f561a11cc79.php 第 254 行.
+NOTIC: [8] Undefined variable: infos D:\xampp\htdocs\data\runtime\Cache\School\404a17261036ee49495b9f561a11cc79.php 第 373 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082299s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082360s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000627s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000680s ]
+
+[ 2019-08-10T15:18:38+08:00 ] 27.188.254.70 /index.php?m=School&c=School&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0073s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0072s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'School/School/index' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 499 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 499 ORDER BY `sort`  [ RunTime:0.0003s ]
+NOTIC: [2] Illegal string offset 'name' D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 21 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 21 行.
+NOTIC: [2] Illegal string offset 'address' D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 24 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\app\School\Controller\SchoolController.class.php 第 24 行.
+SQL: SHOW COLUMNS FROM `sm_school` [ RunTime:0.0072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_school` WHERE `is_del` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_school` WHERE `is_del` = 1 ORDER BY `addtime` desc LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+NOTIC: [2] Illegal string offset 'name' D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 253 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 253 行.
+NOTIC: [2] Illegal string offset 'address' D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 258 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 258 行.
+NOTIC: [8] Undefined variable: infos D:\xampp\htdocs\data\runtime\Cache\School\963aad7a2a7cefb1bed7ccd4448e725e.php 第 379 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078498s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078558s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000631s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000683s ]
+

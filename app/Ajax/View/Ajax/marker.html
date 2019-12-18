@@ -1,0 +1,126 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script src="__PUBLIC__/others/jquery.min-2.2.1.js"></script>
+<script src="__PUBLIC__/layer/layer.js"></script>
+<style type="text/css">
+body{margin:0; padding:0; font-size:12px;}
+.btn_area {margin-top:15px; text-align:center}
+div.button {margin:5px;padding:0 10px;background:#eee;border-right:1px solid #aaa;border-bottom:1px solid #aaa;}
+div.button:hover {background:#ddd}
+.determine {float:left}
+.cancel {float:left;margin-left:70px}
+.center {float:left;margin-left:120px}
+
+#r-result{
+	position:absolute;
+	top:5px;
+	left:50px;
+	padding:1px;
+	z-index:999;
+	overflow:hidden;
+	background-color:white
+}
+#r-result .label{
+	color:red;
+	font-weight:bold;
+}
+</style>
+</head> 
+<body scroll="no">
+<div id="r-result">
+	<span class="label">当前视野:</span>
+	<input type="text" id="suggestId" size="20" placeholder="搜索查询地址" style="width:200px;height:30px;" />
+	<div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+</div>
+<div id="allmap" style="width:100%; height:100%"></div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=kwpimFQlwmXzo63ucQAzhzt2FaXPS8wS"></script>
+<script type="text/javascript">
+var lnglat = '';
+function G(id){
+		return document.getElementById(id);
+	}
+var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	map.centerAndZoom(new BMap.Point("{$lng}", "{$lat}"), 11);
+	setTimeout(function(){
+		map.setZoom(14);   
+	}, 2000);  //2秒后放大到14级
+	map.enableScrollWheelZoom(true);
+	function showInfo(e){
+		map.clearOverlays(); 
+		var point = new BMap.Point(e.point.lng, e.point.lat);
+		lnglat = e.point.lng +','+ e.point.lat  ;
+		map.centerAndZoom(point, 15);
+		var marker = new BMap.Marker(point);  // 创建标注
+		map.addOverlay(marker);               // 将标注添加到地图中
+		map.openInfoWindow(infoWindow,point); //开启信息窗口
+	}
+	map.addEventListener("click", showInfo);
+	var opts = {
+	  width : 200,     // 信息窗口宽度
+	  height: 50,     // 信息窗口高度
+	  title : "确认标记到这个位置吗?" , // 信息窗口标题
+	  enableMessage:true,//设置允许信息窗发送短息
+	  message:"戳下面的链接看下地址喔~"
+	}
+	var infoWindow = new BMap.InfoWindow('<div class="button determine" onclick="setcenter_byWindow()">确认</div>' +
+			'<div class="button center" onclick="quxiao()">取消</div>', opts);  // 创建信息窗口对象 
+			
+	function setcenter_byWindow(){
+		parent.$('#parentIframe').val(lnglat);
+		parent.layer.close(index);
+	}
+	function quxiao(){
+	//alert(lnglat);
+		map.clearOverlays(); 
+	}
+	var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+		{"input" : "suggestId"
+		,"location" : map
+	});
+	ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+	var str = "";
+		var _value = e.fromitem.value;
+		var value = "";
+		if (e.fromitem.index > -1) {
+			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		}    
+		str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+		
+		value = "";
+		if (e.toitem.index > -1) {
+			_value = e.toitem.value;
+			value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		}    
+		str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+		G("searchResultPanel").innerHTML = str;
+	});
+
+	var myValue;
+	ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+	var _value = e.item.value;
+		myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+		
+		setPlace();
+	});
+
+	function setPlace(){
+		map.clearOverlays();    //清除地图上所有覆盖物
+		function myFun(){
+			var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+			map.centerAndZoom(pp, 18);
+			map.addOverlay(new BMap.Marker(pp));    //添加标注
+		}
+		var local = new BMap.LocalSearch(map, { //智能搜索
+		  onSearchComplete: myFun
+		});
+		local.search(myValue);
+	}
+</script>
+</body> 
+</html>

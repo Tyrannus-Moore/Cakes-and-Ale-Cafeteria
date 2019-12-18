@@ -1,0 +1,94 @@
+[ 2019-10-28T15:53:45+08:00 ] 27.188.250.107 /index.php?m=Marki&c=Marki&a=applyList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0071s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0072s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Marki/Marki/applyList' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 683 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 683 ORDER BY `sort`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_member_list` AS a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.is_open = 1 AND a.state = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT a.*,b.ma_merchantname as shopname FROM `sm_member_list` AS a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.is_open = 1 AND a.state = 1 ORDER BY a.application_time DESC LIMIT 0,15   [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+NOTIC: [2] Illegal string offset 'member_name' D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 247 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 247 行.
+NOTIC: [2] Illegal string offset 'telphone' D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 249 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 249 行.
+NOTIC: [2] Illegal string offset 'shopname' D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 251 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 251 行.
+NOTIC: [2] Illegal string offset 'type' D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 254 行.
+NOTIC: [2] Illegal string offset 'type' D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 255 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 255 行.
+NOTIC: [2] Illegal string offset 'type' D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 256 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 256 行.
+NOTIC: [2] Illegal string offset 'due_deadline' D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 259 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\ff07000a29accd8f1b2f3e6a8a6b2791.php 第 259 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.091119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.091179s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000634s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000676s ]
+
+[ 2019-10-28T15:53:46+08:00 ] 27.188.250.107 /index.php?m=Marki&c=Marki&a=markiList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `sm_sysconfig` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `sm_sysconfig` WHERE `aid` IN ('1','17','7','36','37','38','40','41','42','43','44','')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `sm_sysconfig`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_group_access` [ RunTime:0.0073s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM sm_auth_group_access a INNER JOIN sm_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0072s ]
+SQL: SELECT `condition`,`name` FROM `sm_auth_rule` WHERE `id` IN ('1','6','59','151','178','179','180','27','29','37','108','109','110','111','112','113','114','170','355','356','357','358','359','360','632','362','364','365','366','367','635','636','368','369','370','371','372','373','374','375','376','377','38','115','116','117','118','119','120','169','354','208','209','225','224','226','227','228','229','230','210','231','232','233','234','235','237','238','239','240','211','241','242','243','244','246','247','248','249','378','382','383','384','385','391','504','506','514','421','429','430','431','432','428','433','434','435','436','444','445','446','447','448','449','450','451','452','453','454','455','456','457','458','459','460','461','462','463','464','465','466','467','468','469','470','471','472','473','474','475','476','477','478','479','480','481','482','483','484','485','486','487','488','489','490','491','492','493','494','495','496','497','498','559','562','563','564','565','560','570','571','572','573','561','566','567','568','569','574','575','576','577','578','379','380','388','389','390','392','381','386','518','579','580','582','590','599','598','595','591','614','615','616','617','618','619','592','600','601','602','593','603','604','605','594','606','607','608','393','397','398','399','400','401','402','403','404','405','406','407','408','409','410','411','412','413','414','415','416','417','418','419','420','544','546','547','548','549','550','545','551','552','553','554','555','422','423','424','425','426','427','437','438','439','440','441','499','500','502','503','505','507','508','624','501','509','510','511','512','513','623','515','516','522','596','589','597','523','519','520','521','556','558','524','525','532','526','530','533','527','528','534','535','536','537','538','539','540','541','542','543','609','610','633','634','611','612','613','626','627','628','629','630') AND `type` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `sm_auth_rule` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `name` = 'Marki/Marki/markiList' AND `status` = 1 ORDER BY `level` desc,`sort` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `id` = 683 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sm_auth_rule` WHERE `status` = 1 AND `pid` = 683 ORDER BY `sort`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `sm_member_list` AS a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.is_open = 1 AND a.status = 2 AND a.state = 2 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT a.*,b.ma_merchantname as shopname FROM `sm_member_list` AS a LEFT JOIN sm_merchant AS b ON a.ma_id = b.ma_id  WHERE a.is_open = 1 AND a.status = 2 AND a.state = 2 ORDER BY a.addtime DESC LIMIT 0,15   [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [2] Illegal string offset 'member_name' D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 247 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 247 行.
+NOTIC: [2] Illegal string offset 'telphone' D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 249 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 249 行.
+NOTIC: [2] Illegal string offset 'shopname' D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 251 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 251 行.
+NOTIC: [2] Illegal string offset 'type' D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 254 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 254 行.
+NOTIC: [2] Illegal string offset 'type' D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 255 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 255 行.
+NOTIC: [2] Illegal string offset 'type' D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 256 行.
+NOTIC: [8] Uninitialized string offset: 0 D:\xampp\htdocs\data\runtime\Cache\Marki\aa45974511b95235a1e8d8a74cefeccd.php 第 256 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.095046s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095096s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000627s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000668s ]
+

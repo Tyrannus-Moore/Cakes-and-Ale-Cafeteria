@@ -1,0 +1,9 @@
+[ 2019-07-27T14:00:58+08:00 ] 47.103.47.30 /runtime/log/success.txt
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+ERR: 无法加载控制器:Log
+

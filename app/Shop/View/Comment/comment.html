@@ -1,0 +1,108 @@
+<extend name="Public/base" />
+<block name="main-content">
+    <div class="page-content" style="padding-top: 50px">
+        <!--主题-->
+        <div class="page-header">
+            <h1>您当前操作
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>详情
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="form-horizontal ajaxForm" name="admin_list_add" method="post" action="{:U('typeEdit')}">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 订单编号：  </label>
+                        <div class="col-sm-8">
+                            <input type="text" value="{$infos.order_no}" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 用户昵称：  </label>
+                        <div class="col-sm-8">
+                            <input type="text" value="{$infos.member_name}" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 手机号：  </label>
+                        <div class="col-sm-8">
+                            <input type="text" value="{$infos.telphone}" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 档口名称：  </label>
+                        <div class="col-sm-8">
+                            <input type="text" value="{$infos.stall_name}" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 菜品评分：  </label>
+                        <div class="col-sm-8">
+                            <input type="text" value="{$infos.dish_score}" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 服务评分：  </label>
+                        <div class="col-sm-8">
+                            <input type="text" value="{$infos.service_score}" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 评论时间：  </label>
+                        <div class="col-sm-8">
+                            <input type="text" value="{$infos.addtime|date="Y-m-d H:i:s",###}" class="col-xs-10 col-sm-5" readonly/>
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 上传图片：  </label>
+                        <div class="col-sm-8">
+                            <foreach name="imgs" item="vol">
+                                <a href="{$vol}" target="_blank"><img src="{$vol}" style="margin: 10px;width:150px;height: 150px" ></a>
+                            </foreach>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 评论内容：  </label>
+                        <div class="col-sm-8">
+                            <textarea class="col-xs-10 col-sm-5" cols="30" rows="10" readonly>{$infos.content}</textarea>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            &nbsp; &nbsp; &nbsp;
+                            <a href="javascript:history.back(-1)">
+                                <i class="ace-icon fa fa-undo bigger-110"></i> 返回
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- /.page-content -->
+</block>

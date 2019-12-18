@@ -1,0 +1,140 @@
+<div id="sidebar2" class="sidebar h-sidebar navbar-collapse collapse sidebar-fixed menu-min" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+	<div class="nav-wrap-up pos-rel">
+		<div class="nav-wrap">
+            <ul class="nav nav-list">
+                <if condition='$controllername eq "home"'>
+                    <li>
+                        <a href="{:U('Shop/home/banner')}">
+                            <o class="font12 <if condition='$actionname eq "banner" or $actionname eq "banneradd"  or $actionname eq "banneredit"'>rigbg</if>">轮播图管理</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/home/saturated')}">
+                            <o class="font12 <if condition='$actionname eq "saturated"'>rigbg</if>">餐厅饱和度</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/home/distribution')}">
+                            <o class="font12 <if condition='$actionname eq "distribution"'>rigbg</if>">配送费设置</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/home/timeout')}">
+                            <o class="font12 <if condition='$actionname eq "timeout"'>rigbg</if>">超时期限</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/home/discount')}">
+                            <o class="font12 <if condition='$actionname eq "discount" or $actionname eq "discountadd" or $actionname eq "discountedit"'>rigbg</if>">折扣设置</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/home/help')}">
+                            <o class="font12 <if condition='$actionname eq "help"'>rigbg</if>">帮助中心</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/home/addressList')}">
+                            <o class="font12 <if condition='$actionname eq "addresslist"'>rigbg</if>">地址菜单管理</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'foodtype'" />
+                    <li>
+                        <a href="{:U('Shop/Foodtype/typeList')}">
+                            <o class="font12 <if condition='$actionname eq "typelist"'>rigbg</if>">分类列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/Foodtype/foodList')}">
+                            <o class="font12 <if condition='$actionname eq "foodlist"'>rigbg</if>">菜品列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'comment'" />
+                    <li>
+                        <a href="{:U('Shop/Comment/commentList')}">
+                            <o class="font12 <if condition='$actionname eq "commentList"'>rigbg</if>">评论列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'technician'" />
+                    <li>
+                        <a href="{:U('Shop/Technician/technician')}">
+                            <o class="font12 <if condition='$actionname eq "index"'>rigbg</if>">技师列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'stall'" />
+                    <li>
+                        <a href="{:U('Shop/Stall/stallList')}">
+                            <o class="font12 <if condition='$actionname eq "stalllist"'>rigbg</if>">档口列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'member'" />
+                    <li>
+                        <a href="{:U('Shop/Member/memberList')}">
+                            <o class="font12 <if condition='$actionname eq "memberlist"'>rigbg</if>">用户列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'marki'" />
+                    <li>
+                        <a href="{:U('Shop/Marki/applyList')}">
+                            <o class="font12 <if condition='$actionname eq "applylist"'>rigbg</if>">认证申请</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/Marki/markiList')}">
+                            <o class="font12 <if condition='$actionname eq "markilist"'>rigbg</if>">人员管理</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'feedback'" />
+                    <li>
+                        <a href="{:U('Shop/Feedback/feedbackList')}">
+                            <o class="font12 <if condition='$actionname eq "feedbacklist"'>rigbg</if>">反馈列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'settlement'" />
+                    <li>
+                        <a href="{:U('Shop/Settlement/settlementList')}">
+                            <o class="font12 <if condition='$actionname eq "settlementlist"'>rigbg</if>">商户结算</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <elseif condition="$controllername eq 'order'" />
+                    <li>
+                        <a href="{:U('Shop/Order/ordinaryList')}">
+                            <o class="font12 <if condition='$actionname eq "ordinarylist"'>rigbg</if>">普通菜品订单列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/Order/packageList')}">
+                            <o class="font12 <if condition='$actionname eq "packagelist"'>rigbg</if>">周餐订单列表</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <else/>
+                    <li>
+                        <a href="{:U('Shop/Sys/profile')}">
+                            <o class="font12">欢迎进入个人中心</o>
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                </if>
+            </ul>
+		</div>
+	</div><!-- /.nav-list -->
+</div>

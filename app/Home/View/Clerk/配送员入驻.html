@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>配送员入驻</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+	</head>
+
+	<body>
+		<div class="psyrzTop clearfix">
+			<div class="fl psyTypeText">配送类型</div>
+			<div class="psySelTypeBox clearfix fl">
+				<div class="psyTypeBox clearfix fl">
+					<img class="fl psySelTypeImg" src="../images/check_button_s.png" />
+					<div class="fl">专职</div>
+				</div>
+
+				<div class="psyTypeBox clearfix fl">
+					<img class="fl psySelTypeImg" src="../images/check_button_uns.png" />
+					<div class="fl">兼职</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bac-fff mt-15">
+			<div class="psyrzList clearfix">
+				<div class="fl psyTypeText">姓名</div>
+				<input class="fl psyrzInp" type="text" placeholder="输入真实姓名" />
+			</div>
+			<div class="psyrzList clearfix">
+				<div class="fl psyTypeText">性别</div>
+				<div class="psySelTypeBox clearfix fl">
+					<div class="psyTypeBox clearfix fl">
+						<img class="fl psySelTypeImg" src="../images/check_button_s.png" />
+						<div class="fl">男</div>
+					</div>
+
+					<div class="psyTypeBox clearfix fl">
+						<img class="fl psySelTypeImg" src="../images/check_button_uns.png" />
+						<div class="fl">女</div>
+					</div>
+				</div>
+			</div>
+			<div class="psyrzList clearfix">
+				<div class="fl psyTypeText">手机号</div>
+				<input class="fl psyrzInp" type="text" placeholder="输入手机号" />
+			</div>
+		</div>
+
+		<div class="bac-fff mt-15">
+			<div class="psyrzList clearfix">
+				<div class="fl psyTypeText">身份证号</div>
+				<input class="fl psyrzInp" type="text" placeholder="输入身份证号" />
+			</div>
+		</div>
+		
+		<div class="bac-fff mt-15 p-10">
+			<div>身份证正面照片</div>
+			<div class="po-rela">
+				<img class="sfzzp" src="../images/icon_sfzzm.png"/>
+				<input class="unloadFile" onchange="xmTanUploadImg(this)" type="file" name="" id="" value="" />
+			</div>
+			
+		</div>
+		
+		<div class="bac-fff mt-15 p-10">
+			<div>身份证反面照片</div>
+			<div class="po-rela">
+				<img class="sfzzp" src="../images/icon_sfzzm.png"/>
+				<input class="unloadFile" onchange="xmTanUploadImg(this)" type="file" name="" id="" value="" />
+			</div>
+		</div>
+		
+		<input class="psyTjBtn" type="button" value="提交" />
+		<script src="../js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mainfile.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

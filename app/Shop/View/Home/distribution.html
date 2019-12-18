@@ -1,0 +1,56 @@
+<extend name="Public/base" />
+<block name="main-content">
+    <div class="page-content" style="padding-top: 50px">
+        <!--主题-->
+        <div class="page-header">
+            <h1>您当前操作
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>设置配送费
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <form class="form-horizontal ajaxForm" name="admin_list_add" method="post" action="{:U('distribution')}">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 配送费：  </label>
+                        <div class="col-sm-8">
+                            <input type="text" name="value" value="{$value}" class="col-xs-10 col-sm-5" required  onkeyup="this.value=this.value.replace(/^(\d*\.?\d{0,1}).*/,'$1')" />
+                            <span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+                        </div>
+                    </div>
+                    <div class="space-4"></div>
+                    <div class="form-group mode">
+                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 配送方式：  </label>
+                        <div class="checkbox">
+                            <ul>
+                                <label>
+                                    <input class="ace ace-checkbox-2" name="status[]" <in name="a" value="$status">checked</in> value="1" type="checkbox" >
+                                    <span class="lbl">捎带</span>
+                                </label>
+                                <label>
+                                    <input class="ace ace-checkbox-2" name="status[]" value="2" type="checkbox" <in name="b" value="$status">checked</in> >
+                                    <span class="lbl">自提</span>
+                                </label>
+                            </ul>
+                            
+                        </div>
+                    </div>
+
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-info" type="submit">
+                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                保存
+                            </button>
+                            &nbsp; &nbsp; &nbsp;
+                            <a href="javascript:history.back(-1)">
+                                <i class="ace-icon fa fa-undo bigger-110"></i> 返回
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- /.page-content -->
+</block>

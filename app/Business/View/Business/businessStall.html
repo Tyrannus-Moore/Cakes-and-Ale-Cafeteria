@@ -1,0 +1,121 @@
+<extend name="Admin@Public/base" />
+<block name="main-content">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/layui/css/layui.css" media="all">
+    <div class="page-content">
+        <div class="row maintop">
+            <div class="col-xs-4 col-sm-1">
+                <a href="{:U('businessList',array('p'=>I('p',1)))}">
+                    <button class="btn btn-sm btn-info">
+                        <i class="ace-icon fa fa-mail-reply bigger-110"></i>
+                        返回
+                    </button>
+                </a>
+            </div>
+            <div class="col-xs-8 col-sm-8">
+                <form name="admin_list_sea" class="form-search" method="post" action="{:U('businessStall')}">
+                    <div class="input-group">
+                        <input type="hidden" name="ma_id" value="{$ma_id}" />
+                        <span class="input-group-addon">档口名称</span>
+                        <input type="text" name="search[stall_name]" id="val1" class="form-control" value="{$search.stall_name}" placeholder="输入档口名称" />
+                        <span class="input-group-addon">档口电话</span>
+                        <input type="text" name="search[stall_tel]" id="val2" class="form-control" value="{$search.stall_tel}" placeholder="输入档口电话" />
+                        <span class="input-group-addon">状态</span>
+                        <select name="search[is_freeze]" class="form-control">
+                            <option value="" <if condition="$search['is_freeze'] eq ''">selected</if>>请选择</option>
+                            <option value="2" <if condition="$search['is_freeze'] eq 2">selected</if>>正常</option>
+                            <option value="1" <if condition="$search['is_freeze'] eq 1">selected</if>>冻结</option>
+                        </select>
+                        <span class="input-group-addon">添加时间</span>
+                        <input type="text" name="search[addtime]" class="form-control" value="{$search.addtime}" id="test6" placeholder=" - " readonly/>
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-purple btn-sm">
+                                <span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+                                搜索
+                            </button>
+					    </span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-1 col-sm-1">
+                <div class="input-group-btn">
+                    <a href="{:U('businessStall',array('ma_id'=>$ma_id))}">
+                        <button type="button" class="btn btn-sm  btn-purple">
+                            <span class="ace-icon fa fa-globe icon-on-right bigger-110"></span>显示全部
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    <form class="ajaxForm" id="leftnav" name="leftnav" method="post" action="" >
+                        <input type="hidden" name="checkk" id="checkk" value="1" /><!--用于判断操作类型-->
+                        <table class="table table-striped table-bordered table-hover" id="dynamic-table">
+                            <thead>
+                            <tr>
+                                <th>商家名称</th>
+                                <th class="hidden-sm hidden-xs">档口图片</th>
+                                <th>档口名称</th>
+                                <th>档口电话</th>
+                                <th>评分</th>
+                                <th>月销</th>
+                                <th class="hidden-sm hidden-xs">添加时间</th>
+                                <th>状态</th>
+                                <th style="border-right:#CCC solid 1px;">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="layer-photos-demo">
+                            <foreach name="list" item="v">
+                                <tr>
+                                    <td height="20">{$shopName}</td>
+                                    <td height="20" class="hidden-sm hidden-xs"><img src="{$v.image}" style="width: 60px;"/></td>
+                                    <td>{$v.stall_name}</td>
+                                    <td>{$v.stall_tel}</td>
+                                    <td>{$v.score}</td>
+                                    <td>{$v.sales}</td>
+                                    <td class="hidden-sm hidden-xs">{$v.addtime|date="Y-m-d H:i:s",###}</td>
+                                    <td>
+                                        <if condition="$v['is_freeze'] eq 1">
+                                            <a class="btn btn-danger btn-minier confirm-rst-url-btn" href="{:U('stallState',array('x'=>$v['stall_id'],'ma_id'=>$v['ma_id'],'p'=>I('p',1),'search'=>$search))}" data-info="确定要解冻此档口吗？" title="">
+                                                冻结
+                                            </a>
+                                            <else/>
+                                            <a class="btn btn-yellow btn-minier confirm-rst-url-btn" href="{:U('stallState',array('x'=>$v['stall_id'],'ma_id'=>$v['ma_id'],'p'=>I('p',1),'search'=>$search))}" data-info="确定要冻结此档口吗？" title="">
+                                                正常
+                                            </a>
+                                        </if>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a class="btn btn-minier btn-yellow" href="{:U('stallDetail',array('stall_id'=>$v['stall_id'],'ma_id'=>$v['ma_id'],'p'=>I('p',1)))}" title="查看详情">
+                                                <span>查看详情</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </foreach>
+                            <tr>
+                                <td height="50" colspan="16" align="left">{$page}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.page-content -->
+    <script src="__PUBLIC__/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        layui.use('laydate', function() {
+            var laydate = layui.laydate;
+            //日期范围
+            laydate.render({
+                elem: '#test6'
+                , range: true
+            });
+        });
+    </script>
+</block>
+

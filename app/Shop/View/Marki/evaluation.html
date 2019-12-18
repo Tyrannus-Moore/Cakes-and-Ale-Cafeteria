@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- bootstrap & fontawesome必须的css -->
+    <link rel="stylesheet" href="__PUBLIC__/ace/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="__PUBLIC__/font-awesome/css/font-awesome.min.css" />
+    <!-- 此页插件css -->
+    <!-- ace的css -->
+    <link rel="stylesheet" href="__PUBLIC__/ace/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+    <!-- IE版本小于9的ace的css -->
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="__PUBLIC__/ace/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="__PUBLIC__/ace/css/ace-ie.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="__PUBLIC__/yfcmf/yfcmf.css" />
+    <!-- 此页相关css -->
+    <!-- ace设置处理的css -->
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+    <!--[if lte IE 8]>
+    <script src="__PUBLIC__/others/html5shiv.min.js"></script>
+    <script src="__PUBLIC__/others/respond.min.js"></script>
+    <![endif]-->
+    <!-- 引入基本的js -->
+    <script type="text/javascript">
+        var admin_ueditor_handle = "{:U('Admin/Sys/upload')}";
+        var admin_ueditor_lang ='zh-cn';
+    </script>
+    <!--[if !IE]> -->
+    <script src="__PUBLIC__/others/jquery.min-2.2.1.js"></script>
+    <!-- <![endif]-->
+    <!-- 如果为IE,则引入jq1.12.1 -->
+    <!--[if IE]>
+    <script src="__PUBLIC__/others/jquery.min-1.12.1.js"></script>
+    <![endif]-->
+    <!-- 如果为触屏,则引入jquery.mobile -->
+    <script type="text/javascript">
+        if('ontouchstart' in document.documentElement) document.write("<script src='__PUBLIC__/others/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="__PUBLIC__/others/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #fff;">
+<div class="page-content">
+    <div class="row maintop">
+        <div class="col-xs-10 col-sm-5">
+            <form name="admin_list_sea" class="form-search" method="post" action="{:U('evaluation')}">
+                <div class="input-group">
+                    <input type="hidden" name="member_list_id" value="{$member_list_id}">
+                    <span class="input-group-addon">评分</span>
+                    <select name="search[score]" class="form-control" style="width:80px">
+                        <option value="">全部</option>
+                        <option value="1" <if condition="$search['score'] eq 1">selected</if>>1分</option>
+                        <option value="2" <if condition="$search['score'] eq 2">selected</if>>2分</option>
+                        <option value="3" <if condition="$search['score'] eq 3">selected</if>>3分</option>
+                        <option value="4" <if condition="$search['score'] eq 4">selected</if>>4分</option>
+                        <option value="5" <if condition="$search['score'] eq 5">selected</if>>5分</option>
+                    </select>
+                    <span class="btn-group-sm" style="padding-left:0px;">
+                        <button type="submit" class="btn btn-xs  btn-purple">
+                            <span class="ace-icon fa fa-search"></span>搜索
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th class="sort">昵称</th>
+                        <th class="hidden-xs">评分</th>
+                        <th class="hidden-xs">评论时间</th>
+                        <th class="hidden-xs">评论内容</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <foreach name="list" item="v">
+                        <tr>
+                            <td class="hidden-xs">{$v.member_list_nickname}</td>
+                            <td class="hidden-xs">{$v.marki_score}</td>
+                            <td class="hidden-xs">{$v.addtime|date='Y-m-d',###}</td>
+                            <td class="hidden-xs">{$v.marki_content}</td>
+                        </tr>
+                    </foreach>
+                    <tr>
+                        <td height="50" colspan="4" align="left">{$page}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><!-- /.page-content -->
+<script type="text/javascript" src="__PUBLIC__/others/jquery.min-2.2.1.js"></script>
+<script src="__PUBLIC__/others/jquery.form.js"></script>
+<script src="__PUBLIC__/layer/layer.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

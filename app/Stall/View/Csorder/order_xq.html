@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>订单详情</title>
+	<base href="__PUBLIC__/" />
+	<link rel="stylesheet" type="text/css" href="home/css/layer/default/layer.css" />
+	<link rel="stylesheet" type="text/css" href="home/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="home/css/layout.css" />
+</head>
+<body>
+	<div class="orderDetailMainBox">
+		<div class="orderDetailTop bac-fff p-10">
+			<div class="orderDetailTopTitle">{$stall_info.stall_name}</div>
+			<if condition="$infos['order_status'] eq 2">
+				<div class="c-zhu">备餐中</div>
+				<elseif condition="$infos['order_status'] eq 3"/>
+				<div class="c-zhu">待取餐</div>
+				<else/>
+				<div class="c-zhu">已完成</div>
+			</if>
+			<!--菜品详情-->
+			<div class="mt-20">
+				<volist name="goods_list" id="v">
+				<div class="orderDetailProList clearfix">
+					<img class="orderDetailProImg fl" src="{$v.pic_url}" />
+					<span class="orderCenterProTitle fl">{$v.dishes_name}</span>
+					<div class="fr">
+						<span>×</span>
+						<span>{$v.dishes_nums}</span>
+					</div>
+				</div>
+				</volist>
+			</div>
+		</div>
+
+		<div class="orderDetailPriceBox mt-15 bac-fff">
+			<div class="orderDetailPriceList clearfix">
+				<div class="fl">订单金额</div>
+				<div class="fr">
+					<span>￥</span>
+					<span>{$infos.total_money}</span>
+				</div>
+			</div>
+			<if condition="$infos['deliver_type'] eq 1">
+				<div class="orderDetailPriceList clearfix">
+					<div class="fl">配送费</div>
+					<div class="fr">
+						<span>￥</span>
+						<span>{$infos.express_money}</span>
+					</div>
+				</div>
+			</if>
+			<div class="orderDetailPriceList clearfix">
+				<div class="fl">实付金额</div>
+				<div class="fr c-zhu">
+					<span>￥</span>
+					<span>{$infos.real_money}</span>
+				</div>
+			</div>
+			<div class="orderDetailPriceList clearfix" style="border-bottom: none;">
+				<div class="fl">备注:</div>
+			</div>
+			<div class="orderDetailPriceList clearfix">
+				<empty name="infos.order_note">
+					<div class="clearfix" style="border-bottom: none; padding: 0px 0px 15px 0px;line-height: 25px;">
+						未填写
+					</div>
+					<else/>
+					<div class="clearfix" style="border-bottom: none; padding: 0px 0px 15px 0px;line-height: 25px;">
+						{$infos.order_note}
+					</div>
+				</empty>
+			</div>
+		</div>
+
+		<if condition="$infos['deliver_type'] eq 1">
+			<!--配送信息-->
+			<div class="sendInfoBox mt-15">
+				<div class="orderDetailOrderInfoTitle">配送信息</div>
+				<div class="orderDetailOrderInfoList clearfix bac-fff">
+					<div class="fl c99 orderDetailOrderInfoText">配送时间</div>
+					<div class="fl">{$infos.express_time|date='Y-m-d H:i',###}</div>
+				</div>
+				<div class="orderDetailOrderInfoList clearfix bac-fff">
+					<div class="c99 orderDetailOrderInfoText">配送地址</div>
+					<div class="addrInfo">
+						<p>{$infos.username} &nbsp;&nbsp;&nbsp; {$infos.phone}</p>
+						<p>{$infos.address}</p>
+					</div>
+				</div>
+			</div>
+			<!--配送员-->
+			<eq name="infos['is_grab']" value="2">
+			<div class="senderBox mt-15">
+				<div class="orderDetailOrderInfoTitle">配送员</div>
+				<div class="senderInfo clearfix">
+					<div class="senderHeadImgBox fl">
+						<img src="{$infos.ps_headpic}"/>
+					</div>
+					<div class="fl">
+						<p>{$infos.ps_name}</p>
+						<p>{$infos.ps_telphone}</p>
+					</div>
+					<a href="tel:{$infos.ps_telphone}">
+					<img class="call" src="home/images/icon_phone.png"/>
+					</a>
+				</div>
+			</div>
+			</eq>
+		<else/>
+			<!--取餐信息-->
+			<div class="qcInfoBox mt-15">
+				<div class="orderDetailOrderInfoTitle">取餐信息</div>
+				<div class="orderDetailOrderInfoList clearfix bac-fff">
+					<div class="fl c99 orderDetailOrderInfoText">档口电话</div>
+					<div class="fl">{$infos.stall_tel}</div>
+				</div>
+				<div class="orderDetailOrderInfoList clearfix bac-fff">
+					<div class="c99 orderDetailOrderInfoText">档口地址</div>
+					<div class="addrInfo">
+						<p>{$infos.stall_address}</p>
+					</div>
+				</div>
+			</div>
+		</if>
+
+		<div class="orderDetailOrderInfo mt-15">
+			<div class="orderDetailOrderInfoTitle">订单信息</div>
+			<div class="orderDetailOrderInfoList clearfix bac-fff">
+				<div class="fl c99 orderDetailOrderInfoText">订单编号</div>
+				<div class="fl">{$infos.order_no}</div>
+			</div>
+			<div class="orderDetailOrderInfoList clearfix bac-fff">
+				<div class="fl c99 orderDetailOrderInfoText">下单时间</div>
+				<div class="fl">{$infos.create_time|date='Y-m-d H:i',###}</div>
+			</div>
+			<div class="orderDetailOrderInfoList clearfix bac-fff">
+				<div class="fl c99 orderDetailOrderInfoText">付款时间</div>
+				<div class="fl">{$infos.payment_time|date='Y-m-d H:i',###}</div>
+			</div>
+		</div>
+
+		<!--用户评价-->
+		<eq name="infos.order_status" value="6">
+		<notempty name="comment_list">
+		<div class="userEveBox mt-15">
+			<div class="orderDetailOrderInfoTitle">用户评价</div>
+			<div class="userEveListBox p-10 bac-fff">
+				<div class="userEveListTop clearfix">
+					<div class="userHeadImgBox fl">
+						<img class="userHeadImg" src="{$infos.yh_headpic}"/>
+					</div>
+					<div class="userEveUserName fl">{$infos.member_list_nickname}</div>
+					<div class="userEveTime c99 fr">{$comment_list.addtime|date='Y-m-d H:i',###}</div>
+				</div>
+				<div class="xingBox clearfix mt-15">
+					<div class="fl c99">餐品评价</div>
+					<div class="clearfix fl ml-10">
+						<for start="0" end="$comment_list.dish_score">
+							<img class="fl" src="home/images/star_icon24.png"/>
+						</for>
+						<?php
+							for ($i=0;$i<5-$comment_list[dish_score];$i+=1){
+								echo '<img class="ptdkXing" src="home/images/star_icon25.png" />';
+							}
+						?>
+					</div>
+				</div>
+				<div class="xingBox clearfix mt-5">
+					<div class="fl c99">服务评价</div>
+					<div class="clearfix fl ml-10">
+						<for start="0" end="$comment_list.service_score">
+							<img class="fl" src="home/images/star_icon24.png"/>
+						</for>
+						<?php
+							for ($i=0;$i<5-$comment_list[service_score];$i+=1){
+								echo '<img class="ptdkXing" src="home/images/star_icon25.png" />';
+						}
+						?>
+					</div>
+				</div>
+				<div class="userEveCon mt-15">{$comment_list.content}</div>
+				<div class="userEveImgBox mt-5">
+					<foreach name="comment_list.image" item="vo">
+						<img class="userEveImg" src="{$vo}"/>
+					</foreach>
+				</div>
+			</div>
+		</div>
+		</notempty>
+		</eq>
+	</div>
+
+	<div class="orderDetailBottBtnBox">
+		<eq name="infos.order_status" value="2">
+		<input class="fr orderCenterListBtn bcwcBtn bcwcOnclick" data-id="{$infos.order_id}" data-type="{$infos.deliver_type}" type="button" value="备餐完成" />
+		</eq>
+		<eq name="infos.order_status" value="3">
+		<input class="fr orderCenterListBtn bcwcBtn qcBtn" data-id="{$infos.order_id}" data-type="{$infos.deliver_type}" type="button" value="取餐" />
+		</eq>
+		<if condition="$infos['deliver_type'] eq 2 && $infos['order_status'] eq 3 && time() - $infos['success_time'] EGT 3600*3">
+			<input class="fr orderCenterListBtn bcwcBtn qccsBtn" data-id="{$infos.order_id}" type="button" value="取餐超时" />
+		</if>
+		<lt name="infos.order_status" value="4">
+			<eq name="infos.deliver_type" value="1">
+				<a href="tel:{$infos.phone}">
+					<input class="fr orderCenterListBtn lxkhBtn" type="button" value="联系客户" />
+				</a>
+				<else/>
+				<a href="tel:{$infos.telphone}">
+					<input class="fr orderCenterListBtn lxkhBtn" type="button" value="联系客户" />
+				</a>
+			</eq>
+		</lt>
+	</div>
+	<!--展示取餐码-->
+	<!--遮罩-->
+	<div class="mask dis-n"></div>
+	<div class="qcmLay po-rela dis-n">
+		<div class="qcmTitle">输入取餐码</div>
+		<input type="hidden" id="order_id" >
+		<input type="hidden" id="deliver_type" >
+		<div class="qcmInpBox">
+			<input oninput="input(this)" type="number" maxlength="1"/>
+			<input oninput="input(this)" type="number" maxlength="1"/>
+			<input oninput="input(this)" type="number" maxlength="1"/>
+			<input oninput="input(this)" type="number" maxlength="1"/>
+		</div>
+		<div class="qcmBtnBox clearfix">
+			<input class="qcmCancle fl" type="button" value="取消" />
+			<input class="qcmConfirm fl" type="button" value="确定" />
+		</div>
+	</div>
+
+<script src="home/js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="home/jscript/orders.js" type="text/javascript" charset="utf-8"></script>
+<script src="layer/layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    //备餐完成
+    $(".bcwcOnclick").click(function() {
+        var order_id = $(this).attr("data-id");
+        var deliver_type = $(this).attr("data-type");
+        layer.open({
+            content: '确定备餐完成吗？'
+            ,btn: ['确定', '取消']
+            ,yes: function(index){
+                layer.close(index);
+                $.ajax({
+                    type:"post",
+                    url:"{:U('order_eef')}",
+                    data: {order_id:order_id,deliver_type:deliver_type},
+                    success: function (data) {
+                        if(data.code == 0){
+                            layer.open({
+                                content: data.message
+                                ,skin: 'msg'
+                                ,time: 2
+                                ,end: function () {
+                                    location.replace("{:U('order')}&qc=1");
+                                }
+                            });
+                        }else{
+                            layer.open({
+                                content: data.message
+                                ,skin: 'msg'
+                                ,time: 2
+                            });
+                        }
+                    }
+                })
+            }
+        });
+        return false;
+    })
+
+	//取餐超时
+    $('body').on('click','.qccsBtn',function () {
+        var order_id = $(this).attr("data-id");
+        layer.open({
+            content: '用户没有取餐，点击超时完成吗？'
+            , btn: ['确定', '取消']
+            , yes: function (index) {
+                layer.close(index);
+                $.ajax({
+                    type:"post",
+                    url:"{:U('order_cs')}",
+                    data: {order_id:order_id},
+                    success: function (data) {
+                        if(data.code == 0){
+                            layer.open({
+                                content: data.message
+                                ,skin: 'msg'
+                                ,time: 2
+                                ,end: function () {
+                                    location.replace("{:U('order')}&qc=2");
+                                }
+                            });
+                        }else{
+                            layer.open({
+                                content: data.message
+                                ,skin: 'msg'
+                                ,time: 2
+                            });
+                        }
+                    }
+                })
+            }
+        })
+    })
+    //取餐
+    $(".qcmConfirm").click(function () {
+        var q1 = $(this).parent().prev().find('input').eq('0').val();
+        var q2 = $(this).parent().prev().find('input').eq('1').val();
+        var q3 = $(this).parent().prev().find('input').eq('2').val();
+        var q4 = $(this).parent().prev().find('input').eq('3').val();
+        var meal_code = q1+q2+q3+q4;
+        var order_id = $("#order_id").val();
+        var deliver_type = $("#deliver_type").val();
+        if(meal_code.length != 4){
+            layer.open({
+                content:'请输入正确的取餐码'
+                ,skin: 'msg'
+                ,time: 2
+            });
+            qingkong();
+            return false;
+        }
+        $.ajax({
+            type:"post",
+            url:"{:U('order_tf')}",
+            data: {order_id:order_id,deliver_type:deliver_type,meal_code:meal_code},
+            success: function (data) {
+                if(data.code == 0){
+                    layer.open({
+                        content: data.message
+                        ,skin: 'msg'
+                        ,time: 2
+                        ,end: function () {
+                            location.replace("{:U('order')}&qc=2");
+                        }
+                    });
+                }else{
+                    layer.open({
+                        content: data.message
+                        ,skin: 'msg'
+                        ,time: 2
+                        ,end: function () {
+                            qingkong();
+                        }
+                    });
+                }
+            }
+        })
+    })
+    //清空取餐码
+    function qingkong() {
+        $(".qcmConfirm").parent().prev().find('input').eq('0').val('');
+        $(".qcmConfirm").parent().prev().find('input').eq('1').val('');
+        $(".qcmConfirm").parent().prev().find('input').eq('2').val('');
+        $(".qcmConfirm").parent().prev().find('input').eq('3').val('');
+        $(".qcmConfirm").parent().prev().find('input').eq('0').focus();
+    }
+    //图片
+    var userEveImgBox = $(".userEveImgBox");
+    for(var i = 0; i < userEveImgBox.length; i++){
+        var size = $(userEveImgBox[i]).find("Img").size();
+        var s = 6 - size%6
+        var str = '';
+        for(var j = 0; j < s; j++){
+            str += '<div style="width:50px;margin-right:5px"></div>'
+        }
+        $(userEveImgBox[i]).append(str)
+    }
+</script>
+</body>
+</html>

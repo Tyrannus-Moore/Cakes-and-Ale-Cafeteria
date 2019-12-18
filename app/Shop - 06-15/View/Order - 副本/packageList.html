@@ -1,0 +1,145 @@
+<extend name="Public/base" />
+<block name="main-content">
+<div class="page-content" style="padding-top: 50px;">
+    <link href="/public/content/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <div class="row maintop">
+        <div class="col-xs-5 col-sm-3">
+            <form name="admin_list_sea" class="form-search" method="post" action="{:U('packageList')}">
+                <div class="row maintop">
+                    <div class="col-xs-12 col-sm-3 btn-sespan">
+                        <div class="input-group">
+                            <span class="input-group-addon">订单编号：</span>
+                            <input type="text" name="search[order_no]"  class="form-control" value="{$search.order_no}" placeholder="订单编号" style="width:150px;" />
+                            <span class="input-group-addon">手机号：</span>
+                            <input type="text" name="search[phone]"  class="form-control" value="{$search.phone}" placeholder="手机号" style="width:120px;" />
+                            <span class="input-group-addon">档口名称：</span>
+                            <input type="text" name="search[stall_name]"  class="form-control" value="{$search.stall_name}" placeholder="档口名称" style="width:120px;" />
+                            <span class="input-group-addon">订单状态：</span>
+                            <select name="search[order_status]" class="form-control" style="width:80px">
+                                <option value="">请选择</option>
+                                <option value="1" <if condition="$search['order_status'] eq 1">selected</if>>待付款</option>
+                                <option value="2" <if condition="$search['order_status'] eq 2">selected</if>>已支付</option>
+                                <!--<option value="3" <if condition="$search['order_status'] eq 3">selected</if>>待取餐</option>-->
+                                <option value="4" <if condition="$search['order_status'] eq 4">selected</if>>已生效</option>
+                                <option value="5" <if condition="$search['order_status'] eq 5">selected</if>>已完成</option>
+                                <option value="6" <if condition="$search['order_status'] eq 6">selected</if>>已评价</option>
+                                <option value="7" <if condition="$search['order_status'] eq 7">selected</if>>已取消</option>
+                            </select>
+                        </div>
+                        <div class="input-group" style="padding-top: 10px;">
+                            <span class="input-group-addon">开始时间：</span>
+                            <input name="search[start_time]" id="start_time" class="form-control" value="{$search.start_time}" type="text" required="required" readonly="readonly" style="width:150px;">
+                            <span class="input-group-addon">结束时间：</span>
+                            <input name="search[end_time]" id="end_time" class="form-control" type="text"  value="{$search.end_time}" required="required" readonly="readonly" style="width:150px;">
+                            <span class="input-group-btn btn-group-sm" style="padding-left:0px;">
+                            <button type="submit" class="btn btn-xs  btn-purple">
+                                <span class="ace-icon fa fa-search"></span>搜索
+                            </button>
+                            </span>
+                            <span class="input-group-btn btn-group-sm" style="padding-left:10px;">
+                                <a href="{:U('packageList')}">
+                                    <button type="button" class="btn btn-sm  btn-purple">
+                                        <span class="ace-icon fa fa-globe icon-on-right bigger-110"></span>显示全部
+                                    </button>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--列表-->
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+                <form id="leftnav" name="leftnav" method="post" action="" >
+                    <input type="hidden" name="checkk" id="checkk" value="1" /><!--用于判断操作类型-->
+                    <table class="table table-striped table-bordered table-hover" id="dynamic-table">
+                        <thead>
+                            <tr>
+                                <th>订单编号</th>
+                                <th>用户昵称</th>
+                                <th>手机号</th>
+                                <th>档口名称</th>
+                                <th>订单状态</th>
+                                <th>下单时间</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <foreach name="list" item="v">
+                            <tr>
+                                <td>{$v.order_no}</td>
+                                <td class="hidden-sm hidden-xs">{$v.member_list_nickname}</td>
+                                <td class="hidden-sm hidden-xs">{$v.telphone}</td>
+                                <td class="hidden-sm hidden-xs">{$v.stall_name}</td>
+                                <td class="hidden-sm hidden-xs">
+                                    <switch name="v.order_status">
+                                        <case value="1">待付款</case>
+                                        <case value="2">已支付</case>
+                                        <!--<case value="3">待取餐</case>-->
+                                        <case value="4">已生效</case>
+                                        <case value="5">已完成</case>
+                                        <case value="6">已评价</case>
+                                        <case value="7">已取消</case>
+                                    </switch>
+                                </td>
+                                <td>{$v.create_time|date="Y-m-d H:i:s",###}</td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs action-buttons">
+                                        <a class="btn btn-minier btn-yellow" href="{:U('packageDetail',array('order_id'=>$v['order_id'],'p'=>I('p',1)))}" title="查看详情">
+                                            查看详情
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </foreach>
+                        <tr>
+                            <td height="50" colspan="7" align="left">{$page}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div><!-- /.page-content -->
+<script src="/public/content/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<script src="/public/content/js/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+<script type="text/javascript">
+    /*时间插件*/
+    $('#start_time').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language: 'zh-CN', /*加载日历语言包，可自定义*/
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView:'month',
+        forceParse: 0
+    }).on("click",function(ev){
+        $("#start_time").datetimepicker("setEndDate", $("#end_time").val());
+    });
+    /*时间插件*/
+    $('#end_time').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language: 'zh-CN', /*加载日历语言包，可自定义*/
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView:'month',
+        forceParse: 0
+    }).on("click", function (ev) {
+        $("#end_time").datetimepicker("setStartDate", $("#start_time").val());
+    });
+    $(".close").click(function(){
+        $(".shade").fadeOut();
+        $(".tanc").fadeOut();
+    });
+</script>
+</block>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>订单中心</title>
+	<base href="__PUBLIC__/" />
+	<link rel="stylesheet" type="text/css" href="home/css/layer/default/layer.css"/>
+	<link rel="stylesheet" type="text/css" href="home/css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="home/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="layer/layermobile/need/layer.css"/>
+</head>
+<body>
+	<div class="orderCenterTopTab clearfix">
+		<div class="fl orderCenterTopTabBox">
+			<span class="c-zhu">备餐中</span>
+			<div class="orderCenterTopTabLine"></div>
+		</div>
+		<div class="fl orderCenterTopTabBox">
+			<span class="c-qucan">待取餐</span>
+			<div class="orderCenterTopTabLine dis-n"></div>
+		</div>
+		<div class="fl orderCenterTopTabBox">
+			<span class="c-wancheng">已完成</span>
+			<div class="orderCenterTopTabLine dis-n"></div>
+		</div>
+		<input type="hidden" id="itemIndex" value="{$itemIndex}">
+	</div>
+	<!--备餐中-->
+	<div class="orderCenterContent mt-15">
+		<volist name="list1" id="order">
+		<div class="orderCenterListBox bac-fff mb-15">
+			<a href="{:U('order_xq',array('order_id'=>$order['order_id']))}">
+			<div class="orderCenterListTime p-10">
+				<span>订单时间</span>
+				<span>{$order.create_time}</span>
+			</div>
+			<div class="orderCenterListContent">
+				<volist name="order.goodlist" id="v">
+					<div class="orderCenterProListBox clearfix">
+						<img class="orderCenterProImg fl" src="{$v.pic_url}"/>
+						<span class="orderCenterProTitle fl">{$v.dishes_name}</span>
+						<div class="fr">
+							<span>×</span>
+							<span>{$v.dishes_nums}</span>
+						</div>
+					</div>
+				</volist>
+			</div>
+			<div class="orderCenterListBtnBox clearfix">
+				<input class="fr orderCenterListBtn bcwcBtn bcwcOnclick" type="button" data-id="{$order.order_id}" data-type="{$order.deliver_type}" value="备餐完成" />
+				<eq name="order.deliver_type" value="1">
+					<a href="tel:{$order.phone}">
+						<input class="fr orderCenterListBtn lxkhBtn" type="button" value="联系客户" />
+					</a>
+				<else/>
+					<a href="tel:{$order.telphone}">
+						<input class="fr orderCenterListBtn lxkhBtn" type="button" value="联系客户" />
+					</a>
+				</eq>
+			</div>
+			</a>
+		</div>
+		</volist>
+	</div>
+
+	<!--待取餐-->
+	<div class="orderCenterContent mt-15 dis-n">
+		<volist name="list2" id="order">
+		<div class="orderCenterListBox bac-fff mb-15">
+			<a href="{:U('order_xq',array('order_id'=>$order['order_id']))}">
+			<div class="orderCenterListTime p-10">
+				<span>订单时间</span>
+				<span>{$order.create_time}</span>
+			</div>
+			<div class="orderCenterListContent">
+				<volist name="order.goodlist" id="v">
+					<div class="orderCenterProListBox clearfix">
+						<img class="orderCenterProImg fl" src="{$v.pic_url}"/>
+						<span class="orderCenterProTitle fl">{$v.dishes_name}</span>
+						<div class="fr">
+							<span>×</span>
+							<span>{$v.dishes_nums}</span>
+						</div>
+					</div>
+				</volist>
+			</div>
+			<div class="orderCenterListBtnBox clearfix">
+				<input class="fr orderCenterListBtn bcwcBtn qcBtn" data-id="{$order.order_id}" data-type="{$order.deliver_type}" type="button" value="取餐" />
+				<eq name="order.deliver_type" value="1">
+					<a href="tel:{$order.phone}">
+						<input class="fr orderCenterListBtn lxkhBtn" type="button" value="联系客户" />
+					</a>
+					<else/>
+					<a href="tel:{$order.telphone}">
+						<input class="fr orderCenterListBtn lxkhBtn" type="button" value="联系客户" />
+					</a>
+				</eq>
+			</div>
+			</a>
+		</div>
+		</volist>
+	</div>
+	
+	<!--已完成-->
+	<div class="orderCenterContent mt-15 dis-n">
+		<volist name="list3" id="order">
+		<div class="orderCenterListBox bac-fff mb-15">
+			<a href="{:U('order_xq',array('order_id'=>$order['order_id']))}">
+			<div class="orderCenterListTime p-10">
+				<span>订单时间</span>
+				<span>{$order.create_time}</span>
+			</div>
+			<div class="orderCenterListContent">
+				<volist name="order.goodlist" id="v">
+					<div class="orderCenterProListBox clearfix">
+						<img class="orderCenterProImg fl" src="{$v.pic_url}"/>
+						<span class="orderCenterProTitle fl">{$v.dishes_name}</span>
+						<div class="fr">
+							<span>×</span>
+							<span>{$v.dishes_nums}</span>
+						</div>
+					</div>
+				</volist>
+			</div>
+			</a>
+		</div>
+		</volist>
+	</div>
+	<!--展示取餐码-->
+	<!--遮罩-->
+	<div class="mask dis-n"></div>
+	<div class="qcmLay po-rela dis-n">
+		<div class="qcmTitle">输入取餐码</div>
+		<input type="hidden" id="order_id" >
+		<input type="hidden" id="deliver_type" >
+		<div class="qcmInpBox">
+			<input oninput="input(this)" type="number" maxlength="1"/>
+			<input oninput="input(this)" type="number" maxlength="1"/>
+			<input oninput="input(this)" type="number" maxlength="1"/>
+			<input oninput="input(this)" type="number" maxlength="1"/>
+		</div>
+		<div class="qcmBtnBox clearfix">
+			<input class="qcmCancle fl" type="button" value="取消" />
+			<input class="qcmConfirm fl" type="button" value="确定" />
+		</div>
+	</div>
+	
+
+<script src="home/js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="home/jscript/order.js" type="text/javascript" charset="utf-8"></script>
+<script src="layer/layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+//备餐完成
+$(".bcwcOnclick").click(function() {
+    var order_id = $(this).attr("data-id");
+    var deliver_type = $(this).attr("data-type");
+    layer.open({
+        content: '确定备餐了完成吗？'
+        ,btn: ['取消', '确定']
+        ,yes: function(index){
+            layer.close(index);
+            $.ajax({
+                type:"post",
+                url:"{:U('order_eef')}",
+                data: {order_id:order_id,deliver_type:deliver_type},
+                success: function (data) {
+                    if(data.code == 0){
+                        layer.open({
+                            content: data.message
+                            ,skin: 'msg'
+                            ,time: 2
+                            ,end: function () {
+                                location.replace("{:U('order')}&qc=1");
+                            }
+                        });
+                    }else{
+                        layer.open({
+                            content: data.message
+                            ,skin: 'msg'
+                            ,time: 2
+                        });
+                    }
+                }
+            })
+        }
+    });
+	return false;
+})
+	
+//取餐
+//$(".qcmConfirm").click(function () {
+$('body').on('click','.qcmConfirm',function () {
+	var q1 = $(this).parent().prev().find('input').eq('0').val();
+    var q2 = $(this).parent().prev().find('input').eq('1').val();
+    var q3 = $(this).parent().prev().find('input').eq('2').val();
+    var q4 = $(this).parent().prev().find('input').eq('3').val();
+    var meal_code = q1+q2+q3+q4;
+    var order_id = $("#order_id").val();
+    var deliver_type = $("#deliver_type").val();
+    if(meal_code.length != 4){
+        layer.open({
+            content:'请输入正确的取餐码'
+            ,skin: 'msg'
+            ,time: 2
+        });
+        qingkong();
+        return false;
+	}
+    $.ajax({
+        type:"post",
+        url:"{:U('order_tf')}",
+        data: {order_id:order_id,deliver_type:deliver_type,meal_code:meal_code},
+        success: function (data) {
+            if(data.code == 0){
+                layer.open({
+                    content: data.message
+                    ,skin: 'msg'
+                    ,time: 2
+                    ,end: function () {
+                        location.replace("{:U('order')}&qc=2");
+                    }
+                });
+            }else{
+                layer.open({
+                    content: data.message
+                    ,skin: 'msg'
+                    ,time: 2
+                    ,end: function () {
+                        qingkong();
+                    }
+                });
+            }
+        }
+    })
+})
+var qc = getQueryVariable("qc");
+if(qc == 2){
+    onclick('.c-qucan');
+}else if(qc == 3){
+    onclick('.c-wancheng');
+}else{
+    onclick('.c-zhu');
+}
+//获取参数
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+}
+//点击事件
+function onclick(thiss) {
+	$(thiss).addClass("c-zhu");
+	$(thiss).parent().siblings().find("span").removeClass("c-zhu");
+	$(thiss).siblings(".orderCenterTopTabLine").show();
+	$(thiss).parent().siblings().find(".orderCenterTopTabLine").hide();
+	var index = $(thiss).parent().index();
+	$(".orderCenterContent").hide();
+	$(".orderCenterContent").eq(index).show();
+}
+//清空取餐码
+function qingkong() {
+    $(".qcmConfirm").parent().prev().find('input').eq('0').val('');
+    $(".qcmConfirm").parent().prev().find('input').eq('1').val('');
+    $(".qcmConfirm").parent().prev().find('input').eq('2').val('');
+    $(".qcmConfirm").parent().prev().find('input').eq('3').val('');
+    $(".qcmConfirm").parent().prev().find('input').eq('0').focus();
+}
+</script>
+</body>
+</html>

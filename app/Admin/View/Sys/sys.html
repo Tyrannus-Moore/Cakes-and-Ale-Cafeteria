@@ -1,0 +1,237 @@
+<extend name="Public/base" />
+<block name="main-content">
+	<div class="page-content">
+
+
+
+		<!--主题-->
+		<div class="page-header">
+			<h1>
+				您当前操作
+				<small>
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					站点设置
+				</small>
+			</h1>
+		</div>
+		<div class="row">
+
+			<div class="tabbable">
+				<ul class="nav nav-tabs" id="myTab">
+					<li class="active">
+						<a data-toggle="tab" href="#basic">
+							基本设置
+						</a>
+					</li>
+
+					<!-- <li>
+						<a data-toggle="tab" href="#contact">
+							联系方式
+						</a>
+					</li>
+
+					<li class="dropdown">
+						<a data-toggle="tab" href="#seo">
+							SEO设置
+						</a>
+					</li> -->
+				</ul>
+				<form class="form-horizontal setting" name="sys" method="post" action="{:U('runsys')}">
+					<fieldset>
+						<div class="tab-content">
+							<div id="basic" class="tab-pane fade in active">
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 站点名称 </label>
+									<div class="col-sm-9">
+										<input type="text" name="cfg_webname" id="cfg_webname" onkeyup="this.value=this.value.replace(/\s+/g,'')" value="{$info.cfg_webname}" class="col-xs-10 col-sm-5" required/>
+										<span class="lbl col-xs-12 col-sm-7">
+											<span class="red" id="resone">*</span>
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+
+								<!-- <div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 站点网址 </label>
+									<div class="col-sm-9">
+										<input type="text" name="cfg_basehost" id="cfg_basehost" value="{$info.cfg_basehost}"  class="col-xs-10 col-sm-5" required/>
+										<span class="lbl col-xs-12 col-sm-7">
+											<span class="red" id="restwo">*</span><span>请输入正确URL地址以http://开头</span>
+										</span>
+									</div>
+								</div>
+								 
+								<div class="space-4"></div>
+
+								<div class="form-group" id="pic_list">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 网站LOGO </label>
+									<div class="col-sm-9">
+										<input type="hidden" name="checkpic" id="checkpic" value="{$info.cfg_medias_dir}" />
+										<input type="hidden" name="oldcheckpic" id="oldcheckpic" value="{$info.cfg_medias_dir}" />
+										<a href="javascript:;" class="file" title="点击选择所要上传的图片">
+											<input type="file" name="file0" id="file0" multiple="multiple"/>
+											选择上传文件
+										</a>
+										&nbsp;&nbsp;<a href="javascript:;" onclick="return backpic('<if condition="$info.cfg_medias_dir eq ''">__PUBLIC__/img/no_img.jpg<else/>__ROOT__{$info.cfg_medias_dir}</if>');" title="还原修改前的图片" class="file">
+										撤销上传
+										</a>
+										<div><img src="<if condition="$info.cfg_medias_dir neq ''">__ROOT__{$info.cfg_medias_dir}<else/>__PUBLIC__/img/no_img.jpg</if>" height="70" id="img0" ></div>
+									</div>
+								</div>
+								<div class="space-4"></div>
+								
+                                <div class="form-group" id="pic_list">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 水印 </label>
+									<div class="col-sm-9">
+										<input type="hidden" name="checkpic1" id="checkpic1" value="{$info.cfg_watermark}" />
+										<input type="hidden" name="oldcheckpic1" id="oldcheckpic1" value="{$info.cfg_watermark}" />
+
+										<a href="javascript:;" class="file" title="点击选择所要上传的图片">
+											<input type="file" name="file1" id="file1" multiple="multiple"/>
+											选择上传文件
+										</a>
+										&nbsp;&nbsp;<a href="javascript:;" onclick="return backpic1('<if condition="$info.cfg_watermark eq ''">__PUBLIC__/img/no_img.jpg<else/>__ROOT__{$info.cfg_watermark}</if>');" title="还原修改前的图片" class="file">
+										撤销上传
+										</a>
+										<div><img src="<if condition="$info.cfg_watermark neq ''">__ROOT__{$info.cfg_watermark}<else/>__PUBLIC__/img/no_img.jpg</if>" height="70" id="img1" ></div>
+									</div>
+								</div>
+								<div class="space-4"></div>
+					
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 首页视频弹窗 </label>
+									<div class="col-sm-9">
+										<!-- <input type="text" name="cfg_video" id="cfg_video" value="{$info.cfg_video}"  class="col-xs-10 col-sm-5" required/> -->
+										<!-- <textarea  name="cfg_video" cols="20" rows="2" class="col-xs-10 col-sm-7" required>{$info.cfg_video}</textarea>
+										<span class="lbl  col-xs-12 col-sm-7">
+											<span class="red" id="resone">*</span><span>请输入上传视频网站的通用代码(如腾讯，爱奇艺，优酷等)</span>
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+								
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 备案信息 </label>
+									<div class="col-sm-9">
+										<input type="text" name="cfg_beian" id="cfg_beian" onkeyup="this.value=this.value.replace(/\s+/g,'')" value="{$info.cfg_beian}"  class="col-xs-10 col-sm-5" required/>
+										<span class="lbl  col-xs-12 col-sm-7">
+											<span class="red" id="resone">*</span>
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 统计代码 </label>
+									<div class="col-sm-9">
+										<textarea  name="cfg_statistics" cols="20" rows="2" class="col-xs-10 col-sm-7 limited" onkeyup="this.value=this.value.replace(/\s+/g,'')"  id="form-field-9"  maxlength="100" required>{$info.cfg_statistics}</textarea>
+										<input type="hidden" name="maxlengthone" value="100" />
+								<span class="lbl  col-xs-5 col-sm-5">
+									还可以输入 <span class="middle charsLeft"></span> 个字符
+								</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 版权信息 </label>
+									<div class="col-sm-9">
+										<textarea  name="cfg_powerby" cols="20" rows="3" onkeyup="this.value=this.value.replace(/\s+/g,'')" class="col-xs-10 col-sm-7 limited1"   id="form-field-10"  maxlength="150" required>{$info.cfg_powerby}</textarea>
+										<input type="hidden" name="maxlengthone" value="150" />
+								<span class="lbl  col-xs-5 col-sm-5">
+									还可以输入 <span class="middle charsLeft1" style="color:red;"></span> 个字符
+								</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+							</div>
+
+							<div id="contact" class="tab-pane fade">
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 公司名称 </label>
+									<div class="col-sm-9">
+										<input type="text" name="cfg_company" id="cfg_company" onkeyup="this.value=this.value.replace(/\s+/g,'')" value="{$info.cfg_company}" class="col-xs-10 col-sm-5" required/>
+										<span class="lbl  col-xs-12 col-sm-7">
+											<span class="red" id="resone">*</span>
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 公司地址 </label>
+									<div class="col-sm-9">
+										<input type="text" name="cfg_address" id="cfg_address" onkeyup="this.value=this.value.replace(/\s+/g,'')" value="{$info.cfg_address}"  class="col-xs-10 col-sm-5" required/>
+										<span class="lbl  col-xs-12 col-sm-7">
+											<span class="red" id="restwo">*</span>
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 联系电话 </label>
+									<div class="col-sm-9">
+										<input type="text" name="cfg_tel" id="cfg_tel" onkeyup="this.value=this.value.replace(/\s+/g,'')" value="{$info.cfg_tel}"  class="col-xs-10 col-sm-5" required/>
+										<span class="lbl  col-xs-12 col-sm-7">
+											<span class="red" id="restwo">*</span>
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+
+							</div>
+
+							<div id="seo" class="tab-pane fade">
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 首页SEO标题 </label>
+									<div class="col-sm-9">
+										<input type="text" name="cfg_title" id="cfg_title" value="{$info.cfg_title}"  class="col-xs-10 col-sm-5" required/>
+										<span class="lbl  col-xs-12 col-sm-7">
+											<span class="red" id="resthr">*</span>
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 首页SEO关键字 </label>
+									<div class="col-sm-9">
+										<textarea  name="cfg_keywords" cols="20" class="col-xs-10 col-sm-7 limited2"  id="form-field-11"  maxlength="100" required>{$info.cfg_keywords}</textarea>
+										<input type="hidden" name="maxlength" value="100" />
+										<span class="lbl  col-xs-5 col-sm-5">
+											还可以输入 <span class="middle charsLeft2"></span> 个字符,以英文 , 号隔开
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 首页SEO描述 </label>
+									<div class="col-sm-9">
+										<textarea  name="cfg_description" cols="20" rows="4" class="col-xs-10 col-sm-7 limited3"   id="form-field-12"  maxlength="200" required>{$info.cfg_description}</textarea>
+										<input type="hidden" name="maxlengthone" value="200" />
+										<span class="lbl  col-xs-5 col-sm-5">
+											还可以输入 <span class="middle charsLeft3" style="color:red;"></span> 个字符
+										</span>
+									</div>
+								</div>
+								<div class="space-4"></div> --> 
+							</div>
+						</div>
+						<div class="clearfix form-actions">
+							<div class="col-sm-offset-3 col-sm-9">
+								<button class="btn btn-info" type="submit">
+									<i class="ace-icon fa fa-check bigger-110"></i>
+									保存
+								</button>
+
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div><!-- /.page-content -->
+</block>

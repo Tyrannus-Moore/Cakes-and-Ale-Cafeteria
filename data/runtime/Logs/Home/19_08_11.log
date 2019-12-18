@@ -1,0 +1,38 @@
+[ 2019-08-11T17:59:39+08:00 ] 123.151.77.81 /index.php?m=Home&c=Integral&a=shop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0132s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0218s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0113s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0076s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2019-08-11T18:00:39+08:00 ] 101.91.60.108 /index.php?m=Home&c=Integral&a=shop
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+SQL: SHOW COLUMNS FROM `sm_orders` [ RunTime:0.0126s ]
+SQL: SELECT `order_id`,`refund_time` FROM `sm_orders` WHERE `refund` = 1  [ RunTime:0.0226s ]
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8485' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_merchant` [ RunTime:0.0086s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sm_member_list` [ RunTime:0.0077s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: curl_timeout D:\xampp\htdocs\ThinkPHP\Library\Vendor\Pay\Wxpay\WxPayPubHelper.php 第 499 行.
+SQL: SELECT `order_type`,`order_no`,`trade_no`,`real_money`,`member_list_id`,`ma_id`,`dishes_id`,`integral` FROM `sm_orders` WHERE `order_id` = '8489' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `appid`,`appsecret`,`keycode`,`partnerid`,`keycode_certificate`,`payment_certificate`,`refund_through_id` FROM `sm_merchant` WHERE `ma_id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `openid`,`member_name` FROM `sm_member_list` WHERE `member_list_id` = '2192' AND `is_del` = 2 LIMIT 1   [ RunTime:0.0002s ]
+

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>任务详情</title>
+		<base href="__PUBLIC__/home/" />
+		<link rel="stylesheet" type="text/css" href="css/layer/default/layer.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="layer/layermobile/need/layer.css"/>
+	</head>
+	<style>
+		.orderDetailOrderInfoTitle{display: flex;justify-content: space-between;padding-right:10px;}
+	</style>
+	<body>
+		<div class="orderDetailMainBox">
+			<div class="orderDetailTop bac-fff p-10">
+				<div class="clearfix">
+					<div class="orderDetailTopTitle fl">{$infos.stall_name}</div>
+					<eq name="infos.order_status" value="3">
+						<eq name="infos.is_grab" value="1">
+							<div class="c-zhu fr">待抢单</div>
+						<else/>
+							<div class="c-zhu fr">待取餐</div>
+						</eq>												
+					</eq>
+					<switch name="infos.order_status">
+						
+						<case value="4"><div class="c-zhu fr">配送中</div></case>
+						<case value="5"><div class="c-zhu fr">已完成</div></case>
+					</switch>
+				</div>
+				<a href="{:U('Stall/stallDetail',array('stall_id'=>$infos['stall_id']))}"><div class="c99 font13">档口主页>></div></a>
+				<div class="mt-20">
+					<volist name="list" id="vo">
+						<div class="orderDetailProList clearfix">
+							<img class="orderDetailProImg fl" src="{$vo.pic_url}" />
+							<span class="psyorderCenterProTitle fl">{$vo.dishes_name}</span>
+							<div class="fl">
+								<span>×</span>
+								<span>{$vo.dishes_nums}</span>
+							</div>
+							<div class="fr">
+								<span>￥</span>
+								<span>{$vo.discount_price}</span>
+							</div>
+						</div>
+					</volist>
+				</div>
+			</div>
+
+			<div class="orderDetailPriceBox mt-15 bac-fff">
+				<div class="orderDetailPriceList clearfix">
+					<div class="fl">订单金额</div>
+					<div class="fr">
+						<span>￥</span>
+						<span>{$infos.total_money}</span>
+					</div>
+				</div>
+				<div class="orderDetailPriceList clearfix">
+					<div class="fl">配送费</div>
+					<div class="fr">
+						<span>￥</span>
+						<span>{$infos.express_money}</span>
+					</div>
+				</div>
+				<div class="orderDetailPriceList clearfix">
+					<div class="fl">实付金额</div>
+					<div class="fr c-zhu">
+						<span>￥</span>
+						<span>{$infos.real_money}</span>
+					</div>
+				</div>
+				<div class="orderDetailPriceList clearfix" style="border-bottom: none">
+					<div class="fl">备注</div>
+				</div>
+				<empty name="infos.order_note">
+		            <div class="clearfix" style="border-bottom: none; padding: 0px 0px 15px 10px;line-height: 25px">
+		                未填写
+		            </div>
+		            <else/>
+		            <div class="clearfix" style="border-bottom: none; padding: 0px 0px 15px 10px;line-height: 25px">
+		                {$infos.order_note}
+		            </div>
+		        </empty>
+			</div>
+			
+				<!--配送信息-->
+				<div class="sendInfoBox mt-15">
+					<div class="orderDetailOrderInfoTitle">配送信息</div>
+					<div class="orderDetailOrderInfoList clearfix bac-fff">
+						<div class="fl c99 orderDetailOrderInfoText">配送时间</div>
+						<div class="fl">{$infos.express_time|date='Y-m-d H:i',###}</div>
+					</div>
+					<div class="orderDetailOrderInfoList clearfix bac-fff">
+						<div class="c99 orderDetailOrderInfoText">配送地址</div>
+						<div class="addrInfo">
+							<p>{$infos.username} &nbsp;&nbsp;&nbsp; {$infos.phone}</p>
+							<p>{$infos.address}</p>
+						</div>
+					</div>
+				</div>	
+			
+				<!--取餐信息-->
+				<in name="infos.order_status" value="3,4,5">
+					<div class="qcInfoBox mt-15">
+						<if condition="$infos.order_status eq 3 && $infos.is_grab eq 2">
+							<div class="orderDetailOrderInfoTitle">取餐信息
+								<if condition='$infos.order_status eq 3'>
+						        	<span style="color: red;">请于{$endTimes}前取餐</span>
+						        </if>
+							</div>
+							<div class="orderDetailOrderInfoList clearfix bac-fff" style="font-weight: bold;color: blue;">
+								<div class="fl orderDetailOrderInfoText">取餐码</div>
+								<div class="fl">{$list[0]['meal_code']}</div>
+							</div>
+						</if>
+						<div class="orderDetailOrderInfoList clearfix bac-fff">
+							<div class="fl c99 orderDetailOrderInfoText">档口电话</div>
+							<div class="fl">{$infos.stall_tel}</div>
+						</div>
+						<div class="orderDetailOrderInfoList clearfix bac-fff">
+							<div class="c99 orderDetailOrderInfoText">档口地址</div>
+							<div class="addrInfo">
+								<p>{$infos.stall_address}</p>
+							</div>
+						</div>
+						
+					</div>
+
+				</in>
+				
+			
+			
+			
+			<div class="orderDetailOrderInfo mt-15">
+				<div class="orderDetailOrderInfoTitle">订单信息</div>
+				<div class="orderDetailOrderInfoList clearfix bac-fff" style="font-weight: bold;color: #333;">
+					<div class="fl orderDetailOrderInfoText">订单编号</div>
+					<div class="fl">{$infos.order_no}</div>
+				</div>
+				<div class="orderDetailOrderInfoList clearfix bac-fff">
+					<div class="fl c99 orderDetailOrderInfoText">下单时间</div>
+					<div class="fl">{$infos.create_time|date='Y-m-d H:i',###}</div>
+				</div>
+				<notempty name="infos.payment_time">
+					<div class="orderDetailOrderInfoList clearfix bac-fff">
+						<div class="fl c99 orderDetailOrderInfoText">付款时间</div>
+						<div class="fl">{$infos.payment_time|date='Y-m-d H:i',###}</div>
+					</div>
+				</notempty>
+				<eq name="infos.order_status" value="4">
+				<div class="orderDetailOrderInfoList clearfix bac-fff">
+					<div class="fl c99 orderDetailOrderInfoText">送达时间</div>
+					<div class="fl">{$infos.meals_time|date='Y-m-d H:i',###}</div>
+				</div>
+				</eq>
+			</div>
+		</div>
+		<div class="orderDetailBottBtnBox">
+			
+			<eq name="infos.order_status" value="3">
+				<eq name="infos.is_grab" value="1">
+					<input class="fr orderCenterListBtn bcwcBtn" type="button" onclick="sheet({$infos.order_id})" value="抢单" />
+				</eq>
+			<else/>
+				<in name="infos.order_status" value="3,4"><a href="tel:{$infos.phone}"><input class="fr orderCenterListBtn bcwcBtn" type="button" value="联系客户" /></a></in>
+				
+			</eq> 
+			<eq name="infos.order_status" value="3">
+				<eq name="type" value="1">
+					<eq name="infos.is_grab" value="2">
+						<input class="fr orderCenterListBtn lxkhBtn" onclick="cancel({$infos.order_id})" type="button" value="取消任务" />
+					</eq>
+				</eq>
+			</eq>
+			
+		</div>
+		<script src="js/jquery-2.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layermobile/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//抢单
+			function sheet(order_id){
+				var zzz = layer.open({
+					type: 2,
+				  	shadeClose:false
+				})
+				$.post("{:U('sheet')}",{order_id:order_id},function(da){
+					if(da == 1){
+					//提示
+						layer.open({
+						    content: '抢单成功'
+						    ,skin: 'msg'
+						    ,time: 2 //2秒后自动关闭
+						    ,end:function(){
+						    	window.location.reload()
+						    }
+						});
+					}else if(da == 2){
+						layer.open({
+						    content: '抢单失败'
+						    ,skin: 'msg'
+						    ,time: 2 //2秒后自动关闭
+						    ,end:function(){
+						    	layer.closeAll(zzz);
+						    }
+						   
+						});
+					}else if(da == 3){
+						layer.open({
+						    content: '订单已被抢'
+						    ,skin: 'msg'
+						    ,time: 2 //2秒后自动关闭
+						    ,end:function(){
+						    	layer.close(zzz);
+						    }
+						   
+						});
+					}else if(da == 4){
+						layer.open({
+						    content: '您已经变成了用户'
+						    ,skin: 'msg'
+						    ,time: 2 //2秒后自动关闭
+						    ,end:function(){
+						    	window.location.href="{:U('Home/Personal/index')}"
+						    }
+						   
+						});
+					}
+				})
+			}
+			//取消
+			function cancel(order_id){
+				//询问框
+				layer.open({
+				    content: '确定取消订单吗？'
+				    ,btn: ['确定', '取消']
+				    ,yes: function(index){
+					    $.post("{:U('cancel')}",{order_id:order_id},function(da){
+							if(da == 1){
+							//提示
+								layer.open({
+								    content: '取消成功'
+								    ,skin: 'msg'
+								    ,time: 2 //2秒后自动关闭
+								    ,end:function(){
+								    	window.location.reload()
+								    }
+								});
+							}else if(da == 2){
+								layer.open({
+								    content: '取消失败'
+								    ,skin: 'msg'
+								    ,time: 2 //2秒后自动关闭
+								   
+								});
+							}else if(da == 3){
+								layer.open({
+								    content: '该订单已经被别人抢了'
+								    ,skin: 'msg'
+								    ,time: 2 //2秒后自动关闭
+								    ,end:function(){
+								    	window.location.href="{:U('task')}"
+								    }
+								   
+								});
+							}
+						})
+				    }
+				});
+			}
+		</script>
+	</body>
+
+</html>

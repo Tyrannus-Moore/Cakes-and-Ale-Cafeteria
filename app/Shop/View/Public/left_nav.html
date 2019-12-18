@@ -1,0 +1,286 @@
+<style type="text/css">
+    @media only screen and (min-width: 992px) {
+        .h-navbar.navbar-fixed-top + .main-container .sidebar:not(.h-sidebar):before {
+            top: 0px;
+        }
+    }
+</style>
+<div id="sidebar" class="sidebar responsive sidebar-fixed">
+    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+        <!--左侧顶端按钮-->
+        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+            <a class="btn btn-danger" href="#" role="button" title=""><i class="ace-icon fa fa-cogs"></i></a>
+            <a class="btn btn-success" href="#" role="button" title=""><i class="ace-icon fa fa-signal"></i></a>
+            <a class="btn btn-warning" href="#" role="button" title=""><i class="ace-icon fa fa-users"></i></a>
+            <a class="btn btn-info" href="#" role="button" title=""><i class="ace-icon fa fa-pencil"></i></a>
+        </div>
+        <!--左侧顶端按钮（手机）-->
+        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <a class="btn btn-success" href="{:U('Shop/Sys/profile')}" role="button" title="商家中心"></a>
+            <a class="btn btn-info" href="{:U('Shop/Order/orderList')}" role="button" title="订单管理"></a>
+            <a class="btn btn-warning" href="{:U('Shop/Technician/technician')}" role="button" title="技师管理"></a>
+            <a class="btn btn-danger" href="{:U('Shop/ShopProject/projectList')}" role="button" title="项目管理"></a>
+        </div>
+    </div>
+	<!-- 菜单列表开始 -->
+	<!-- 一级菜单 -->
+	<ul class="nav nav-list">
+        <!--<li <if condition='$controllername eq "user" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text">权限管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                &lt;!&ndash;二级菜单遍历开始&ndash;&gt;
+                <li <if condition='$actionname eq "userList"'>class="active open"</if>>
+                    <a href="{:U('Shop/User/userList')}" >
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        用户管理
+                    </a>
+                    <b class="arrow"></b>
+                </li>&lt;!&ndash;二级菜单遍历结束&ndash;&gt;
+            </ul>
+            <ul class="submenu">
+                &lt;!&ndash;二级菜单遍历开始&ndash;&gt;
+                <li <if condition='$actionname eq "xianzhi"'>class="active open"</if>>
+                    <a href="{:U('Shop/User/xianzhi')}" >
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        限制时间管理
+                    </a>
+                    <b class="arrow"></b>
+                </li>&lt;!&ndash;二级菜单遍历结束&ndash;&gt;
+            </ul>
+        </li>-->
+
+        <li <if condition='$controllername eq "home" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-building"></i>
+                <span class="menu-text">首页管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "home"'>class="active open"</if>>
+                    <a href="{:U('Shop/Home/banner')}" >
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        轮播图管理
+                    </a>
+                    <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "home"'>class="active open"</if>>
+                <a href="{:U('Shop/Home/saturated')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    餐厅饱和度
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "home"'>class="active open"</if>>
+                <a href="{:U('Shop/Home/distribution')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    配送费设置
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "home"'>class="active open"</if>>
+                <a href="{:U('Shop/Home/timeout')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    超时期限
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "home"'>class="active open"</if>>
+                <a href="{:U('Shop/Home/discount')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    折扣设置
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "home"'>class="active open"</if>>
+                <a href="{:U('Shop/Home/help')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    帮助中心
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "home"'>class="active open"</if>>
+                <a href="{:U('Shop/Home/addressList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    地址菜单管理
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+            </ul>
+        </li>
+        <li <if condition='$controllername eq "foodtype" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-database"></i>
+                <span class="menu-text">菜品管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                    <li <if condition='$actionname eq "typeList"'>class="active open"</if>>
+                        <a href="{:U('Shop/Foodtype/typeList')}" >
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            分类列表
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                <!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "foodList"'>class="active open"</if>>
+                <a href="{:U('Shop/Foodtype/foodList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    菜品列表
+                </a>
+                <b class="arrow"></b>
+                </li>
+                <!--二级菜单遍历结束-->
+            </ul>
+        </li>
+        <li <if condition='$controllername eq "comment" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-commenting"></i>
+                <span class="menu-text">评论管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "commentList"'>class="active open"</if>>
+                <a href="{:U('Shop/Comment/commentList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    评论列表
+                </a>
+                <b class="arrow"></b>
+                </li>
+                <!--二级菜单遍历结束-->
+            </ul>
+        </li>
+
+        <li <if condition='$controllername eq "stall" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-newspaper-o"></i>
+                <span class="menu-text">档口管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "stalllist"'>class="active open"</if>>
+                <a href="{:U('Shop/Stall/stallList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    档口列表
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+            </ul>
+        </li>
+        <li <if condition='$controllername eq "settlement" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-line-chart"></i>
+                <span class="menu-text">财务审计管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "settlementlist"'>class="active open"</if>>
+                <a href="{:U('Shop/Settlement/settlementList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>商户结算
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+            </ul>
+        </li>
+        <li <if condition='$controllername eq "member" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-user"></i>
+                <span class="menu-text">用户管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "memberlist"'>class="active open"</if>>
+                <a href="{:U('Shop/Member/memberList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>用户列表
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+            </ul>
+        </li>
+        <li <if condition='$controllername eq "marki" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-truck"></i>
+                <span class="menu-text">配送员管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "applylist"'>class="active open"</if>>
+                <a href="{:U('Shop/Marki/applyList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>认证申请
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "markilist"'>class="active open"</if>>
+                <a href="{:U('Shop/Marki/markiList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>人员管理
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "withdrawal_list"'>class="active open"</if>>
+                <a href="{:U('Shop/Marki/withdrawal_list')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>提现管理
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+            </ul>
+        </li>
+        <li <if condition='$controllername eq "feedback" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-tags"></i>
+                <span class="menu-text">意见管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "feedbacklist"'>class="active open"</if>>
+                <a href="{:U('Shop/Feedback/feedbackList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>反馈列表
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+            </ul>
+        </li>
+        <li <if condition='$controllername eq "order" '>class="open"</if>>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-stack-overflow"></i>
+                <span class="menu-text">订单管理</span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <ul class="submenu">
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "ordinarylist"'>class="active open"</if>>
+                <a href="{:U('Shop/Order/ordinaryList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>普通菜品订单列表
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+                <!--二级菜单遍历开始-->
+                <li <if condition='$actionname eq "packagelist"'>class="active open"</if>>
+                <a href="{:U('Shop/Order/packageList')}" >
+                    <i class="menu-icon fa fa-caret-right"></i>周餐订单列表
+                </a>
+                <b class="arrow"></b>
+                </li><!--二级菜单遍历结束-->
+            </ul>
+        </li>
+    </ul>
+</div>

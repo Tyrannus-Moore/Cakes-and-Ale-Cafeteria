@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<base href="__PUBLIC__/" />
+	<link rel="stylesheet" href="home/css/mui.min.css" />
+	<link rel="stylesheet" href="home/css/common.css" />
+	<link rel="stylesheet" href="home/css/currency.css" />
+	<script src="home/js/mui.min.js"></script>
+	<script src="home/js/jquery-2.2.1.min.js"></script>
+</head>
+<style type="text/css">
+	.mui-content {
+		padding-bottom: 0;
+	}
+
+	.imgs {
+		width: 100%;
+		background: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.imgs img {
+		width: 10rem;
+		height: 6rem;
+	}
+</style>
+<style type="text/css">
+	.filter {
+		height: 50px;
+		line-height: 50px;
+		width: 100%;
+		background: #fff;
+	}
+
+	.filter li {
+		width: 24%;
+		display: inline-block;
+		text-align: center;
+	}
+
+	.filter .active{font-weight: bold;}
+	.filter .xianshi{font-weight: bold;}
+
+	.filter img {
+		display: inline-block;
+		width: 0.6rem;
+		margin-left: 0.3rem;
+		height: 0.4rem;
+	}
+
+	.meal .img {
+		width: 6rem;
+		height: 6rem;
+		background: url(home/images/a.jpg) no-repeat center;
+		background-size: cover;
+		margin-right: 15px;
+	}
+
+	.mealContent {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.info {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.evaluate,
+	.count {
+		display: flex;
+		align-items: center;
+	}
+
+	.evaluate div {
+		margin-right: 15px;
+	}
+
+	.evaluate img {
+		width: 1rem;
+		height: 1rem;
+	}
+	.mask{top: 100px;}
+	.priceDiv{display: flex;}
+	.count{text-decoration:line-through;}
+	.countMoney {
+		text-decoration: line-through;
+	}
+	.mui-search {
+		width: 83%;
+	}
+	.searchDiv .searchBtn {
+		color: #333;
+		width: 15%;
+		background: transparent;
+	}
+</style>
+
+<body>
+<div class="mui-content">
+	<div class="imgs">
+		<img src="home/images/icon_whz.png" alt="" style="width: 12rem;height: 10rem;"/>
+	</div>
+</div>
+<!--菜单-->
+<ul class="footer" id="nav">
+	<li>
+		<a href="#" id="order" class="active">
+			<span class="mui-icon order active"></span>
+			<span class="mui-tab-label">点餐</span>
+		</a>
+	</li>
+	<li>
+		<a href="{:U('Integral/shop')}" id="shop">
+			<span class="mui-icon shop"></span>
+			<span class="mui-tab-label">积分商城</span>
+		</a>
+	</li>
+	<eq name="status" value="2">
+		<li>
+			<a href="{:U('Clerk/task')}" id="task">
+				<span class="mui-icon task"></span>
+				<span class="mui-tab-label">我的任务</span>
+			</a>
+		</li>
+	</eq>
+	<li>
+		<a href="{:U('Myorder/index')}" id="myOrder">
+			<span class="mui-icon myOrder"></span>
+			<span class="mui-tab-label">我的订单</span>
+		</a>
+	</li>
+	<li>
+		<a href="{:U('Personal/index')}" id="mine">
+			<span class="mui-icon mine"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</li>
+</ul>
+<script type="text/javascript">
+    $(".imgs").height($(window).height());
+    /*(function(){
+        var interval = setInterval(function(){
+            location.href = "{:U('Home/Personal/index')}";
+            clearInterval(interval);
+        }, 5000);
+    })();*/
+</script>
+</body>
+</html>

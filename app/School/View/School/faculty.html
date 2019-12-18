@@ -1,0 +1,172 @@
+<extend name="Admin@Public/base" />
+
+<block name="main-content">
+    <div class="page-content">
+        <div class="row maintop">
+            <div class="col-xs-4 col-sm-2">
+                <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#agree">
+                    <i class="ace-icon fa fa-bolt bigger-110"></i>
+                    添加
+                </button>
+            </div>
+            <div class="col-xs-10 col-sm-4">
+                <form name="admin_list_sea" class="form-search" method="post" action="{:U('faculty')}">
+                    <input type="hidden" name="school_id" value="{$school_id}">
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                            院系名称
+					</span>
+                        <input type="text" name="search[faculty_name]" id="val" class="form-control" value="{$search.faculty_name}" placeholder="院系名称" />
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-purple btn-sm">
+                                <span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+                                搜索
+                            </button>
+					    </span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-4 col-sm-5">
+                <div class="input-group-btn">
+                    <a href="{:U('faculty',array('school_id'=>$school_id))}">
+                        <button type="button" class="btn btn-sm  btn-purple">
+                            <span class="ace-icon fa fa-globe icon-on-right bigger-110"></span>显示全部
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    <form id="leftnav" name="leftnav" method="post" action="" >
+                        <input type="hidden" name="checkk" id="checkk" value="1" /><!--用于判断操作类型-->
+                        <table class="table table-striped table-bordered table-hover" id="dynamic-table">
+                            <thead>
+                            <tr>
+                                <th>院系名称</th>
+                                <th>班级数量</th>
+                                <th style="border-right:#CCC solid 1px;">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <foreach name="list" item="v" key="key">
+                                <tr>
+                                    <td>{$v.faculty_name}</td>
+                                    <td>{$v.num}</td>
+
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="{:U('facultyEdit')}" data-id="{$v.faculty_id}" class="btn btn-minier btn-success faculty-btn" data-rel="tooltip" title="编辑" data-original-title="编辑">
+                                                编辑
+                                            </a>
+                                            <a class="btn btn-danger btn-minier confirm-rst-url-btn" href="{:U('facultyDel',array('faculty_id'=>$v['faculty_id'],'school_id'=>$school_id,'p'=>I('p',1)))}" data-info="是否确认删除此院系？" title="">
+                                                删除
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </foreach>
+                            <tr>
+                                <td height="50" colspan="16" align="left">{$page}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="agree" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form class="form-horizontal ajaxForm2" method="post" action="{:U('facultyAdd')}">
+                <input type="hidden" id="school_id" name="school_id" value="{$school_id}" />
+                <div class="modal-dialog" style="width: 660px;height: 300px;position:fixed;left:50%;top:50%;margin-left:-300px;margin-top: -150px;" >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                添加
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 院系名称： </label>
+                                        <div class="col-sm-10">
+                                            <input type="text"  name="faculty_name" maxlength="15" class="col-xs-10 col-sm-10" required />
+                                        </div>
+                                    </div>
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 班级数量： </label>
+                                        <div class="col-sm-10">
+                                            <input type="number" min="1" step="1"  name="num" maxlength="30" class="col-xs-10 col-sm-10" required />
+                                        </div>
+                                    </div>
+                                    <div class="space-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">
+                                提交保存
+                            </button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                关闭
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div><!-- /.modal -->
+        <div class="modal fade in" id="facultyedits" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-backdrop fade in" id="gbbb1" style="height: 100%;"></div>
+            <form class="form-horizontal ajaxForm2" name="agent_runedit"  action="{:U('facultyRunEdit')}">
+                <input type="hidden" id="school_id" name="school_id" value="{$school_id}" />
+                <div class="modal-dialog" style="width: 660px;height: 300px;position:fixed;left:50%;top:50%;margin-left:-300px;margin-top: -150px;" >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> </button>
+                            <h4 class="modal-title" id="">
+                                修改信息
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <input type="hidden" name="faculty_id" value="{$infos.faculty_id}">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 院系名称： </label>
+                                        <div class="col-sm-10">
+                                            <input type="text"  name="faculty_name" maxlength="15" class="col-xs-10 col-sm-10" required />
+                                        </div>
+                                    </div>
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 班级数量： </label>
+                                        <div class="col-sm-10">
+                                            <input type="text"  name="num" min="1" step="1" maxlength="30" class="col-xs-10 col-sm-10" required />
+                                        </div>
+                                    </div>
+                                    <div class="space-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">
+                                提交保存
+                            </button>
+                            <button type="button" class="btn btn-default"  id="gbb2" >
+                                关闭
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div><!-- /.modal -->
+    </div><!-- /.page-content -->
+</block>
+

@@ -1,0 +1,224 @@
+<extend name="Public/base" />
+<block name="main-content">
+<link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/sldate/daterangepicker-bs3.css" />
+<style>
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+	input[type="number"]{
+		-moz-appearance: textfield;
+	}
+</style>
+<div class="page-content" style="padding-top: 50px;">
+	<!--主题-->
+	<div class="page-header">
+		<h1>您当前操作
+			<small>
+				<i class="ace-icon fa fa-angle-double-right"></i>套餐-订单详情
+			</small>
+		</h1>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<form class="form-horizontal ajaxForm" name="admin_list_add" method="post" action="">
+				<input type="hidden" name="order_id" value="{$infos.order_id}">
+				<input type="hidden" name="p" value="{$p}">
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 订单编号：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.order_no}" placeholder="订单编号" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 下单时间：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.create_time|date='Y-m-d H:i:s',###}" placeholder="下单时间" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<neq name="order_status" value="1">
+					<div class="form-group">
+						<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 付款时间：  </label>
+						<div class="col-sm-7">
+							<input type="text" value="{$infos.payment_time|date='Y-m-d H:i:s',###}" placeholder="付款时间" class="col-xs-10 col-sm-5" readonly/>
+							<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+						</div>
+					</div>
+					<div class="space-4"></div>
+				</neq>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 订单状态：  </label>
+					<div class="col-sm-7">
+						<switch name="infos.order_status">
+							<case value="1"><input type="text" value="待付款" class="col-xs-10 col-sm-5" readonly/></case>
+							<case value="2"><input type="text" value="已支付" class="col-xs-10 col-sm-5" readonly/></case>
+							<!--<case value="3"><input type="text" value="待取餐" class="col-xs-10 col-sm-5" readonly/></case>-->
+							<case value="4"><input type="text" value="已生效" class="col-xs-10 col-sm-5" readonly/></case>
+							<case value="5"><input type="text" value="已完成" class="col-xs-10 col-sm-5" readonly/></case>
+							<case value="6"><input type="text" value="已评价" class="col-xs-10 col-sm-5" readonly/></case>
+							<case value="7"><input type="text" value="已取消" class="col-xs-10 col-sm-5" readonly/></case>
+							<case value="8"><input type="text" value="已退款" class="col-xs-10 col-sm-5" readonly/></case>
+						</switch>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 配送方式：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="档口自提" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 用户昵称：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.member_list_nickname}" placeholder="用户昵称" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 手机号：  </label>
+					<div class="col-sm-7">
+						<input type="number" value="{$infos.telphone}" placeholder="手机号" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 订单金额：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.total_money}" placeholder="订单金额" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 备注：  </label>
+					<div class="col-sm-7">
+						<textarea cols="54" rows="4" readonly style="resize:none;">{$infos.order_note}</textarea>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 获得积分：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.integral}" placeholder="获得积分" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 实付金额：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.real_money}" placeholder="实付金额" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 取餐地址：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.stall_address}" placeholder="取餐地址" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 档口电话：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.stall_tel}" placeholder="档口电话" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 归属档口：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.stall_name}" placeholder="归属档口" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 周餐名称：  </label>
+					<div class="col-sm-7">
+						<input type="text" value="{$infos.meal_name}" placeholder="周餐名称" class="col-xs-10 col-sm-5" readonly/>
+						<span class="lbl col-xs-12 col-sm-7"><span class="red">*</span></span>
+					</div>
+				</div>
+				<div class="space-4"></div>
+				<volist name="goods_list" id="good">
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="form-field-1">
+						<switch name="good.day">
+							<case value="1">周一：</case>
+							<case value="2">周二：</case>
+							<case value="3">周三：</case>
+							<case value="4">周四：</case>
+							<case value="5">周五：</case>
+							<case value="6">周六：</case>
+							<case value="7">周日：</case>
+						</switch>
+					</label>
+					<div class="col-sm-9">
+						<table class="table table-striped table-bordered table-hover" style="width:100%;" id="dynamic-table">
+							<thead>
+							<tr>
+								<th class="hidden-xs" width="10%">餐</th>
+								<th class="hidden-xs">菜品名称</th>
+								<th class="hidden-xs" width="10%">取餐码</th>
+								<th class="hidden-xs" width="10%">状态</th>
+							</tr>
+							</thead>
+							<tbody>
+								<volist name="good.goodinfo" id="v">
+								<tr>
+									<td class="hidden-xs">
+										<eq name="v.type" value="1">早餐</eq>
+										<eq name="v.type" value="2">午餐</eq>
+										<eq name="v.type" value="3">晚餐</eq>
+									</td>
+									<td class="hidden-xs">{$v.dishes_name}</td>
+									<td class="hidden-xs"><eq name="v.state" value="2">{$v.meal_code}</eq></td>
+									<td class="hidden-xs">
+										<eq name="v.state" value="1">备餐中</eq>
+										<eq name="v.state" value="2">待取餐</eq>
+										<eq name="v.state" value="3">已完成</eq>
+									</td>
+								</tr>
+								</volist>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				</volist>
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-3 col-md-9">
+						<!--<button class="btn btn-info" type="submit">
+							<i class="ace-icon fa fa-check bigger-110"></i>提交
+						</button>-->
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button class="btn btn-info" type="button" onclick="javascript:window.history.back(-1);">
+							返回
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div><!-- /.page-content -->
+<script src="__PUBLIC__/uploadify/api-uploadify.js" type="text/javascript"></script>
+<script>
+$('#faculty').change(function(){
+    var id = $(this).val();
+})
+</script>
+</block>
