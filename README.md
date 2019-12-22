@@ -107,9 +107,9 @@ Users are usually campus teachers and students who can order food via this syste
 * Normal order management.  
 * Weekly order management.  
  
-## User & Delivery Man
-![Images](https://github.com/Tyrannus-Moore/Cakes-and-Ale-Cafeteria/blob/master/Images/demo1.jpg)   
-![Images](https://github.com/Tyrannus-Moore/Cakes-and-Ale-Cafeteria/blob/master/Images/demo7.jpg)   
+## User & Delivery Man 
+<img src="https://github.com/Tyrannus-Moore/Cakes-and-Ale-Cafeteria/blob/master/Images/demo1.jpg" width="375">
+<img src="https://github.com/Tyrannus-Moore/Cakes-and-Ale-Cafeteria/blob/master/Images/demo7.jpg" width="375">  
 ### Dish Browse
 * Search dish.  
 * View dish description and comments.  
