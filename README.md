@@ -5,6 +5,7 @@
 Users are usually campus teachers and students who can order food via this system, but they can make an application to become a delivery man.  
 
 ## Admin
+![Images](https://github.com/Tyrannus-Moore/Cakes-and-Ale-Cafeteria/blob/master/Images/demo9.png)   
 ### Withdraw Record Management
 * Check the withdraw records.  
 -> Check the withdraw records.  
@@ -65,6 +66,7 @@ Users are usually campus teachers and students who can order food via this syste
 * Crud an article.  
  
 ## Merchant
+![Images](https://github.com/Tyrannus-Moore/Cakes-and-Ale-Cafeteria/blob/master/Images/demo8.png)   
 ### Home Page Management
 * Carousel management.  
 * Restaurant states management.  
